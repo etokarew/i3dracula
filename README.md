@@ -1,4 +1,7 @@
 # What is used?
+- [i3-gaps](https://github.com/Airblader/i3) — A fork of tiling window manager for `X11`;
+- [i3blocks](https://github.com/vivien/i3blocks) — A feed generator for text based status bars;
+- [Polybar](https://github.com/polybar/polybar) — A fast and easy-to-use status bar;
 - ...
 
 # About
