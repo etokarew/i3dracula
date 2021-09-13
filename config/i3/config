@@ -1,0 +1,340 @@
+# i3 config file (v4)
+
+# Variable setting
+set $defaultmod Mod4
+set $up i
+set $down k
+set $left j
+set $right l
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:JetBrains Mono 10
+
+########## Keybindings ##########
+bindsym Mod4+Shift+s exec --no-startup-id draculocker
+
+### Backlight ###
+# Note: If light doesn't work, install xbacklight and
+# 1) uncomment the two lines below.
+# 2) Comment out the exec light lines.
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec light -A 10 # Increase Brightness
+bindsym XF86MonBrightnessDown exec light -U 10 # Decrease Brightness
+
+### Media Player ###
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl next
+
+### Other ###
+#bindsym Print exec scrot -q 100
+
+### Sound ###
+# Raise Volume
+#bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.volume.sh up
+# Lower Volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.volume.sh down
+# Toggle muting
+#bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mute
+bindsym XF86AudioMute exec --no-startup-id ~/.volume.sh mute
+
+# Use Mouse+Mod4 to drag floating windows to their wanted position
+floating_modifier Mod4
+
+# start a terminal
+bindsym Mod4+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym Mod4+Shift+q kill
+
+# start dmenu (a program launcher)
+#bindsym Mod4+d exec dmenu_run
+bindsym Mod4+d exec --no-startup-id "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'jetbrains-10' -p 'dmenu%'"
+
+# Rofi launcher -- the dmenu alternative
+set $RofiExec "rofi -combi-modi window,drun -show combi -modi combi"
+bindsym Mod4+Shift+d exec --no-startup-id $RofiExec
+bindsym Mod4+Tab exec --no-startup-id $RofiExec
+
+# change focus
+bindsym Mod4+$left focus left
+bindsym Mod4+$down focus down
+bindsym Mod4+$up focus up
+bindsym Mod4+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Left focus left
+bindsym Mod4+Down focus down
+bindsym Mod4+Up focus up
+bindsym Mod4+Right focus right
+
+# move focused window
+bindsym Mod4+Shift+$left move left
+bindsym Mod4+Shift+$down move down
+bindsym Mod4+Shift+$up move up
+bindsym Mod4+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Shift+Right move right
+bindsym Mod4+Shift+Left move left
+bindsym Mod4+Shift+Down move down
+bindsym Mod4+Shift+Up move up
+
+# split in horizontal orientation
+bindsym Mod4+h split h
+
+# split in vertical orientation
+bindsym Mod4+v split v
+
+# enter fullscreen mode for the focused container
+bindsym Mod4+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym Mod4+s layout stacking
+bindsym Mod4+w layout tabbed
+bindsym Mod4+q layout toggle split
+
+# toggle tiling / floating
+bindsym Mod4+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym Mod4+space focus mode_toggle
+
+# focus the parent container
+bindsym Mod4+a focus parent
+focus_follows_mouse no
+
+# focus the child container
+#bindsym Mod4+d focus child
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym Mod4+minus scratchpad show
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+set $KP_0 KP_Insert
+set $KP_1 KP_End
+set $KP_2 KP_Down
+set $KP_3 KP_Next
+set $KP_4 KP_Left
+set $KP_5 KP_Begin
+#set $KP_5 KP_5
+set $KP_6 KP_Right
+set $KP_7 KP_Home
+set $KP_8 KP_Up
+set $KP_9 KP_Prior
+set $KP_Decimal KP_Delete
+
+# switch to workspace
+bindsym Mod4+1 workspace $ws1
+bindsym Mod4+2 workspace $ws2
+bindsym Mod4+3 workspace $ws3
+bindsym Mod4+4 workspace $ws4
+bindsym Mod4+5 workspace $ws5
+bindsym Mod4+6 workspace $ws6
+bindsym Mod4+7 workspace $ws7
+bindsym Mod4+8 workspace $ws8
+bindsym Mod4+9 workspace $ws9
+bindsym Mod4+0 workspace $ws10
+
+bindsym Mod4+$KP_1 workspace $ws1
+bindsym Mod4+$KP_2 workspace $ws2
+bindsym Mod4+$KP_3 workspace $ws3
+bindsym Mod4+$KP_4 workspace $ws4
+bindsym Mod4+$KP_5 workspace $ws5
+bindsym Mod4+$KP_6 workspace $ws6
+bindsym Mod4+$KP_7 workspace $ws7
+bindsym Mod4+$KP_8 workspace $ws8
+bindsym Mod4+$KP_9 workspace $ws9
+bindsym Mod4+$KP_0 workspace $ws10
+
+# move focused container to workspace
+bindsym Mod4+Shift+1 move container to workspace $ws1
+bindsym Mod4+Shift+2 move container to workspace $ws2
+bindsym Mod4+Shift+3 move container to workspace $ws3
+bindsym Mod4+Shift+4 move container to workspace $ws4
+bindsym Mod4+Shift+5 move container to workspace $ws5
+bindsym Mod4+Shift+6 move container to workspace $ws6
+bindsym Mod4+Shift+7 move container to workspace $ws7
+bindsym Mod4+Shift+8 move container to workspace $ws8
+bindsym Mod4+Shift+9 move container to workspace $ws9
+bindsym Mod4+Shift+0 move container to workspace $ws10
+
+# move container
+bindsym Mod4+z move workspace to output left
+bindsym Mod4+x move workspace to output right
+
+# reload the configuration file
+bindsym Mod4+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym Mod4+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+#bindsym Mod4+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# RU
+bindsym Mod4+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'Вы действительно хотите выйти из текущей сессии?' -b 'Завершить работу i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that) { ↔ ↕ ⇱ ⇲ }
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or Mod4+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym Mod4+r mode "default"
+}
+
+bindsym Mod4+r mode "resize"
+
+set $ScreenshotExec gnome-screenshot --interactive
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        output HDMI-A-0
+
+        status_command i3blocks
+        position bottom
+        workspace_min_width 40
+
+        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+        font pango:JetBrains Mono 10
+
+        colors {
+                background #282A36
+                statusline #F8F8F2
+                separator  #44475A
+
+                focused_workspace  #44475A #44475A #F8F8F2
+                active_workspace   #282A36 #44475A #F8F8F2
+                inactive_workspace #282A36 #282A36 #BFBFBF
+                urgent_workspace   #FF5555 #FF5555 #F8F8F2
+                binding_mode       #FF5555 #FF5555 #F8F8F2
+        }
+
+#        xrandr --query
+#        tray_output HDMI-A-0
+        tray_output none
+
+        bindsym --release button2 exec $ScreenshotExec
+        bindsym --release button3 exec $ScreenshotExec
+}
+
+########## Polybar ##########
+#exec_always --no-startup-id polybar --config=$HOME/.config/polybar foo
+exec_always --no-startup-id polybar --config=$HOME/.config/polybar bar
+for_window [instance=polybar] sticky enable
+
+########## Styling ##########
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.background       #F8F8F2
+
+########## i3-gaps integration ##########
+for_window [class="^.*"] border pixel 5
+# force floating for all new windows
+for_window [class="[.]*"] floating enable
+#for_window [window_role="pop-up"] floating enable
+#for_window [window_role="task_dialog"] floating enable
+#for_window [title="Preferences$"] floating enable
+
+smart_borders no_gaps
+smart_gaps on
+gaps inner 10
+gaps outer 0
+
+# custom shortcuts
+bindsym Control+Shift+Escape exec gnome-system-monitor -p
+bindsym Mod4+grave exec gnome-terminal
+bindsym Mod4+F9 exec gnome-calculator
+bindsym Mod4+F11 exec gnome-control-center info-overview
+
+set $SolusUpdateExec solus-sc --update-view
+bindsym Mod4+F10 exec $SolusUpdateExec
+bindsym Mod4+F12 exec $SolusUpdateExec
+
+# Problem with copy to clipboard under i3 -- do not close a GNOME screenshot window until you was pasted your image!
+bindsym Print exec $ScreenshotExec
+#bindsym Print exec gnome-screenshot -c
+#bindsym Mod4+Print exec gnome-screenshot -wc
+#bindsym Mod4+Ctrl+Print exec gnome-screenshot -ac
+# or use maim+scrot+xclip
+#  maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i
+
+bindsym Mod4+o exec opera-new
+bindsym Mod4+Shift+o exec opera-private
+bindsym Mod4+Shift+f exec firefox --private-window
+
+set $TelegramExec "telegram-desktop -- %u"
+bindsym Mod4+t exec $TelegramExec
+bindsym Mod4+g exec $TelegramExec
+
+bindsym Mod4+e exec "nautilus --new-window recent\:"
+
+########## Autolaunch ##########
+#exec --no-startup-id xrandr --output HDMI-A-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal
+exec --no-startup-id xrandr --output DVI-D-0 --rotate right
+exec --no-startup-id xset +dpms dpms 0 0 90
+exec --no-startup-id xset s off
+
+exec --no-startup-id picom -b
+exec --no-startup-id feh --bg-fill /usr/src/larry/dracula/wallpaper/solus.png
+exec --no-startup-id setxkbmap -layout "us,ru" -option "grp:alt_space_toggle" -model "logitech"
+#exec --no-startup-id ibus-daemon -d --replace --desktop=i3
+
+exec --no-startup-id nm-applet
+exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id gnome-keyring-daemon --daemonize
+
+set $FrameColor #6272a4
+set $ForegroundColor #f8f8f2
+exec --no-startup-id dunst -startup_notification -transparency 10 \
+        -font "JetBrains Mono 10" \
+        -geometry "300x30+30+60" \
+        -frame_color "$FrameColor" \
+        -lb "#2f343f" -lf "$ForegroundColor" -lfr "$FrameColor" \
+        -nb "#2f343f" -nf "$ForegroundColor" -nfr "$FrameColor" \
+        -cb "#ba5e57" -cf "$ForegroundColor" -cfr "$FrameColor" &
+
+# exec --no-startup-id clipit &
+
+#exec --no-startup-id copyq &
+bindsym Mod4+y exec copyq toggle
+
+#exec --no-startup-id transmission-gtk --minimized
+#exec --no-startup-id dropbox start

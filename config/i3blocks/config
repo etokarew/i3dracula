@@ -1,0 +1,80 @@
+align=center
+separator_block_width=5
+
+[window]
+#command=xtitle -t 30 -s
+command=echo "$(xtitle -t 60)"
+#interval=persist
+interval=1
+min_width=525
+color=#bd93f9
+
+[cpu]
+command=i3usage=$(neofetch cpu_usage); echo -ne "\x20${i3usage##*: }"
+interval=5
+min_width=80
+color=#8be9fd
+
+[ram]
+#command=free -m | awk 'NR==2{printf "🗐 %.2f/%.2f", $3/1024, $2/1024 }'
+command=free -m | awk 'NR==2{pr=100*($3/$2); if(pr<12.5) foo="▁"; else if(pr<25) foo="▂"; else if(pr<37.5) foo="▃"; else if(pr<50) foo="▄"; else if(pr<62.5) foo="▅"; else if(pr<75) foo="▆"; else if(pr<87.5) foo="▇"; else foo="█"; printf "%s %.2f/%.2f", foo, $3/1024, $2/1024 }'
+interval=30
+min_width=120
+color=#50fa7b
+
+#[weather]
+#command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo 🌡
+#interval=3600
+#color=#f1fa8c
+#separator=false
+
+#[ip]
+#command=curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' | xargs echo  IP:
+#interval=once
+#min_width=200
+#color=#f1fa8c
+
+[bandwidth]
+command=~/.bandwidth.sh
+instance=eno1
+interval=1
+min_width=150
+color=#f1fa8c
+
+[kbd-layout]
+command=echo -ne "⌨ " && setxkbmap -query | awk '/layout/{print $2}'
+interval=once
+min_width=100
+#color=#f8f8f2 already defined in i3 config as fg-color
+
+[time]
+command=echo -ne "⏲ " && date +%T
+interval=1
+min_width=100
+color=#ff79c6
+
+#[calendar]
+#command=date "+%d.%m.%Y, %a"
+#interval=43200
+
+#[calendar-button]
+#full_text=🗒 Кал.
+#command=gnome-calendar > /dev/null
+#min_width=80
+
+#[trash]
+#full_text=🗑 Кор.
+#command=nautilus --new-window trash\: > /dev/null
+#min_width=80
+
+[i3-restart]
+full_text=i3 ↻
+command=i3-msg restart
+color=#ffb86c
+min_width=50
+
+[i3-quit]
+full_text=⏻ i3
+command=i3-nagbar -t warning -m "Вы действительно хотите выйти из текущей сессии?" -b "Завершить работу i3" "i3-msg exit" > /dev/null
+color=#ff5555
+min_width=50
