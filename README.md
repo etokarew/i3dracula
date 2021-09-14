@@ -12,7 +12,7 @@
   3. [Iosevka](https://typeof.net/Iosevka/);
   4. [Hack](https://sourcefoundry.org/hack/).
 - Terminal Apps & Prompts:
-  - [xrandr](https://x.org/releases/current/doc/man/man1/xrandr.1.xhtml), [xtitle](https://github.com/baskerville/xtitle), [setxkbmap](https://linux.die.net/man/1/setxkbmap);
+  - [xrandr](https://x.org/releases/current/doc/man/man1/xrandr.1.xhtml), [feh](https://feh.finalrewind.org/), [setxkbmap](https://linux.die.net/man/1/setxkbmap), [xtitle](https://github.com/baskerville/xtitle);
   - [neofetch](https://github.com/dylanaraps/neofetch) — A command-line system information tool;
   - [Starship](https://starship.rs/) — The minimal, blazing-fast, and infinitely customizable prompt for any shell [⚙️](./config/starship.toml);
   - [Gawk](https://www.gnu.org/software/gawk/), [GNU coreutils](https://www.gnu.org/software/coreutils/), etc...
