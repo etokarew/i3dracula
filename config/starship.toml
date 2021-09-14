@@ -6,9 +6,16 @@ add_newline = false
 success_symbol = "[ ](bold green)"
 error_symbol   = "[ ](bold red)"
 
+# alt
+#success_symbol = "[](bold green)"
+#error_symbol   = "[](bold red)"
+#vicmd_symbol   = "[](bold green)"
+
+
 # Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
+
 
 # Also 👉 date 👈
 [time]
@@ -18,3 +25,26 @@ format = '[⏲ $time ]($style) '
 time_format = "%H:%M:%S%.6f"
 #time_format = "%c"
 utc_time_offset = "local"
+
+
+## Add the following below the file
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+unknown_symbol = "🔌"
+empty_symbol = "∅"
+
+## The display configuration option is used to define when the battery indicator should be shown (threshold) and what it looks like (style).
+
+[[battery.display]]
+threshold = 10
+style = "red"
+
+[[battery.display]] # "bold yellow" style when capacity is between 10% and 30%
+threshold = 30
+style = "yellow"
+
+[[battery.display]]
+threshold = 100
+style = "green"
