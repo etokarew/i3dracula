@@ -4,7 +4,7 @@
 - [Polybar](https://github.com/polybar/polybar) — A fast and easy-to-use status bar [⚙️](./config/polybar);
 - [Picom](https://github.com/yshui/picom) — A lightweight compositor for `X11` [⚙️](./config/picom.conf);
 - [Rofi](https://github.com/davatorium/rofi) — A window switcher, application launcher and [dmenu](https://tools.suckless.org/dmenu/) replacement [⚙️](./config/rofi/config.rasi);
-- [Dunst](https://dunst-project.org/) — A lightweight replacement for the notification daemons;
+- [Dunst](https://dunst-project.org/) — A lightweight replacement for the notification daemons [⚙️](./config/dunst/dunstrc);
 - [This icon pack](https://github.com/matheuuus/dracula-icons);
 - Monospace & Icon Fonts:
   1. [JetBrains Mono](https://www.jetbrains.com/lp/mono/);

@@ -321,15 +321,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id gnome-keyring-daemon --daemonize
 
-set $FrameColor #6272a4
-set $ForegroundColor #f8f8f2
-exec --no-startup-id dunst -startup_notification -transparency 10 \
-        -font "JetBrains Mono 10" \
-        -geometry "300x30+30+60" \
-        -frame_color "$FrameColor" \
-        -lb "#2f343f" -lf "$ForegroundColor" -lfr "$FrameColor" \
-        -nb "#2f343f" -nf "$ForegroundColor" -nfr "$FrameColor" \
-        -cb "#ba5e57" -cf "$ForegroundColor" -cfr "$FrameColor" &
+exec --no-startup-id dunst -startup_notification
 
 # exec --no-startup-id clipit &
 
