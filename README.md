@@ -17,6 +17,11 @@
   - [Starship](https://starship.rs/) — The minimal, blazing-fast, and infinitely customizable prompt for any shell [⚙️](./config/starship.toml);
   - [Gawk](https://www.gnu.org/software/gawk/), [GNU coreutils](https://www.gnu.org/software/coreutils/), etc...
 
+# @TODO
+- [x] Make **@TODO** list;
+- [ ] Fix the large cursor issue in `Qt` apps;
+- [ ] Add some glyphs into `Polybar` RC using #2 `Font Awesome`.
+
 # About
 This is my `i3wm` setup based on [Zeno](https://github.com/zenorocha)'s Color Scheme 🧛‍♂️
 
