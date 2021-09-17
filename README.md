@@ -19,8 +19,7 @@
 
 # @TODO
 - [x] Make **@TODO** list;
-- [ ] Fix the large cursor issue in `Qt` apps;
-- [ ] Add some glyphs into `Polybar` RC using #2 `Font Awesome`.
+- [ ] Add some glyphs into `Polybar` RC using `Font Awesome`.
 
 # About
 This is my `i3wm` setup based on [Zeno](https://github.com/zenorocha)'s Color Scheme 🧛‍♂️
