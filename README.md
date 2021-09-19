@@ -20,7 +20,7 @@
 # @TODO
 - [x] Make **@TODO** list;
 - [ ] Add some glyphs into `Polybar` RC using `Font Awesome`;
-- [ ] Add `bash` RC.
+- [x] Add `Bash` RC.
 
 # About
 This is my `i3wm` setup based on [Zeno](https://github.com/zenorocha)'s Color Scheme 🧛‍♂️
