@@ -16,6 +16,8 @@
   - [neofetch](https://github.com/dylanaraps/neofetch) — A command-line system information tool;
   - [Starship](https://starship.rs/) — The minimal, blazing-fast, and infinitely customizable prompt for any shell [⚙️](./config/starship.toml);
   - [Gawk](https://www.gnu.org/software/gawk/), [GNU coreutils](https://www.gnu.org/software/coreutils/), etc...
+- Non-trivial color schemes:
+  - [CopyQ](https://github.com/dracula/copyq) [⚙️](./config/copyq/themes/dracula-custom.ini).
 
 # @TODO
 - [x] Make **@TODO** list;
