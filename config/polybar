@@ -66,10 +66,10 @@ click-right = ${exec.screenshot}
 module-margin-right = 1
 
 ; fonts
-font-0 = JetBrains Mono:fontformat=truetype:style=Medium:size=10:antialias=true;1
-font-1 = FontAwesome:fontformat=truetype:pixelsize=10;2
-font-2 = Iosevka Term:fontformat=truetype:pixelsize=10;0
-font-3 = Hack:fontformat=truetype:pixelsize=12;0
+font-0 = JetBrains Mono:fontformat=truetype:style=Medium:size=10:antialias=true;2
+font-1 = Font Awesome 5 Free:fontformat=truetype:pixelsize=10;0
+font-2 = Iosevka Term
+font-3 = Hack:fontformat=truetype:pixelsize=8;3
 
 ; bar doesn't take away gaps space
 ;override-redirect = true
@@ -308,7 +308,7 @@ mount-0 = /
 
 label-mounted = ROM %used%/%total%
 ;label-mounted = 🖫 %percentage_free%
-label-mounted-font = 2
+label-mounted-font = 4
 label-mounted-padding = ${layout.def-padding}
 label-mounted-foreground = ${color.fg}
 
@@ -324,7 +324,7 @@ format = <label>
 ;format-background = ${color.purple}
 ;label = 🌡 %temperature-f%
 label = %temperature-c%
-label-font = 3
+label-font = 2
 
 ; Warning
 format-warn-background = ${color.red}
@@ -334,7 +334,7 @@ format-warn-padding = ${layout.def-padding}
 ;format-warn =  <label-warn>
 format-warn = <label-warn>
 label-warn = ${self.label}
-;label-warn-font = 2
+label-warn-font = 2
 
 [settings]
 screenchange-reload = true
