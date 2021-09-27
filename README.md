@@ -5,13 +5,11 @@
 - [Picom](https://github.com/yshui/picom) — A lightweight compositor for `X11` [⚙️](./config/picom.conf)
 - [Rofi](https://github.com/davatorium/rofi) — A window switcher, application launcher and [dmenu](https://tools.suckless.org/dmenu/) replacement [⚙️](./config/rofi/config.rasi)
 - [Dunst](https://dunst-project.org/) — A lightweight replacement for the notification daemons [⚙️](./config/dunst/dunstrc)
-- [This icon pack](https://github.com/matheuuus/dracula-icons)
+- [Dracula Icons](https://github.com/matheuuus/dracula-icons)
 - Monospace & Icon Fonts:
   1. [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
   2. [Awesome](https://fontawesome.com/)
-  3. [Iosevka](https://typeof.net/Iosevka/)
-  4. [Hack](https://sourcefoundry.org/hack/)
-  5. [Droid Sans](https://fonts.adobe.com/fonts/droid-sans)
+  3. [Droid Sans](https://fonts.adobe.com/fonts/droid-sans)
 - Terminal Apps & Prompts:
   - [xrandr](https://x.org/releases/current/doc/man/man1/xrandr.1.xhtml), [feh](https://feh.finalrewind.org/), [setxkbmap](https://linux.die.net/man/1/setxkbmap), [xtitle](https://github.com/baskerville/xtitle)
   - [neofetch](https://github.com/dylanaraps/neofetch) — A command-line system information tool
@@ -23,7 +21,7 @@
 # @TODO
 - [x] Make **@TODO** list;
 - [x] Add `Bash` RC;
-- [ ] Add some glyphs into `Polybar` RC using `Font Awesome`.
+- [x] Add some glyphs into `Polybar` RC using `Font Awesome`.
 
 # About
 This is my `i3wm` setup based on [Zeno](https://github.com/zenorocha)'s Color Scheme 🧛‍♂️

@@ -192,8 +192,8 @@ bindsym Mod4+Shift+r restart
 # RU
 bindsym Mod4+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'Вы действительно хотите выйти из текущей сессии?' -b 'Завершить работу i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that) { ↔ ↕ ⇱ ⇲ }
-mode "resize" {
+# resize window (you can also use the mouse for that)
+mode "⋱" {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
@@ -217,44 +217,44 @@ mode "resize" {
         bindsym Mod4+r mode "default"
 }
 
-bindsym Mod4+r mode "resize"
+bindsym Mod4+r mode "⋱"
 
 set $ScreenshotExec gnome-screenshot --interactive
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        output HDMI-A-0
-
-        status_command i3blocks
-        position bottom
-        workspace_min_width 40
-
-        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-        font pango:JetBrains Mono 10
-
-        colors {
-                background #282A36
-                statusline #F8F8F2
-                separator  #44475A
-
-                focused_workspace  #44475A #44475A #F8F8F2
-                active_workspace   #282A36 #44475A #F8F8F2
-                inactive_workspace #282A36 #282A36 #BFBFBF
-                urgent_workspace   #FF5555 #FF5555 #F8F8F2
-                binding_mode       #FF5555 #FF5555 #F8F8F2
-        }
-
-#        xrandr --query
+#bar {
+#        output DVI-D-0
+#
+#        status_command i3blocks
+#        position bottom
+#        workspace_min_width 40
+#
+#        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#        font pango:JetBrains Mono 10
+#
+#        colors {
+#                background #282A36
+#                statusline #F8F8F2
+#                separator  #44475A
+#
+#                focused_workspace  #44475A #44475A #F8F8F2
+#                active_workspace   #282A36 #44475A #F8F8F2
+#                inactive_workspace #282A36 #282A36 #BFBFBF
+#                urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#                binding_mode       #FF5555 #FF5555 #F8F8F2
+#        }
+#
+#        » xrandr --query
 #        tray_output HDMI-A-0
-        tray_output none
-
-        bindsym --release button2 exec $ScreenshotExec
-        bindsym --release button3 exec $ScreenshotExec
-}
+#        tray_output none
+#
+#        bindsym --release button2 exec $ScreenshotExec
+#        bindsym --release button3 exec $ScreenshotExec
+#}
 
 ########## Polybar ##########
-#exec_always --no-startup-id polybar --config=$HOME/.config/polybar foo
+exec_always --no-startup-id polybar --config=$HOME/.config/polybar foo
 exec_always --no-startup-id polybar --config=$HOME/.config/polybar bar
 for_window [instance=polybar] sticky enable
 
@@ -291,7 +291,7 @@ bindsym Mod4+F12 exec $SolusUpdateExec
 # Problem with copy to clipboard under i3 -- do not close a GNOME screenshot window until you was pasted your image!
 bindsym Print exec $ScreenshotExec
 #bindsym Print exec gnome-screenshot -c
-#bindsym Mod4+Print exec gnome-screenshot -wc
+bindsym Mod4+Print exec gnome-screenshot -wp
 #bindsym Mod4+Ctrl+Print exec gnome-screenshot -ac
 # or use maim+scrot+xclip
 #  maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i
@@ -304,12 +304,12 @@ set $TelegramExec "telegram-desktop -- %u"
 bindsym Mod4+t exec $TelegramExec
 bindsym Mod4+g exec $TelegramExec
 
-bindsym Mod4+e exec "nautilus --new-window recent\:"
+bindsym Mod4+e exec "nautilus --new-window recent\: > /dev/null"
 
 ########## Autolaunch ##########
 #exec --no-startup-id xrandr --output HDMI-A-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 exec --no-startup-id xrandr --output DVI-D-0 --rotate right
-exec --no-startup-id xset +dpms dpms 0 0 90
+exec --no-startup-id xset +dpms dpms 0 0 300
 exec --no-startup-id xset s off
 
 exec --no-startup-id picom -b
@@ -320,11 +320,9 @@ exec --no-startup-id setxkbmap -layout "us,ru" -option "grp:alt_space_toggle" -m
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id gnome-keyring-daemon --daemonize
-
 exec --no-startup-id dunst -startup_notification
 
 # exec --no-startup-id clipit &
-
 #exec --no-startup-id copyq &
 bindsym Mod4+y exec copyq toggle
 

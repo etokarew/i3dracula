@@ -40,15 +40,15 @@ screenshot = gnome-screenshot --interactive
 
 [bar/base]
 width = 100%
-height = 27
-radius = 6.0
+height = 24
+;radius = 6.0
 
 background = ${color.base-bg}
-foreground = ${color.text-bg}
+foreground = ${color.text-fg}
 
 ; size of under-/overlines
-line-size = 3
-border-size = 4
+line-size = 2
+;border-size = 4
 
 ; some cursors to indicate a module's functions
 cursor-click = pointer
@@ -67,51 +67,50 @@ module-margin-right = 1
 
 ; fonts
 font-0 = JetBrains Mono:fontformat=truetype:style=Medium:size=10:antialias=true;2
-font-1 = Font Awesome 5 Free:fontformat=truetype:pixelsize=10;0
-font-2 = Iosevka Term
-font-3 = Hack:fontformat=truetype:pixelsize=8;3
+font-1 = Font Awesome 5 Free:fontformat=truetype:pixelsize=10;1
+font-2 = Font Awesome 5 Brands:fontformat=truetype:pixelsize=10;1
 
 ; bar doesn't take away gaps space
 ;override-redirect = true
-
 ; restack the bar window and put it above the selected window manager's root
 ; fixes the issue where the bar is being drawn on top of fullscreen window's
 ;wm-restack = i3
 
-[bar/bar]
+[bar/foo]
 ;» xrandr -q
-monitor = ${env:MONITOR:DVI-D-0}
-inherit = bar/base
+monitor = ${env:MONITOR:HDMI-A-0}
 
+inherit = bar/base
+bottom = true
+fixed-center = false
+
+modules-left = i3 firefox fmanager control-center xwindow
+;modules-center = trash
+modules-right = cpu temperature memory swap filesystem pulseaudio xkeyboard date trash
+
+tray-detached = false
+tray-position = center
+;tray-offset-x = 1
+;tray-offset-y = 1
+tray-maxsize = 16
+;tray-padding = ${layout.def-padding-x2}
+;tray-scale = 1
+
+[bar/bar]
+monitor = ${env:MONITOR:DVI-D-0}
+
+inherit = bar/base
 bottom = true
 fixed-center = true
 
 modules-left = i3
-modules-right = pulseaudio xkeyboard
-
-tray-detached = false
-tray-position = center
-tray-offset-x = 0
-tray-offset-y = 0
-tray-maxsize = 24
-;tray-padding = ${layout.def-padding-x2}
-;tray-scale = 1
-
-[bar/foo]
-inherit = bar/base
-bottom = false
-fixed-center = false
-
-modules-left = i3 xwindow
-modules-center = pulseaudio
-modules-right = powermenu filesystem cpu temperature memory swap date
+modules-right = xkeyboard date
 
 [generic-format-style]
-format-background = ${color.purple}
+content-padding = ${layout.def-padding}
 format-padding = ${layout.def-padding}
-format-prefix-padding-right = ${layout.def-padding}
 format-prefix-background = ${color.base-bg}
-format-prefix-foreground = ${color.module-bg}
+format-prefix-foreground = ${color.text-fg}
 format-suffix-background = ${color.base-bg}
 format-suffix-foreground = ${color.module-bg}
 
@@ -128,28 +127,40 @@ strip-wsnumbers = true
 
 format = <label-state><label-mode>
 
+ws-icon-default = 
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+
 ; Active workspace on focused monitor
-;label-focused = %{T2}%icon%%{T-} %name%
-label-focused = %name%
-label-focused-foreground = ${color.text-fg}
-label-focused-background = ${color.module-bg}
+label-focused = %{T2}%icon%%{T-}
+;label-focused = %name%
+label-focused-foreground = ${color.purple}
+label-focused-background = ${color.bg}
 ;label-focused-underline = ${color.pink}
-label-focused-overline = ${color.pink}
+;label-focused-overline = ${color.pink}
 label-focused-padding = ${layout.def-i3-padding}
 
 ; Inactive workspace on any monitor
-label-unfocused = ${self.label-focused}
+label-unfocused = %{T2}%{T-}
 label-unfocused-foreground = ${color.text-fg}
-label-unfocused-background = ${color.module-bg}
+label-unfocused-background = ${color.bg}
 label-unfocused-padding = ${layout.def-i3-padding}
 
 ; Active workspace on unfocused monitor
-label-visible = ${self.label-focused}
-label-visible-background = ${color.module-bg}
+label-visible = ${self.label-unfocused}
+label-visible-background = ${color.bg}
 label-visible-padding = ${layout.def-i3-padding}
 
 ; Workspace with urgency hint set
-label-urgent = ${self.label-focused}
+label-urgent = ${self.label-unfocused}
 label-urgent-foreground = ${color.text-bg}
 label-urgent-background = ${color.red}
 label-urgent-padding = ${layout.def-i3-padding}
@@ -161,25 +172,25 @@ label-mode-padding = ${layout.def-i3-padding}
 [module/xwindow]
 type = internal/xwindow
 inherit = generic-format-style
-label = %title:0:150:...%
+label =  %title:0:30:...%
+label-font = 3
 
 [module/xkeyboard]
 type = internal/xkeyboard
+inherit = generic-format-style
 
 ; <label-indicator>
 format = <label-layout>
 format-spacing = 2
 
 ; %layout% %name% %number%
-label-layout = %icon%
-label-layout-padding = ${layout.def-padding}
-
-label-layout-background = ${color.fg}
-label-layout-foreground = ${color.bg}
+label-layout =  %icon%
+label-layout-overline = ${color.white}
+label-layout-font = 2
 
 ;layout-icon-default = ⌨
-layout-icon-0 = us;US
-layout-icon-1 = ru;РУ
+layout-icon-0 = us;En
+layout-icon-1 = ru;Ру
 
 [module/date]
 type = internal/date
@@ -193,61 +204,24 @@ date-alt = %A, %d %B %Y
 time = %H:%M:%S
 time-alt = %H:%M
 
-label = %date% %time%
-
-[module/powermenu]
-type = custom/menu
-
-label-active-font = 3
-expand-right = true
-format-spacing = 2
-
-label-open = pw ⏻
-;label-open-padding = ${layout.def-padding-x2}
-label-open-foreground = ${color.red}
-label-close = rt ↑
-;label-close-padding = ${layout.def-padding-x2}
-label-close-foreground = ${color.text-fg}
-
-label-separator = |
-label-separator-foreground = ${color.text-fg}
-
-menu-0-0 = rb ↻
-menu-0-0-foreground = ${color.orange}
-menu-0-0-exec = #powermenu.open.1
-menu-0-1 = off ⏻
-menu-0-1-foreground = ${color.red}
-menu-0-1-exec = #powermenu.open.2
-
-menu-1-0 = ← back
-menu-1-0-foreground = ${color.text-fg}
-menu-1-0-exec = #powermenu.open.0
-menu-1-1 = rb ↻
-menu-1-1-foreground = ${color.orange}
-menu-1-1-exec = sudo reboot
-
-; @2DO: suspend ⏾
-
-menu-2-0 = off ⏻
-menu-2-0-foreground = ${color.red}
-menu-2-0-exec = sudo poweroff
-menu-2-1 = ← back
-menu-2-1-foreground = ${color.text-fg}
-menu-2-1-exec = #powermenu.open.0
+label = %{A1:gnome-calendar > /dev/null:}  %date% %{A}  %time%
+label-font = 2
 
 [module/pulseaudio]
 type = internal/pulseaudio
+inherit = generic-format-style
 
-format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
+;format-volume = <bar-volume>
 format-volume-padding = ${layout.def-padding}
 
-;label-volume = %percentage%% 🕩
-label-volume = %percentage%%
-label-volume-foreground = ${color.white}
+label-volume =  %percentage%%
+label-volume-underline = ${color.pink}
+label-volume-font = 2
 
-label-muted = 0%
-;label-muted = 🕨
-label-muted-foreground = ${color.white}
+label-muted = 
+;label-muted-underline = ${color.pink}
+label-muted-font = 2
 
 bar-volume-width = 10
 bar-volume-foreground-0 = ${color.green}
@@ -271,17 +245,25 @@ bar-volume-empty-foreground = ${color.yellow}
 type = internal/cpu
 inherit = generic-format-style
 
-;format =  <label>
-format = CPU <label>
-label = %percentage%%
 interval = 5
+
+;format =  <label>
+format = <label>
+label =  %percentage%%
+label-underline = ${color.cyan}
+label-font = 3
 
 [module/memory]
 type = internal/memory
 inherit = generic-format-style
 
-format = RAM <ramp-used> <label>
-label = %gb_used%/%gb_total%
+interval = 5
+
+;format =  <label>
+format = <ramp-used> <label>
+label = %gb_used%
+label-font = 2
+label-underline = ${color.green}
 
 ; Only applies if <ramp-used> is used
 ramp-used-0 = ▁
@@ -297,20 +279,60 @@ ramp-used-7 = █
 type = internal/memory
 inherit = generic-format-style
 
-format = swap <label>
+interval = 60
+
+format =  <label>
 label = %percentage_swap_used%%
+label-font = 2
 
 [module/filesystem]
 type = internal/fs
+inherit = generic-format-style
 
-interval = 25
-mount-0 = /
+interval = 300
+mount-0 = /home
 
-label-mounted = ROM %used%/%total%
-;label-mounted = 🖫 %percentage_free%
-label-mounted-font = 4
-label-mounted-padding = ${layout.def-padding}
-label-mounted-foreground = ${color.fg}
+label-mounted =  %free%
+label-mounted-font = 2
+
+[module/trash]
+type = custom/text
+inherit = generic-format-style
+content = 
+content-font = 2
+click-left = nautilus --new-window trash\: > /dev/null
+
+[module/fmanager]
+type = custom/text
+inherit = generic-format-style
+content = 
+content-font = 2
+click-left = nautilus --new-window recent\: > /dev/null
+
+[module/control-center]
+type = custom/text
+inherit = generic-format-style
+content = 
+content-font = 2
+click-left = gnome-control-center info-overview > /dev/null
+
+[module/firefox]
+type = custom/text
+inherit = generic-format-style
+content = 
+content-font = 3
+click-left = firefox --new-tab about:newtab > /dev/null
+
+[module/i3logout]
+type = custom/text
+
+content = 
+content-font = 2
+content-background = ${color.purple}
+content-foreground = ${color.text-bg}
+content-padding = ${layout.def-padding-x2}
+
+click-left = i3-nagbar -t warning -m "Вы действительно хотите выйти из текущей сессии?" -b "Завершить работу i3" "i3-msg exit" > /dev/null
 
 [module/temperature]
 type = internal/temperature
@@ -321,9 +343,8 @@ thermal-zone = 0
 warn-temperature = 80
 
 format = <label>
-;format-background = ${color.purple}
-;label = 🌡 %temperature-f%
-label = %temperature-c%
+label =  %temperature-c%
+label-underline = ${color.orange}
 label-font = 2
 
 ; Warning
@@ -331,8 +352,7 @@ format-warn-background = ${color.red}
 format-warn-foreground = ${color.fg}
 format-warn-underline = ${color.red}
 format-warn-padding = ${layout.def-padding}
-;format-warn =  <label-warn>
-format-warn = <label-warn>
+format-warn =  <label-warn>
 label-warn = ${self.label}
 label-warn-font = 2
 
