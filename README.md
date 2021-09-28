@@ -6,9 +6,9 @@
 - [Rofi](https://github.com/davatorium/rofi) — A window switcher, application launcher and [dmenu](https://tools.suckless.org/dmenu/) replacement [⚙️](./config/rofi/config.rasi)
 - [Dunst](https://dunst-project.org/) — A lightweight replacement for the notification daemons [⚙️](./config/dunst/dunstrc)
 - [Dracula Icons](https://github.com/matheuuus/dracula-icons)
-- Monospace & Icon Fonts:
+- Fonts:
   1. [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
-  2. [Awesome](https://fontawesome.com/)
+  2. [Awesome](https://fontawesome.com/) (*icon glyphs*)
   3. [Droid Sans](https://fonts.adobe.com/fonts/droid-sans)
 - Terminal Apps & Prompts:
   - [xrandr](https://x.org/releases/current/doc/man/man1/xrandr.1.xhtml), [feh](https://feh.finalrewind.org/), [setxkbmap](https://linux.die.net/man/1/setxkbmap), [xtitle](https://github.com/baskerville/xtitle)
