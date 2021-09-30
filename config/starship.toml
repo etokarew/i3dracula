@@ -1,15 +1,12 @@
 # Don't print a new line at the start of the prompt
 add_newline = false
 
+
 # Replaces the default "❯" symbol in the prompt
 [character] # The name of the module we are configuring is "character"
 success_symbol = "[ ](bold green)"
 error_symbol   = "[ ](bold red)"
-
-# alt
-#success_symbol = "[](bold green)"
-#error_symbol   = "[](bold red)"
-#vicmd_symbol   = "[](bold green)"
+vicmd_symbol   = "[ ](bold green)"
 
 
 # Disable the package module, hiding it from the prompt completely
@@ -48,3 +45,12 @@ style = "yellow"
 [[battery.display]]
 threshold = 100
 style = "green"
+
+
+[python]
+symbol = "∿ "
+python_binary = ["python", "python3"]
+
+
+[nodejs]
+symbol = "⚛️ "
