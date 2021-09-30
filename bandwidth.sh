@@ -31,8 +31,10 @@ while [[ $# -gt 1 ]]; do
     shift
 done
 
-[[ -z $INLABEL ]] && INLABEL=" "
-[[ -z $OUTLABEL ]] && OUTLABEL=" "
+#[[ -z $INLABEL ]] && INLABEL=" "
+#[[ -z $OUTLABEL ]] && OUTLABEL=" "
+[[ -z $INLABEL ]] && INLABEL="↓ "
+[[ -z $OUTLABEL ]] && OUTLABEL="↑ "
 
 # Use the provided interface, otherwise the device used for the default route.
 if [[ -n $BLOCK_INSTANCE ]]; then

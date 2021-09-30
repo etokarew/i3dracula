@@ -1,16 +1,17 @@
-;==========================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;==========================================================
-; github.com/dracula/dracula-theme#color-palette :: 11 unique colors
+;=====================================================================
+;                                                                    |
+;                                                                    |
+;       ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗       |
+;       ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗      |
+;       ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝      |
+;       ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗      |
+;       ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║      |
+;       ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝      |
+;                                                                    |
+;                                                                    |
+;=====================================================================
+; github.com/dracula/dracula-theme#color-palette :: 11 unique colors |
+;=====================================================================
 
 [color]
 fg = #f8f8f2
@@ -33,7 +34,7 @@ yellow = #f1fa8c
 [layout]
 def-padding = 1
 def-padding-x2 = 2
-def-i3-padding = 2
+def-i3-padding = 1
 
 [exec]
 screenshot = gnome-screenshot --interactive
@@ -63,7 +64,8 @@ click-right = ${exec.screenshot}
 ;double-click-middle = 
 ;double-click-right = 
 
-module-margin-right = 1
+;module-margin-left = 1
+;module-margin-right = 1
 
 ; fonts
 font-0 = JetBrains Mono:fontformat=truetype:style=Medium:size=10:antialias=true;2
@@ -84,9 +86,9 @@ inherit = bar/base
 bottom = true
 fixed-center = false
 
-modules-left = i3 firefox fmanager control-center xwindow
+modules-left = i3 rofi firefox steam filemanager control-center xwindow
 ;modules-center = trash
-modules-right = cpu temperature memory swap filesystem pulseaudio xkeyboard date trash
+modules-right = bandwidth cpu temperature memory swap filesystem pulseaudio xkeyboard date time trash
 
 tray-detached = false
 tray-position = center
@@ -104,7 +106,7 @@ bottom = true
 fixed-center = true
 
 modules-left = i3
-modules-right = xkeyboard date
+modules-right = xkeyboard time i3logout
 
 [generic-format-style]
 content-padding = ${layout.def-padding}
@@ -196,15 +198,22 @@ layout-icon-1 = ru;Ру
 type = internal/date
 inherit = generic-format-style
 
+interval = 60
+date = %d
+
+label = %{A1:gnome-calendar > /dev/null:}  %date% %{A}
+label-font = 2
+
+[module/time]
+type = internal/date
+inherit = generic-format-style
+
 interval = 1
 
-date = %d.%m.%Y
-date-alt = %A, %d %B %Y
+time = %H:%M
+time-alt = %H:%M:%S
 
-time = %H:%M:%S
-time-alt = %H:%M
-
-label = %{A1:gnome-calendar > /dev/null:}  %date% %{A}  %time%
+label =  %time%
 label-font = 2
 
 [module/pulseaudio]
@@ -245,7 +254,7 @@ bar-volume-empty-foreground = ${color.yellow}
 type = internal/cpu
 inherit = generic-format-style
 
-interval = 5
+interval = 2
 
 ;format =  <label>
 format = <label>
@@ -281,9 +290,8 @@ inherit = generic-format-style
 
 interval = 60
 
-format =  <label>
+format = sw <label>
 label = %percentage_swap_used%%
-label-font = 2
 
 [module/filesystem]
 type = internal/fs
@@ -294,6 +302,24 @@ mount-0 = /home
 
 label-mounted =  %free%
 label-mounted-font = 2
+label-mounted-padding = ${layout.def-padding}
+
+[module/bandwidth]
+type = custom/script
+inherit = generic-format-style
+
+exec = $HOME/.bandwidth.sh
+interval = 5
+
+format = <label>
+format-underline = ${color.yellow}
+
+[module/rofi]
+type = custom/text
+inherit = generic-format-style
+content = 
+content-font = 2
+click-left = rofi -combi-modi window,drun -show combi -modi combi > /dev/null
 
 [module/trash]
 type = custom/text
@@ -302,7 +328,7 @@ content = 
 content-font = 2
 click-left = nautilus --new-window trash\: > /dev/null
 
-[module/fmanager]
+[module/filemanager]
 type = custom/text
 inherit = generic-format-style
 content = 
@@ -323,10 +349,24 @@ content = 
 content-font = 3
 click-left = firefox --new-tab about:newtab > /dev/null
 
+[module/opera]
+type = custom/text
+inherit = generic-format-style
+content = 
+content-font = 3
+click-left = opera-new > /dev/null
+
+[module/steam]
+type = custom/text
+inherit = generic-format-style
+content = 
+content-font = 3
+click-left = steam steam://open/news > /dev/null
+
 [module/i3logout]
 type = custom/text
 
-content = 
+content = 
 content-font = 2
 content-background = ${color.purple}
 content-foreground = ${color.text-bg}
