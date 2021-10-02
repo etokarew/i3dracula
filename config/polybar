@@ -86,7 +86,7 @@ inherit = bar/base
 bottom = true
 fixed-center = false
 
-modules-left = i3 rofi firefox steam filemanager control-center xwindow
+modules-left = i3 rofi firefox opera steam dropbox-folder filemanager control-center xwindow
 ;modules-center = trash
 modules-right = bandwidth cpu temperature memory swap filesystem pulseaudio xkeyboard date time trash
 
@@ -106,7 +106,7 @@ bottom = true
 fixed-center = true
 
 modules-left = i3
-modules-right = xkeyboard time i3logout
+modules-right = xkeyboard time i3lock i3logout
 
 [generic-format-style]
 content-padding = ${layout.def-padding}
@@ -229,7 +229,6 @@ label-volume-underline = ${color.pink}
 label-volume-font = 2
 
 label-muted = 
-;label-muted-underline = ${color.pink}
 label-muted-font = 2
 
 bar-volume-width = 10
@@ -362,6 +361,23 @@ inherit = generic-format-style
 content = 
 content-font = 3
 click-left = steam steam://open/news > /dev/null
+
+[module/dropbox-folder]
+type = custom/text
+inherit = generic-format-style
+content = 
+content-font = 3
+click-left = nautilus --new-window $HOME/Dropbox > /dev/null
+
+[module/i3lock]
+type = custom/text
+inherit = generic-format-style
+
+content = 
+content-font = 2
+content-overline = ${color.purple}
+
+click-left = $HOME/.draculocker.sh > /dev/null
 
 [module/i3logout]
 type = custom/text
