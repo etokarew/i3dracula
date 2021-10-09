@@ -14,3 +14,5 @@ eval "$(starship init bash)"
 
 complete -cf sudo
 alias lsdl="lsd --icon auto --icon-theme unicode -l"
+alias drat="bat --theme Dracula"
+alias bats="bat --theme Solarized\ \(dark\)"
