@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Copyright (C) 2012 Stefan Breunig <stefan+measure-net-speed@mathphys.fsk.uni-heidelberg.de>
 # Copyright (C) 2014 kaueraal
 # Copyright (C) 2015 Thiago Perrotta <perrotta dot thiago at poli dot ufrj dot br>
@@ -46,9 +47,9 @@ fi
 # Issue #36 compliant.
 if ! [ -e "/sys/class/net/${INTERFACE}/operstate" ] || ! [ "`cat /sys/class/net/${INTERFACE}/operstate`" = "up" ]
 then
-    echo "$INTERFACE down"
-    echo "$INTERFACE down"
-    echo "#FF0000"
+    #echo "$INTERFACE down"
+    #echo "#FF0000"
+    echo "↓ VPN ↑"
     exit 0
 fi
 
