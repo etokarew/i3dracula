@@ -175,7 +175,8 @@
     max_icon_size = 64
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    #icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_path = /home/larry/.icons/dracula/16/panel/:/home/larry/.icons/dracula/16/devices/
 
     ### History ###
 
@@ -325,7 +326,6 @@
 #    msg_urgency
 #    stack_tag
 #    summary
-#
 # and you can override the
 #    background
 #    foreground
