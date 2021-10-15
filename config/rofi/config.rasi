@@ -2,6 +2,7 @@
 configuration {
     show-icons: true;
     location: 7;
+    xoffset: 1;
     yoffset: -24;
 }
 
