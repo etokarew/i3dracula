@@ -7,10 +7,20 @@
 icon_path=/home/larry/.icons/dracula/symbolic/status/
 
 notify_id=506
-sink_nr=0 # use `pacmd list-sinks` to find out sink_nr
+STEP=4; CHUNKS=25
 
-STEP=4
-CHUNKS=25
+function get_used_by {
+    pacmd list-sinks | awk '/\tused by:/ { print $3 }' | tail -n+$(($1+1)) | head -n1
+}
+
+sink_nr=0
+for i in 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
+do
+    if [[ `get_used_by $i` -gt 0 ]]; then
+        sink_nr=$i
+        break
+    fi
+done
 
 function get_volume {
     pacmd list-sinks | awk '/\tvolume:/ { print $5 }' | tail -n+$((sink_nr+1)) | head -n1 | cut -d '%' -f 1
