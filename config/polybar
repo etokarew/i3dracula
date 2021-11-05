@@ -105,8 +105,8 @@ inherit = bar/base
 bottom = true
 fixed-center = true
 
-modules-left = i3
-modules-right = xkeyboard time i3lock i3logout
+modules-left = i3 rofi
+modules-right = xkeyboard times i3lock i3logout
 
 [generic-format-style]
 content-padding = ${layout.def-padding}
@@ -212,6 +212,18 @@ interval = 1
 
 time = %H:%M
 time-alt = %H:%M:%S
+
+label =  %time%
+label-font = 2
+
+[module/times]
+type = internal/date
+inherit = generic-format-style
+
+interval = 1
+
+time = %H:%M:%S
+time-alt = %H:%M
 
 label =  %time%
 label-font = 2
@@ -373,8 +385,8 @@ click-left = nautilus --new-window $HOME/Dropbox > /dev/null
 type = custom/text
 inherit = generic-format-style
 
-content = 
-content-font = 2
+content = LOCK
+content-font = 1
 content-overline = ${color.purple}
 
 click-left = $HOME/.draculocker.sh > /dev/null
