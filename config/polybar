@@ -105,7 +105,7 @@ inherit = bar/base
 bottom = true
 fixed-center = true
 
-modules-left = i3 rofi
+modules-left = i3 rofi xwindow
 modules-right = xkeyboard times i3lock i3logout
 
 [generic-format-style]
