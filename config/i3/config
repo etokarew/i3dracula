@@ -326,5 +326,5 @@ exec --no-startup-id dunst -startup_notification
 #exec --no-startup-id copyq &
 bindsym Mod4+y exec copyq toggle
 
-#exec --no-startup-id transmission-gtk --minimized
+exec --no-startup-id transmission-gtk --minimized
 #exec --no-startup-id dropbox start
