@@ -174,7 +174,7 @@ label-mode-padding = ${layout.def-i3-padding}
 [module/xwindow]
 type = internal/xwindow
 inherit = generic-format-style
-label =  %title:0:30:...%
+label = %title:0:30:...%
 label-font = 3
 
 [module/xkeyboard]
