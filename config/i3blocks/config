@@ -75,6 +75,6 @@ min_width=50
 
 [i3-quit]
 full_text=⏻ i3
-command=i3-nagbar -t warning -m "Вы действительно хотите выйти из текущей сессии?" -b "Завершить работу i3" "i3-msg exit" > /dev/null
+command=~/.drunner.sh i3logout
 color=#ff5555
 min_width=50

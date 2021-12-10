@@ -37,7 +37,7 @@ def-padding-x2 = 2
 def-i3-padding = 1
 
 [exec]
-screenshot = gnome-screenshot --interactive
+screenshot = ~/.drunner.sh screenshot
 
 [bar/base]
 width = 100%
@@ -200,7 +200,7 @@ inherit = generic-format-style
 interval = 60
 date = %d
 
-label = %{A1:gnome-calendar > /dev/null:}  %date% %{A}
+label = %{A1:~/.drunner.sh calendar:}  %date% %{A}
 label-font = 2
 
 [module/time]
@@ -329,56 +329,56 @@ type = custom/text
 inherit = generic-format-style
 content = 
 content-font = 2
-click-left = rofi -combi-modi window,drun -show combi -modi combi > /dev/null
+click-left = ~/.drunner.sh rofi
 
 [module/trash]
 type = custom/text
 inherit = generic-format-style
 content = 
 content-font = 2
-click-left = nautilus --new-window trash\: > /dev/null
+click-left = ~/.drunner.sh trash
 
 [module/filemanager]
 type = custom/text
 inherit = generic-format-style
 content = 
 content-font = 2
-click-left = nautilus --new-window recent\: > /dev/null
+click-left = ~/.drunner.sh recent
 
 [module/control-center]
 type = custom/text
 inherit = generic-format-style
 content = 
 content-font = 2
-click-left = gnome-control-center info-overview > /dev/null
+click-left = ~/.drunner.sh settings
 
 [module/firefox]
 type = custom/text
 inherit = generic-format-style
 content = 
 content-font = 3
-click-left = firefox --new-tab about:newtab > /dev/null
+click-left = ~/.drunner.sh firefox
 
 [module/opera]
 type = custom/text
 inherit = generic-format-style
 content = 
 content-font = 3
-click-left = opera-new > /dev/null
+click-left = ~/.drunner.sh opera
 
 [module/steam]
 type = custom/text
 inherit = generic-format-style
 content = 
 content-font = 3
-click-left = steam steam://open/news > /dev/null
+click-left = ~/.drunner.sh steam
 
 [module/dropbox-folder]
 type = custom/text
 inherit = generic-format-style
 content = 
 content-font = 3
-click-left = nautilus --new-window $HOME/Dropbox > /dev/null
+click-left = ~/.drunner.sh dropbox-folder
 
 [module/i3lock]
 type = custom/text
@@ -399,7 +399,7 @@ content-background = ${color.purple}
 content-foreground = ${color.text-bg}
 content-padding = ${layout.def-padding-x2}
 
-click-left = i3-nagbar -t warning -m "Вы действительно хотите выйти из текущей сессии?" -b "Завершить работу i3" "i3-msg exit" > /dev/null
+click-left = ~/.drunner.sh i3logout
 
 [module/temperature]
 type = internal/temperature

@@ -57,9 +57,8 @@ bindsym Mod4+Shift+q kill
 bindsym Mod4+d exec --no-startup-id "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'jetbrains-10' -p 'dmenu%'"
 
 # Rofi launcher -- the dmenu alternative
-set $RofiExec "rofi -combi-modi window,drun -show combi -modi combi"
-bindsym Mod4+Shift+d exec --no-startup-id $RofiExec
-bindsym Mod4+Tab exec --no-startup-id $RofiExec
+bindsym Mod4+Shift+d exec --no-startup-id "~/.drunner.sh rofi"
+bindsym Mod4+Tab exec --no-startup-id "~/.drunner.sh rofi"
 
 # change focus
 bindsym Mod4+$left focus left
@@ -189,8 +188,7 @@ bindsym Mod4+Shift+r restart
 
 # exit i3 (logs you out of your X session)
 #bindsym Mod4+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-# RU
-bindsym Mod4+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'Вы действительно хотите выйти из текущей сессии?' -b 'Завершить работу i3' 'i3-msg exit'"
+bindsym Mod4+Shift+e exec --no-startup-id "~/.drunner.sh i3logout"
 
 # resize window (you can also use the mouse for that)
 mode "⋱" {
@@ -219,38 +217,36 @@ mode "⋱" {
 
 bindsym Mod4+r mode "⋱"
 
-set $ScreenshotExec gnome-screenshot --interactive
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
-#        output DVI-D-0
-#
+##        output DVI-D-0
+
 #        status_command i3blocks
 #        position bottom
 #        workspace_min_width 40
-#
+
 #        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 #        font pango:JetBrains Mono 10
-#
+
 #        colors {
 #                background #282A36
 #                statusline #F8F8F2
 #                separator  #44475A
-#
+
 #                focused_workspace  #44475A #44475A #F8F8F2
 #                active_workspace   #282A36 #44475A #F8F8F2
 #                inactive_workspace #282A36 #282A36 #BFBFBF
 #                urgent_workspace   #FF5555 #FF5555 #F8F8F2
 #                binding_mode       #FF5555 #FF5555 #F8F8F2
 #        }
-#
-#        » xrandr --query
+
+##        » xrandr --query
 #        tray_output HDMI-A-0
 #        tray_output none
-#
-#        bindsym --release button2 exec $ScreenshotExec
-#        bindsym --release button3 exec $ScreenshotExec
+
+#        bindsym --release button2 exec "~/.drunner.sh screenshot"
+#        bindsym --release button3 exec "~/.drunner.sh screenshot"
 #}
 
 ########## Polybar ##########
@@ -279,52 +275,28 @@ gaps inner 10
 gaps outer 0
 
 # custom shortcuts
-bindsym Control+Shift+Escape exec gnome-system-monitor -p
-bindsym Mod4+grave exec gnome-terminal
-bindsym Mod4+F9 exec gnome-calculator
-bindsym Mod4+F11 exec gnome-control-center info-overview
+bindsym Control+Shift+Escape exec "~/.drunner.sh system-monitor"
+bindsym Mod4+grave exec "~/.drunner.sh terminal"
+bindsym Mod4+F9 exec "~/.drunner.sh calculator"
+bindsym Mod4+F11 exec "~/.drunner.sh settings"
 
-set $SolusUpdateExec solus-sc --update-view
-bindsym Mod4+F10 exec $SolusUpdateExec
-bindsym Mod4+F12 exec $SolusUpdateExec
+bindsym Mod4+F10 exec "~/.drunner.sh updater"
+bindsym Mod4+F12 exec "~/.drunner.sh updater"
 
 # Problem with copy to clipboard under i3 -- do not close a GNOME screenshot window until you was pasted your image!
-bindsym Print exec $ScreenshotExec
-#bindsym Print exec gnome-screenshot -c
-bindsym Mod4+Print exec gnome-screenshot -wp
-#bindsym Mod4+Ctrl+Print exec gnome-screenshot -ac
+bindsym Print exec "~/.drunner.sh screenshot"
 # or use maim+scrot+xclip
 #  maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i
 
-bindsym Mod4+o exec opera-new
-bindsym Mod4+Shift+o exec opera-private
-bindsym Mod4+Shift+f exec firefox --private-window
+bindsym Mod4+o exec "~/.drunner.sh opera"
+bindsym Mod4+Shift+o exec "~/.drunner.sh opera-private"
+bindsym Mod4+Shift+f exec "~/.drunner.sh firefox-private"
 
-set $TelegramExec "telegram-desktop -- %u"
-bindsym Mod4+t exec $TelegramExec
-bindsym Mod4+g exec $TelegramExec
+bindsym Mod4+t exec "~/.drunner.sh telegram"
+bindsym Mod4+g exec "~/.drunner.sh telegram"
 
-bindsym Mod4+e exec "nautilus --new-window recent\: > /dev/null"
+bindsym Mod4+e exec "~/.drunner.sh recent"
+bindsym Mod4+y exec "~/.drunner.sh clipboard-manager"
 
 ########## Autolaunch ##########
-#exec --no-startup-id xrandr --output HDMI-A-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal
-exec --no-startup-id xrandr --output DVI-D-0 --rotate right
-exec --no-startup-id xset +dpms dpms 0 0 300
-exec --no-startup-id xset s off
-
-exec --no-startup-id picom -b
-exec --no-startup-id feh --bg-fill /usr/src/larry/dracula/wallpaper/solus.png
-exec --no-startup-id setxkbmap -layout "us,ru" -option "grp:alt_space_toggle" -model "logitech"
-#exec --no-startup-id ibus-daemon -d --replace --desktop=i3
-
-exec --no-startup-id nm-applet
-exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id gnome-keyring-daemon --daemonize
-exec --no-startup-id dunst -startup_notification
-
-# exec --no-startup-id clipit &
-#exec --no-startup-id copyq &
-bindsym Mod4+y exec copyq toggle
-
-exec --no-startup-id transmission-gtk --minimized
-#exec --no-startup-id dropbox start
+exec --no-startup-id "~/.drunner.sh autolaunch"
