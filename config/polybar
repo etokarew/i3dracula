@@ -57,7 +57,7 @@ cursor-scroll = ns-resize
 
 ;click-left = 
 click-middle = ${exec.screenshot}
-click-right = ${exec.screenshot}
+;click-right = ${exec.screenshot}
 ;scroll-up = 
 ;scroll-down = 
 ;double-click-left = 
@@ -358,6 +358,7 @@ inherit = generic-format-style
 content = 
 content-font = 3
 click-left = ~/.drunner.sh firefox
+click-right = ~/.drunner.sh firefox-private
 
 [module/opera]
 type = custom/text
@@ -365,6 +366,7 @@ inherit = generic-format-style
 content = 
 content-font = 3
 click-left = ~/.drunner.sh opera
+click-right = ~/.drunner.sh opera-private
 
 [module/steam]
 type = custom/text

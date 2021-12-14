@@ -41,10 +41,10 @@ case $1 in
         i3-nagbar -t warning -m "Вы действительно хотите выйти из текущей сессии?" -b "Завершить работу i3" "i3-msg exit" > /dev/null &
         ;;
     opera)
-        opera-new > /dev/null &
+        opera --new-window --password-store=basic --enable-features=OverlayScrollbar --disable-features=OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter %U > /dev/null &
         ;;
     opera-private)
-        opera-private > /dev/null &
+        opera --private --password-store=basic --enable-features=OverlayScrollbar --disable-features=OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter %U > /dev/null &
         ;;
     recent)
         nautilus --new-window recent\: > /dev/null &
