@@ -10,7 +10,7 @@ case $1 in
         feh --bg-fill /usr/src/larry/dracula/wallpaper/solus.png &
         setxkbmap -layout "us,ru" -option "grp:alt_space_toggle" -model "logitech" &
         #ibus-daemon -d --replace --desktop=i3 &
-        dunst -startup_notification &
+        dunst &
         /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1 &
         gnome-keyring-daemon --daemonize &
         nm-applet &
