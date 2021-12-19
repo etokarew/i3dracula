@@ -7,7 +7,7 @@
 icon_path=/home/$USER/.icons/dracula/symbolic/status/
 
 notify_id=506
-STEP=4; CHUNKS=25
+STEP=2; CHUNKS=50
 
 function get_used_by {
     pacmd list-sinks | awk '/\tused by:/ { print $3 }' | tail -n+$(($1+1)) | head -n1
