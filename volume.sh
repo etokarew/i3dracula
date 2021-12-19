@@ -4,7 +4,7 @@
 # inspired by gist.github.com/sebastiencs/5d7227f388d93374cebdf72e783fbd6a
 
 #icon_path=/usr/share/icons/Numix/scalable/status/
-icon_path=/home/larry/.icons/dracula/symbolic/status/
+icon_path=/home/$USER/.icons/dracula/symbolic/status/
 
 notify_id=506
 STEP=4; CHUNKS=25

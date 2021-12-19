@@ -196,7 +196,7 @@
     max_icon_size = 64
 
     # Paths to default icons.
-    icon_path = /home/larry/.icons/dracula/16/panel/:/home/larry/.icons/dracula/16/devices/
+    icon_path = /home/$USER/.icons/dracula/16/panel/:/home/$USER/.icons/dracula/16/devices/
 
     ### History ###
 

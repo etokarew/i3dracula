@@ -7,7 +7,7 @@ case $1 in
         xset +dpms dpms 0 0 300 &
         xset s off &
         picom -b &
-        feh --bg-fill /usr/src/larry/dracula/wallpaper/solus.png &
+        feh --bg-fill /usr/src/$USER/dracula/wallpaper/solus.png &
         setxkbmap -layout "us,ru" -option "grp:alt_space_toggle" -model "logitech" &
         #ibus-daemon -d --replace --desktop=i3 &
         dunst &
