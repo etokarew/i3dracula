@@ -224,7 +224,7 @@ interval = 1
 time = %H:%M:%S
 time-alt = %H:%M
 
-label =  %time%
+label =  %time%
 label-font = 2
 
 [module/pulseaudio]
