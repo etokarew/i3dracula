@@ -68,11 +68,13 @@ bindsym Mod4+$right focus right
 
 # alternatively, you can use the cursor keys:
 bindsym Mod4+Left focus left
-bindsym Mod1+Tab focus left
 bindsym Mod4+Down focus down
 bindsym Mod4+Up focus up
 bindsym Mod4+Right focus right
-bindsym Mod1+Shift+Tab focus right
+
+# also alt+tab
+bindsym Mod1+Shift+Tab focus left
+bindsym Mod1+Tab focus right
 
 # move focused window
 bindsym Mod4+Shift+$left move left

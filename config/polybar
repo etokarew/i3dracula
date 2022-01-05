@@ -86,7 +86,7 @@ inherit = bar/base
 bottom = true
 fixed-center = false
 
-modules-left = i3 rofi firefox opera steam dropbox-folder filemanager control-center xwindow
+modules-left = rofi firefox opera steam dropbox-folder filemanager control-center i3
 modules-right = bandwidth cpu temperature memory swap filesystem pulseaudio xkeyboard date time trash
 
 tray-detached = false
@@ -104,7 +104,7 @@ inherit = bar/base
 bottom = true
 fixed-center = true
 
-modules-left = i3 rofi
+modules-left = rofi i3
 modules-center = times
 modules-right = xkeyboard i3lock i3logout
 
