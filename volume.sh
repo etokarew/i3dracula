@@ -11,7 +11,7 @@ STEP=2; CHUNKS=50
 
 function get_active {
     sink=$(pacmd list-sinks | awk '/\* index:/' | cut -d ':' -f 2 | sed 's/ //g')
-    if [[ -z $sink || $sink -lt 0 ]]; then i=0; fi
+    if [[ -z $sink || $sink -lt 0 ]]; then sink=0; fi
     echo $sink
 }
 
