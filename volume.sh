@@ -9,19 +9,13 @@ icon_path=/home/$USER/.icons/dracula/symbolic/status/
 notify_id=506
 STEP=2; CHUNKS=50
 
-function get_used_by {
-    pacmd list-sinks | awk '/\tused by:/ { print $3 }' | tail -n+$(($1+1)) | head -n1
+function get_active {
+    i=$(pacmd list-sinks | awk '/\* index:/' | cut -d ':' -f 2 | sed 's/ //g')
+    if [[ $i -lt 0 ]]; then i=0; fi
+    echo $i
 }
 
-sink_nr=0
-for i in 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
-do
-    if [[ `get_used_by $i` -gt 0 ]]; then
-        sink_nr=$i
-        break
-    fi
-done
-
+sink_nr=`get_active`
 function get_volume {
     pacmd list-sinks | awk '/\tvolume:/ { print $5 }' | tail -n+$((sink_nr+1)) | head -n1 | cut -d '%' -f 1
 }
