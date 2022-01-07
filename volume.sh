@@ -10,9 +10,9 @@ notify_id=506
 STEP=2; CHUNKS=50
 
 function get_active {
-    i=$(pacmd list-sinks | awk '/\* index:/' | cut -d ':' -f 2 | sed 's/ //g')
-    if [[ $i -lt 0 ]]; then i=0; fi
-    echo $i
+    sink=$(pacmd list-sinks | awk '/\* index:/' | cut -d ':' -f 2 | sed 's/ //g')
+    if [[ -z $sink || $sink -lt 0 ]]; then i=0; fi
+    echo $sink
 }
 
 sink_nr=`get_active`
