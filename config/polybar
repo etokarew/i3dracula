@@ -184,7 +184,7 @@ format-spacing = 2
 
 ; %layout% %name% %number%
 label-layout =  %icon%
-label-layout-overline = ${color.white}
+;label-layout-overline = ${color.white}
 label-layout-font = 2
 
 ;layout-icon-default = ⌨
