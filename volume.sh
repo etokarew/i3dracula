@@ -17,17 +17,17 @@ function get_active {
 
 sink_nr=`get_active`
 function get_volume {
-    pacmd list-sinks | awk '/\tvolume:/ { print $5 }' | tail -n+$((sink_nr+1)) | head -n1 | cut -d '%' -f 1
+    pacmd list-sinks | awk '/\tvolume:/ { print $5 }' | head -n $sink_nr | tail -n1 | cut -d '%' -f 1
 }
 
 function get_volume_icon {
-    if [ "$1" -lt 34 ]
+    if [[ $1 -lt 34 ]]
     then
         echo -n "audio-volume-low-symbolic.svg"
-    elif [ "$1" -lt 67 ]
+    elif [[ $1 -lt 67 ]]
     then
         echo -n "audio-volume-medium-symbolic.svg"
-    elif [ "$1" -le 100 ]
+    elif [[ $1 -le 100 ]]
     then
         echo -n "audio-volume-high-symbolic.svg"
     else
@@ -37,12 +37,12 @@ function get_volume_icon {
 
 function generate_bar {
     chex="◦"
-    if [ $2 -gt 0 ]; then ch=$chex; else ch="•"; fi
+    if [[ $2 -gt 0 ]]; then ch=$chex; else ch="•"; fi
 
     let quotient=($1 / $STEP); bar=""
     for i in $(seq $CHUNKS)
     do
-        if [ $i -le $quotient ]; then bar+=$ch; else bar+=$chex; fi
+        if [[ $i -le $quotient ]]; then bar+=$ch; else bar+=$chex; fi
     done
 
     echo -n $bar
@@ -57,9 +57,9 @@ function volume_notification {
 }
 
 function mute_notification {
-    muted=$(pacmd list-sinks | awk '/muted/ { print $2 }' | tail -n+$((sink_nr+1)) | head -n1)
+    muted=$(pacmd list-sinks | awk '/muted/ { print $2 }' | head -n $sink_nr | tail -n1)
     volume=`get_volume`
-    if [ $muted == 'yes' ]
+    if [[ $muted == 'yes' ]]
     then
         dunstify -r $notify_id -u low -i ${icon_path}audio-volume-muted-symbolic.svg `generate_bar $volume 1`
     else
