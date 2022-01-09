@@ -9,26 +9,36 @@ icon_path=/home/$USER/.icons/dracula/symbolic/status/
 notify_id=506
 STEP=2; CHUNKS=50
 
+sink_or=1; sink_nr=0
+while read -rs sink
+do
+    if [[ $(echo -n "$sink" | awk '{ print $1 }') == '*' ]]
+    then
+        sink_nr=$(echo -n "$sink" | awk '{ print $3 }')
+        break
+    else
+        sink_nr=$(echo -n "$sink" | awk '{ print $2 }')
+        sink_or=$(( $sink_or + 1 ))
+    fi
+done < <(pacmd list-sinks | awk '/index: [[:digit:]]/')
+
+# legacy
 function get_active {
     sink=$(pacmd list-sinks | awk '/\* index:/' | cut -d ':' -f 2 | sed 's/ //g')
-    if [[ -z $sink || $sink -lt 1 ]]; then sink=1; fi
-    echo $sink
+    if [[ -z $sink || $sink -lt 0 ]]; then sink=0; fi
+    echo -n $sink
 }
 
-sink_nr=`get_active`
 function get_volume {
-    pacmd list-sinks | awk '/\tvolume:/ { print $5 }' | head -n $sink_nr | tail -n1 | cut -d '%' -f 1
+    pacmd list-sinks | awk '/\tvolume:/ { print $5 }' | head -n $sink_or | tail -n1 | cut -d '%' -f 1
 }
 
 function get_volume_icon {
-    if [[ $1 -lt 34 ]]
-    then
+    if [[ $1 -lt 34 ]]; then
         echo -n "audio-volume-low-symbolic.svg"
-    elif [[ $1 -lt 67 ]]
-    then
+    elif [[ $1 -lt 67 ]]; then
         echo -n "audio-volume-medium-symbolic.svg"
-    elif [[ $1 -le 100 ]]
-    then
+    elif [[ $1 -le 100 ]]; then
         echo -n "audio-volume-high-symbolic.svg"
     else
         echo -n "audio-volume-overamplified-symbolic.svg"
@@ -57,9 +67,9 @@ function volume_notification {
 }
 
 function mute_notification {
-    muted=$(pacmd list-sinks | awk '/muted/ { print $2 }' | head -n $sink_nr | tail -n1)
+    muted=$(pacmd list-sinks | awk '/muted/ { print $2 }' | head -n $sink_or | tail -n1)
     volume=`get_volume`
-    if [[ $muted == 'yes' ]]
+    if [[ "$muted" == 'yes' ]]
     then
         dunstify -r $notify_id -u low -i ${icon_path}audio-volume-muted-symbolic.svg `generate_bar $volume 1`
     else
