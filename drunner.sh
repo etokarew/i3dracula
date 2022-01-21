@@ -17,7 +17,7 @@ case $1 in
         #clipit &
         #copyq &
         transmission-gtk --minimized &
-        #dropbox start &
+        dropbox start &
         ;;
     calculator)
         gnome-calculator &
@@ -27,6 +27,9 @@ case $1 in
         ;;
     clipboard-manager)
         copyq toggle &
+        ;;
+    downloads)
+        nautilus --new-window Downloads > /dev/null &
         ;;
     dropbox-folder)
         nautilus --new-window $HOME/Dropbox > /dev/null &
@@ -39,6 +42,9 @@ case $1 in
         ;;
     i3logout)
         i3-nagbar -t warning -m "Вы действительно хотите выйти из текущей сессии?" -b "Завершить работу i3" "i3-msg exit" > /dev/null &
+        ;;
+    magnifier)
+        kmag &
         ;;
     opera)
         opera --new-window --password-store=basic --enable-features=OverlayScrollbar --disable-features=OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter %U > /dev/null &
@@ -76,7 +82,10 @@ case $1 in
     updater)
         solus-sc --update-view &
         ;;
+    virtual-keyboard)
+        echo vkbd
+        ;;
     *)
-        echo -ne "Usage: $0 [ autolaunch | calculator | clipboard-manager | dropbox-folder | firefox | firefox-private | i3logout | opera | opera-private | recent | rofi | screenshot | settings | system-monitor | steam | telegram | terminal | trash | updater ]" &
+        echo -ne "Usage: $0 action --optional-args\n" &
         ;;
 esac
