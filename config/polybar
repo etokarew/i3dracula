@@ -34,7 +34,7 @@ yellow = #f1fa8c
 [layout]
 def-padding = 1
 def-padding-x2 = 2
-def-i3-padding = 1
+def-i3-padding = 2
 
 [exec]
 screenshot = ~/.drunner.sh screenshot
@@ -81,30 +81,36 @@ font-2 = Font Awesome 5 Brands:fontformat=truetype:pixelsize=10;1
 monitor = ${env:MONITOR:HDMI-A-0}
 
 inherit = bar/base
-bottom = true
 fixed-center = false
 
-modules-left = rofi firefox opera steam dropbox-folder filemanager control-center i3
-modules-right = bandwidth cpu temperature memory pulseaudio xkeyboard date time trash
-
-tray-detached = false
-tray-position = center
-;tray-offset-x = 1
-;tray-offset-y = 1
-tray-maxsize = 16
-;tray-padding = ${layout.def-padding-x2}
-;tray-scale = 1
+modules-left = rofi xwindow
+modules-right = bandwidth cpu temperature memory pulseaudio date time xkeyboard
 
 [bar/bar]
 monitor = ${env:MONITOR:DVI-D-0}
 
 inherit = bar/base
-bottom = true
 fixed-center = true
 
-modules-left = rofi i3
+modules-left = i3
 modules-center = times
 modules-right = xkeyboard
+
+[bar/eggs]
+monitor = ${env:MONITOR:HDMI-A-0}
+
+inherit = bar/base
+bottom = true
+fixed-center = false
+
+modules-left = i3
+tray-detached = false
+tray-position = right
+;tray-offset-x = 1
+;tray-offset-y = 1
+tray-maxsize = 16
+;tray-padding = ${layout.def-padding-x2}
+;tray-scale = 1
 
 [generic-format-style]
 content-padding = ${layout.def-padding}
@@ -172,7 +178,7 @@ label-mode-padding = ${layout.def-i3-padding}
 [module/xwindow]
 type = internal/xwindow
 inherit = generic-format-style
-label = %title:0:30:...%
+label = %title:0:120:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -327,6 +333,7 @@ type = custom/text
 inherit = generic-format-style
 content = 
 content-font = 2
+content-foreground = ${color.purple}
 click-left = ~/.drunner.sh rofi
 
 [module/trash]

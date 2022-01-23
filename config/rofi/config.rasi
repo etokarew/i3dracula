@@ -1,13 +1,14 @@
 /*Dracula theme based on the Purple official rofi theme*/
+
 configuration {
     show-icons: true;
-    location: 7;
+    /*location: 7;
     xoffset: 1;
-    yoffset: -24;
+    yoffset: -24;*/
 }
 
 * {
-    font: "JetBrains Mono 10";
+    font: "JetBrains Mono 14";
     foreground: #f8f8f2;
     background: #282a36df;
     active-background: #6272a480;
