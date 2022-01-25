@@ -67,7 +67,8 @@ click-middle = ${exec.screenshot}
 
 font-0 = JetBrains Mono:fontformat=truetype:style=Medium:size=10:antialias=true;2
 font-1 = Font Awesome 5 Free:fontformat=truetype:pixelsize=10;1
-font-2 = Font Awesome 5 Brands:fontformat=truetype:pixelsize=10;1
+font-2 = Font Awesome 5 Free:fontformat=truetype:style=Solid:pixelsize=10;1
+font-3 = Font Awesome 5 Brands:fontformat=truetype:pixelsize=10;1
 
 ; bar doesn't take away gaps space
 ;override-redirect = true
@@ -84,7 +85,7 @@ inherit = bar/base
 fixed-center = false
 
 modules-left = rofi xwindow
-modules-right = bandwidth cpu temperature memory pulseaudio date time xkeyboard
+modules-right = bandwidth cpu temperature memory pulseaudio date time xkeyboard i3lock i3logout
 
 [bar/bar]
 monitor = ${env:MONITOR:DVI-D-0}
@@ -94,7 +95,7 @@ fixed-center = true
 
 modules-left = i3
 modules-center = times
-modules-right = xkeyboard
+modules-right = xkeyboard i3lock i3logout
 
 [bar/eggs]
 monitor = ${env:MONITOR:HDMI-A-0}
@@ -270,9 +271,8 @@ inherit = generic-format-style
 
 interval = 2
 
-;format =  <label>
 format = <label>
-label =  %percentage%%
+label =  %percentage%%
 label-underline = ${color.cyan}
 label-font = 3
 
@@ -282,7 +282,6 @@ inherit = generic-format-style
 
 interval = 5
 
-;format =  <label>
 format = <ramp-used> <label>
 label = %gb_used%
 label-font = 2
@@ -326,6 +325,7 @@ exec = $HOME/.bandwidth.sh
 interval = 5
 
 format = <label>
+label-font = 3
 format-underline = ${color.yellow}
 
 [module/rofi]
@@ -361,7 +361,7 @@ click-left = ~/.drunner.sh settings
 type = custom/text
 inherit = generic-format-style
 content = 
-content-font = 3
+content-font = 4
 click-left = ~/.drunner.sh firefox
 click-right = ~/.drunner.sh firefox-private
 
@@ -369,7 +369,7 @@ click-right = ~/.drunner.sh firefox-private
 type = custom/text
 inherit = generic-format-style
 content = 
-content-font = 3
+content-font = 4
 click-left = ~/.drunner.sh opera
 click-right = ~/.drunner.sh opera-private
 
@@ -377,34 +377,31 @@ click-right = ~/.drunner.sh opera-private
 type = custom/text
 inherit = generic-format-style
 content = 
-content-font = 3
+content-font = 4
 click-left = ~/.drunner.sh steam
 
 [module/dropbox-folder]
 type = custom/text
 inherit = generic-format-style
 content = 
-content-font = 3
+content-font = 4
 click-left = ~/.drunner.sh dropbox-folder
 
 [module/i3lock]
 type = custom/text
 inherit = generic-format-style
 
-content = LOCK
-content-font = 1
-content-overline = ${color.purple}
+content = 
+content-font = 3
 
 click-left = $HOME/.draculocker.sh > /dev/null
 
 [module/i3logout]
 type = custom/text
+inherit = generic-format-style
 
-content = 
-content-font = 2
-content-background = ${color.purple}
-content-foreground = ${color.text-bg}
-content-padding = ${layout.def-padding-x2}
+content = 
+content-font = 3
 
 click-left = ~/.drunner.sh i3logout
 

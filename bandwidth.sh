@@ -32,10 +32,8 @@ while [[ $# -gt 1 ]]; do
     shift
 done
 
-#[[ -z $INLABEL ]] && INLABEL=" "
-#[[ -z $OUTLABEL ]] && OUTLABEL=" "
-[[ -z $INLABEL ]] && INLABEL="↓ "
-[[ -z $OUTLABEL ]] && OUTLABEL="↑ "
+[[ -z $INLABEL ]] && INLABEL=" "
+[[ -z $OUTLABEL ]] && OUTLABEL=" "
 
 # Use the provided interface, otherwise the device used for the default route.
 if [[ -n $BLOCK_INSTANCE ]]; then
@@ -49,7 +47,7 @@ if ! [ -e "/sys/class/net/${INTERFACE}/operstate" ] || ! [ "`cat /sys/class/net/
 then
     #echo "$INTERFACE down"
     #echo "#FF0000"
-    echo "↓ ∞ ↑ ∞"
+    echo ""
     exit 0
 fi
 
