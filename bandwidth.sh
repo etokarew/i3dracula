@@ -49,7 +49,7 @@ if ! [ -e "/sys/class/net/${INTERFACE}/operstate" ] || ! [ "`cat /sys/class/net/
 then
     #echo "$INTERFACE down"
     #echo "#FF0000"
-    echo "⇵ VPN"
+    echo "↓ ∞ ↑ ∞"
     exit 0
 fi
 

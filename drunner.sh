@@ -18,6 +18,7 @@ case $1 in
         #copyq &
         transmission-gtk --minimized &
         dropbox start &
+        solus-update-checker &
         ;;
     calculator)
         gnome-calculator &
