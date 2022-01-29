@@ -27,7 +27,7 @@ green = #50fa7b
 orange = #ffb86c
 pink = #ff79c6
 purple = #bd93f9
-red  = #ff5555
+red = #ff5555
 white = #f8f8f2
 yellow = #f1fa8c
 
@@ -282,8 +282,8 @@ inherit = generic-format-style
 
 interval = 5
 
-format = <ramp-used> <label>
-label = %gb_used%
+format = <label>
+label =  %gb_used%
 label-font = 2
 label-underline = ${color.green}
 
@@ -335,6 +335,7 @@ content = 
 content-font = 2
 content-foreground = ${color.purple}
 click-left = ~/.drunner.sh rofi
+click-right = i3-msg kill
 
 [module/trash]
 type = custom/text
@@ -402,6 +403,7 @@ inherit = generic-format-style
 
 content = 
 content-font = 3
+content-foreground = ${color.red}
 
 click-left = ~/.drunner.sh i3logout
 

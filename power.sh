@@ -13,9 +13,9 @@ elif [[ $perc -ge 50 ]]; then
     icon=
 elif [[ $perc -ge 25 ]]; then
     icon=
-elif [[ $perc -ge 5 ]]; then
+elif [[ $perc -ge 10 ]]; then
     icon=
-elif [[ $perc -ge 0 ]]; then
+elif [[ $perc -ge 1 ]]; then
     icon=
 else
     icon=
@@ -30,4 +30,5 @@ else
 fi
 
 # sed to remove leading and trailing spaces
-echo -n " $icon $arrow $perc% " | sed 's/^ //g' | sed 's/ $//g'
+[[ -n $perc ]] && perc="$perc%"
+echo -n "$icon $arrow $perc" | sed 's/^ //g' | sed 's/ $//g'

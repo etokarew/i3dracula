@@ -1,26 +1,15 @@
-
 align=center
 separator_block_width=5
 
-[window]
-#command=xtitle -t 30 -s
-command=echo "$(xtitle -t 60)"
-#interval=persist
-interval=1
-min_width=525
-color=#bd93f9
-
 [weather]
-command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo 🌡
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo 
 interval=3600
-color=#f1fa8c
 separator=false
 
 [ip]
 command=curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' | xargs echo  IP:
 interval=once
 min_width=200
-color=#f1fa8c
 
 [bandwidth]
 command=~/.bandwidth.sh
@@ -32,29 +21,36 @@ color=#f1fa8c
 [cpu]
 command=i3usage=$(neofetch cpu_usage); echo -ne "\x20${i3usage##*: }"
 interval=5
-min_width=80
+min_width=100
 color=#8be9fd
 
 [ram]
-#command=free -m | awk 'NR==2{printf "🗐 %.2f/%.2f", $3/1024, $2/1024 }'
-command=~/.memory.sh
+command=free -m | awk 'NR==2{printf " %.2f/%.2f", $3/1024, $2/1024 }'
+#command=~/.memory.sh
 interval=30
-min_width=120
+min_width=150
 color=#50fa7b
 
 [time]
-command=echo -ne "⏲ " && date +%T
+command=echo -ne " " && date +%T
 interval=1
 min_width=100
 color=#ff79c6
 
-[kbd-layout]
-command=echo -ne "⌨ " && setxkbmap -query | awk '/layout/{print $2}'
-interval=once
-min_width=100
+[power]
+command=~/.power.sh
+interval=30
+color=#ffb86c
+min_width=25
+separator=false
 
 [i3-quit]
-full_text=⏻
+full_text=
 command=~/.drunner.sh i3logout
 color=#ff5555
+min_width=50
+
+[kbd-layout]
+command=~/.kbd-layout.sh
+interval=1
 min_width=50

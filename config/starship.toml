@@ -6,7 +6,7 @@ add_newline = false
 [character] # The name of the module we are configuring is "character"
 success_symbol = "[ ](bold green)"
 error_symbol   = "[ ](bold red)"
-vicmd_symbol   = "[ ](bold green)"
+vicmd_symbol   = "[ ](bold yellow)"
 
 
 # Disable the package module, hiding it from the prompt completely
@@ -17,20 +17,26 @@ disabled = true
 # Also 👉 date 👈
 [time]
 disabled = false
-#format = '🕙[\[ $time \]]($style) '
-format = '[⏲ $time ]($style) '
+
+#format = "🕙 [$time]($style) "
+format = "[⏲ $time ]($style)"
+
 time_format = "%H:%M:%S%.6f"
 #time_format = "%c"
+
 utc_time_offset = "local"
 
 
 ## Add the following below the file
 [battery]
+disabled = true
+format = "[$symbol $percentage]($style) "
+
 full_symbol = "🔋"
 charging_symbol = "⚡️"
 discharging_symbol = "💀"
 unknown_symbol = "🔌"
-empty_symbol = "∅"
+empty_symbol = "🪫"
 
 ## The display configuration option is used to define when the battery indicator should be shown (threshold) and what it looks like (style).
 

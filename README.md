@@ -12,9 +12,9 @@
   2. [Awesome](https://fontawesome.com/) (*icon glyphs*)
   3. [Droid Sans](https://fonts.adobe.com/fonts/droid-sans)
 - Terminal Apps & Prompts:
-  - [xrandr](https://x.org/releases/current/doc/man/man1/xrandr.1.xhtml), [feh](https://feh.finalrewind.org/), [setxkbmap](https://linux.die.net/man/1/setxkbmap), [xtitle](https://github.com/baskerville/xtitle)
   - [neofetch](https://github.com/dylanaraps/neofetch) — A command-line system information tool
   - [Starship](https://starship.rs/) — The minimal, blazing-fast, and infinitely customizable prompt for any shell [⚙️](./config/starship.toml)
+  - [xrandr](https://x.org/releases/current/doc/man/man1/xrandr.1.xhtml), [feh](https://feh.finalrewind.org/), [setxkbmap](https://linux.die.net/man/1/setxkbmap)
   - [Gawk](https://www.gnu.org/software/gawk/), [GNU coreutils](https://www.gnu.org/software/coreutils/), etc...
 - Non-trivial color schemes:
   - [CopyQ](https://github.com/dracula/copyq) [⚙️](./config/copyq/themes/dracula-custom.ini)
@@ -23,7 +23,9 @@
 - [x] Make **@TODO** list;
 - [x] Add `Bash` RC;
 - [x] Add some glyphs into `Polybar` RC using `Font Awesome`;
-- [ ] Add battery module to `Polybar`/`i3blocks` (via `neofetch`).
+- [ ] Add battery module to
+  - [x] `i3blocks` (via `neofetch`);
+  - [ ] `Polybar`.
 
 # About
 This is my `i3wm` setup based on [Zeno](https://github.com/zenorocha)'s Color Scheme 🧛‍♂️
