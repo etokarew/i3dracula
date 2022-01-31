@@ -5,7 +5,6 @@
 - [Picom](https://github.com/yshui/picom) — A lightweight compositor for `X11` [⚙️](./config/picom.conf)
 - [Rofi](https://github.com/davatorium/rofi) — A window switcher, application launcher and [dmenu](https://tools.suckless.org/dmenu/) replacement [⚙️](./config/rofi/config.rasi)
 - [Dunst](https://dunst-project.org/) — A lightweight replacement for the notification daemons [⚙️](./config/dunst/dunstrc)
-- [Dracula GTK Theme](https://github.com/dracula/gtk)
 - [Dracula Icons](https://github.com/matheuuus/dracula-icons)
 - Fonts:
   1. [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
@@ -16,7 +15,14 @@
   - [Starship](https://starship.rs/) — The minimal, blazing-fast, and infinitely customizable prompt for any shell [⚙️](./config/starship.toml)
   - [xrandr](https://x.org/releases/current/doc/man/man1/xrandr.1.xhtml), [feh](https://feh.finalrewind.org/), [setxkbmap](https://linux.die.net/man/1/setxkbmap)
   - [Gawk](https://www.gnu.org/software/gawk/), [GNU coreutils](https://www.gnu.org/software/coreutils/), etc...
-- Non-trivial color schemes:
+
+# Color schemes
+- Trivial:
+  - [i3](https://github.com/dracula/i3)
+  - [Rofi](https://github.com/dracula/rofi)
+  - [Dunst](https://github.com/dracula/dunst)
+  - [GTK Theme](https://github.com/dracula/gtk)
+- Non-trivial:
   - [CopyQ](https://github.com/dracula/copyq) [⚙️](./config/copyq/themes/dracula-custom.ini)
 
 # @TODO
@@ -25,7 +31,7 @@
 - [x] Add some glyphs into `Polybar` RC using `Font Awesome`;
 - [ ] Add battery module to
   - [x] `i3blocks` (via `neofetch`);
-  - [ ] `Polybar`.
+  - [ ] `Polybar` ([wiki](https://github.com/polybar/polybar/wiki/Module:-battery)).
 
 # About
 This is my `i3wm` setup based on [Zeno](https://github.com/zenorocha)'s Color Scheme 🧛‍♂️
