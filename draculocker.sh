@@ -16,5 +16,5 @@ activate() {
 #i3lock -c 282a36 -p win --nofork
 #revert
 
-i3lock -c 282a36 -p default --nofork &
+i3lock -u -c 282a36 -p default --nofork &
 activate

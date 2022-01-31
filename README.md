@@ -21,7 +21,7 @@
   - [i3](https://github.com/dracula/i3)
   - [Rofi](https://github.com/dracula/rofi)
   - [Dunst](https://github.com/dracula/dunst)
-  - [GTK Theme](https://github.com/dracula/gtk)
+  - [GTK](https://github.com/dracula/gtk)
 - Non-trivial:
   - [CopyQ](https://github.com/dracula/copyq) [⚙️](./config/copyq/themes/dracula-custom.ini)
 

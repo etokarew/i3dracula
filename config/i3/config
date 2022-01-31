@@ -259,7 +259,7 @@ bindsym Mod4+r mode "∷"
 #        }
 
 #!!        » xrandr --query
-#        tray_output DVI-D-0
+#!!        tray_output DVI-D-0
 #!!        tray_output none
 
 #        bindsym --release button2 exec "~/.drunner.sh screenshot"
