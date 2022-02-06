@@ -13,11 +13,13 @@ case $1 in
         dunst > /dev/null &
         /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1 > /dev/null &
         gnome-keyring-daemon --daemonize > /dev/null &
+        #gnome-session-i3 --failsafe > /dev/null &
         nm-applet > /dev/null &
+        redshift-gtk -c $HOME/.config/redshift.conf > /dev/null &
         #clipit > /dev/null &
         #copyq > /dev/null &
         transmission-gtk --minimized > /dev/null &
-        dropbox start > /dev/null &
+        #dropbox start > /dev/null &
         solus-update-checker > /dev/null &
         ;;
     calculator)
@@ -55,6 +57,10 @@ case $1 in
         ;;
     recent)
         nautilus --new-window recent\: > /dev/null
+        ;;
+    redshift)
+        #pkill -USR1 redshift
+        redshift-gtk -x > /dev/null
         ;;
     rofi)
         rofi -combi-modi window,drun -show combi -modi combi > /dev/null
