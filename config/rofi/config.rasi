@@ -2,22 +2,40 @@
 
 configuration {
     show-icons: true;
-    /*location: 7;
+    /*
+    location: 7;
     xoffset: 1;
-    yoffset: -24;*/
+    yoffset: -24;
+    */
 }
 
 * {
+    /* Dracula theme colour palette */
+    drac-bgd: #282a36;
+    drac-cur: #44475a;
+    drac-fgd: #f8f8f2;
+    drac-cmt: #6272a4;
+    drac-cya: #8be9fd;
+    drac-grn: #50fa7b;
+    drac-ora: #ffb86c;
+    drac-pnk: #ff79c6;
+    drac-pur: #bd93f9;
+    drac-red: #ff5555;
+    drac-yel: #f1fa8c;
+
     font: "JetBrains Mono 14";
-    foreground: #f8f8f2;
+
+    foreground: @drac-fgd;
     background: #282a36df;
+    background-tr: #282a3600;
     active-background: #6272a480;
     urgent-background: #ff555580;
+    
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
     separatorcolor: @active-background;
-    bordercolor: @active-background;
+    bordercolor: #6272a4;
 }
 
 #window {
@@ -58,7 +76,7 @@ configuration {
 }
 
 #element.normal.normal {
-    background-color: @background;
+    background-color: @background-tr;
     text-color:       @foreground;
 }
 
@@ -88,7 +106,7 @@ configuration {
 }
 
 #element.alternate.normal {
-    background-color: @background;
+    background-color: @background-tr;
     text-color:       @foreground;
 }
 
@@ -132,12 +150,12 @@ configuration {
 
 #entry {
     spacing:    0;
-    text-color: @foreground;
+    text-color: @drac-cya;
 }
 
 #prompt {
     spacing:    0;
-    text-color: @foreground;
+    text-color: @drac-grn;
 }
 
 #inputbar {
@@ -148,5 +166,11 @@ configuration {
     expand:     false;
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
-    text-color: @foreground;
+    text-color: @drac-grn;
 }
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color: inherit;
+}
+
