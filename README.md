@@ -13,7 +13,7 @@
 - Terminal Apps & Prompts:
   - [neofetch](https://github.com/dylanaraps/neofetch) — A command-line system information tool
   - [Starship](https://starship.rs/) — The minimal, blazing-fast, and infinitely customizable prompt for any shell [⚙️](./config/starship.toml)
-  - [xrandr](https://x.org/releases/current/doc/man/man1/xrandr.1.xhtml), [feh](https://feh.finalrewind.org/), [setxkbmap](https://linux.die.net/man/1/setxkbmap)
+  - [xrandr](https://x.org/releases/current/doc/man/man1/xrandr.1.xhtml), [feh](https://feh.finalrewind.org/), [setxkbmap](https://linux.die.net/man/1/setxkbmap), [xcursorgen](https://linux.die.net/man/1/xcursorgen)
   - [Gawk](https://www.gnu.org/software/gawk/), [GNU coreutils](https://www.gnu.org/software/coreutils/), etc...
 
 # Color schemes
@@ -21,7 +21,7 @@
   - [i3](https://github.com/dracula/i3)
   - [Rofi](https://github.com/dracula/rofi)
   - [Dunst](https://github.com/dracula/dunst)
-  - [GTK](https://github.com/dracula/gtk)
+  - [GTK](https://github.com/dracula/gtk) (include [cursors](https://github.com/dracula/gtk/tree/master/kde/cursors))
 - Non-trivial:
   - [CopyQ](https://github.com/dracula/copyq) [⚙️](./config/copyq/themes/dracula-custom.ini)
 
