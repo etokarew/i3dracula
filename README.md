@@ -6,6 +6,7 @@
 - [Rofi](https://github.com/davatorium/rofi) — A window switcher, application launcher and [dmenu](https://tools.suckless.org/dmenu/) replacement [⚙️](./config/rofi/config.rasi)
 - [Dunst](https://dunst-project.org/) — A lightweight replacement for the notification daemons [⚙️](./config/dunst/dunstrc)
 - [Dracula Icons](https://github.com/matheuuus/dracula-icons)
+- [Redshift](https://github.com/jonls/redshift) — A tool that is used to adjust the color temperature of the screen [⚙️](./config/redshift.conf)
 - Fonts:
   1. [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
   2. [Awesome](https://fontawesome.com/) (*icon glyphs*)
@@ -29,7 +30,7 @@
 - [x] Make **@TODO** list;
 - [x] Add `Bash` RC;
 - [x] Add some glyphs into `Polybar` RC using `Font Awesome`;
-- [ ] Add battery module to
+- [ ] Add battery module to:
   - [x] `i3blocks` (via `neofetch`);
   - [ ] `Polybar` ([wiki](https://github.com/polybar/polybar/wiki/Module:-battery)).
 
