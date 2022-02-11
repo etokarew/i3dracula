@@ -1,5 +1,4 @@
 #!/bin/sh
-
 case $1 in
     autolaunch)
         #xrandr --output HDMI-A-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal &
@@ -14,10 +13,9 @@ case $1 in
         /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1 > /dev/null &
         gnome-keyring-daemon --daemonize > /dev/null &
         #gnome-session-i3 --failsafe > /dev/null &
-        nm-applet > /dev/null &
+        #gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true > /dev/null &
         redshift-gtk -c $HOME/.config/redshift.conf > /dev/null &
-        #clipit > /dev/null &
-        #copyq > /dev/null &
+        nm-applet > /dev/null &
         transmission-gtk --minimized > /dev/null &
         #dropbox start > /dev/null &
         solus-update-checker > /dev/null &
