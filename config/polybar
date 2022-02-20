@@ -62,10 +62,10 @@ click-middle = ${exec.screenshot}
 ;module-margin-left = 1
 ;module-margin-right = 1
 
-font-0 = JetBrains Mono:fontformat=truetype:style=Medium:size=10:antialias=true;2
-font-1 = Font Awesome 5 Free:fontformat=truetype:pixelsize=10;1
-font-2 = Font Awesome 5 Free:fontformat=truetype:style=Solid:pixelsize=10;1
-font-3 = Font Awesome 5 Brands:fontformat=truetype:pixelsize=10;1
+font-0 = JetBrains Mono:fontformat=opentype:style=Medium:size=8:antialias=true;2
+font-1 = Font Awesome 6 Free:fontformat=opentype:pixelsize=8;2
+font-2 = Font Awesome 6 Free:fontformat=opentype:style=Solid:pixelsize=8;2
+font-3 = Font Awesome 6 Brands:fontformat=opentype:pixelsize=8;2
 
 [bar/foo]
 ;» xrandr -q
@@ -98,16 +98,16 @@ override-redirect = true
 ; fixes the issue where the bar is being drawn on top of fullscreen window's
 wm-restack = i3
 
-width = 100%:-120
-height = 40
-radius = 20.0
+width = 100%:-320
+height = 32
+radius = 16.0
 
 background = ${color.module-bg}
 ;border-size = 2
 ;border-color = ${color.purple}
 
-offset-x = 120
-offset-y = 40
+offset-x = 320
+offset-y = 20
 
 bottom = true
 fixed-center = false
@@ -201,7 +201,7 @@ format-spacing = 2
 ; %layout% %name% %number%
 label-layout =  %icon%
 ;label-layout-overline = ${color.white}
-label-layout-font = 2
+;label-layout-font = 2
 
 ;layout-icon-default = ⌨
 layout-icon-0 = us;En
