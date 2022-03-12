@@ -75,7 +75,7 @@ inherit = bar/base
 fixed-center = false
 
 modules-left = rofi xwindow
-modules-right = date time pulseaudio xkeyboard i3lock i3logout
+modules-right = trash date time pulseaudio xkeyboard i3lock i3logout
 
 [bar/bar]
 monitor = ${env:MONITOR:DVI-D-0}
@@ -201,7 +201,6 @@ format-spacing = 2
 ; %layout% %name% %number%
 label-layout =  %icon%
 ;label-layout-overline = ${color.white}
-;label-layout-font = 2
 
 ;layout-icon-default = ⌨
 layout-icon-0 = us;En
@@ -213,9 +212,7 @@ inherit = generic-format-style
 
 interval = 60
 date = %d
-
 label = %{A1:~/.drunner.sh calendar:} %date%%{A}
-label-font = 2
 
 [module/time]
 type = internal/date
@@ -225,9 +222,7 @@ interval = 1
 
 time = %H:%M
 time-alt = %H:%M:%S
-
 label =  %time%
-label-font = 2
 
 [module/times]
 type = internal/date
@@ -237,9 +232,7 @@ interval = 1
 
 time = %H:%M:%S
 time-alt = %H:%M
-
 label =  %time%
-label-font = 2
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -251,11 +244,9 @@ format-volume-padding = ${layout.def-padding}
 
 label-volume =  %percentage%%
 label-volume-foreground = ${color.pink}
-label-volume-font = 2
 
 label-muted = 
 ;label-muted-foreground = ${color.pink}
-label-muted-font = 2
 
 bar-volume-width = 10
 bar-volume-foreground-0 = ${color.green}
@@ -267,12 +258,9 @@ bar-volume-foreground-5 = ${color.orange}
 bar-volume-foreground-6 = ${color.red}
 bar-volume-gradient = false
 bar-volume-indicator = |
-;bar-volume-indicator-font = 2
 bar-volume-indicator-foreground = ${color.white}
 bar-volume-fill = ─
-;bar-volume-fill-font = 2
 bar-volume-empty = ─
-;bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${color.yellow}
 
 [module/cpu]
@@ -284,7 +272,6 @@ interval = 2
 format = <label>
 label =  %percentage%%
 label-underline = ${color.cyan}
-label-font = 3
 
 [module/memory]
 type = internal/memory
@@ -294,7 +281,6 @@ interval = 5
 
 format = <label>
 label =  %gb_used%
-label-font = 2
 label-underline = ${color.green}
 
 ; Only applies if <ramp-used> is used
@@ -324,7 +310,6 @@ interval = 300
 mount-0 = /home
 
 label-mounted =  %free%
-label-mounted-font = 2
 label-mounted-padding = ${layout.def-padding}
 
 [module/bandwidth]
@@ -335,14 +320,12 @@ exec = $HOME/.bandwidth.sh
 interval = 5
 
 format = <label>
-label-font = 3
 format-underline = ${color.yellow}
 
 [module/rofi]
 type = custom/text
 inherit = generic-format-style
 content = 
-content-font = 4
 content-foreground = ${color.purple}
 click-left = ~/.drunner.sh rofi
 click-right = i3-msg kill
@@ -351,28 +334,24 @@ click-right = i3-msg kill
 type = custom/text
 inherit = generic-format-style
 content = 
-content-font = 2
 click-left = ~/.drunner.sh trash
 
 [module/filemanager]
 type = custom/text
 inherit = generic-format-style
 content = 
-content-font = 2
 click-left = ~/.drunner.sh recent
 
 [module/control-center]
 type = custom/text
 inherit = generic-format-style
 content = 
-content-font = 2
 click-left = ~/.drunner.sh settings
 
 [module/firefox]
 type = custom/text
 inherit = generic-format-style
 content = 
-content-font = 4
 click-left = ~/.drunner.sh firefox
 click-right = ~/.drunner.sh firefox-private
 
@@ -380,7 +359,6 @@ click-right = ~/.drunner.sh firefox-private
 type = custom/text
 inherit = generic-format-style
 content = 
-content-font = 4
 click-left = ~/.drunner.sh opera
 click-right = ~/.drunner.sh opera-private
 
@@ -388,14 +366,12 @@ click-right = ~/.drunner.sh opera-private
 type = custom/text
 inherit = generic-format-style
 content = 
-content-font = 4
 click-left = ~/.drunner.sh steam
 
 [module/dropbox-folder]
 type = custom/text
 inherit = generic-format-style
 content = 
-content-font = 4
 click-left = ~/.drunner.sh dropbox-folder
 
 [module/i3lock]
@@ -403,7 +379,6 @@ type = custom/text
 inherit = generic-format-style
 
 content = 
-content-font = 3
 
 click-left = $HOME/.draculocker.sh > /dev/null
 
@@ -412,7 +387,6 @@ type = custom/text
 inherit = generic-format-style
 
 content = 
-content-font = 3
 content-foreground = ${color.red}
 
 click-left = ~/.drunner.sh i3logout
@@ -428,7 +402,6 @@ warn-temperature = 80
 format = <label>
 label =  %temperature-c%
 label-underline = ${color.orange}
-label-font = 2
 
 format-warn-background = ${color.red}
 format-warn-foreground = ${color.fg}
@@ -436,7 +409,6 @@ format-warn-underline = ${color.red}
 format-warn-padding = ${layout.def-padding}
 format-warn =  <label-warn>
 label-warn = ${self.label}
-label-warn-font = 2
 
 [settings]
 screenchange-reload = true

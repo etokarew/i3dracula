@@ -7,7 +7,7 @@ case $1 in
         xset s off > /dev/null &
         picom -b > /dev/null &
         feh --bg-fill /usr/src/$USER/dracula/wallpaper/solus.png > /dev/null &
-        setxkbmap -layout "us,ru" -option "grp:alt_space_toggle" -model "logitech" > /dev/null &
+        setxkbmap -layout "us,ru" -option "grp:alt_space_toggle,grp:caps_toggle" -model "logitech" > /dev/null &
         #ibus-daemon -d --replace --desktop=i3 > /dev/null &
         dunst > /dev/null &
         /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1 > /dev/null &
