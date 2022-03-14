@@ -1,0 +1,4 @@
+! after modify run: xrdb -merge ~/.Xdefaults
+
+Xcursor.theme: Dracula-cursors
+Xcursor.size: 24
