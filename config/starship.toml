@@ -59,4 +59,4 @@ python_binary = ["python", "python3"]
 
 
 [nodejs]
-symbol = "⚛️ "
+symbol = "⚛️  "
