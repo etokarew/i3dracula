@@ -5,7 +5,7 @@
 - [Picom](https://github.com/yshui/picom) — A lightweight compositor for `X11` [⚙️](./config/picom.conf)
 - [Rofi](https://github.com/davatorium/rofi) — A window switcher, application launcher and [dmenu](https://tools.suckless.org/dmenu/) replacement [⚙️](./config/rofi/config.rasi)
 - [Dunst](https://dunst-project.org/) — A lightweight replacement for the notification daemons [⚙️](./config/dunst/dunstrc)
-- [Dracula Icons](https://github.com/matheuuus/dracula-icons)
+- [Dracula](https://github.com/matheuuus/dracula-icons) or [Colloid](https://github.com/vinceliuice/Colloid-icon-theme) icon themes
 - [Redshift](https://github.com/jonls/redshift) — A tool that is used to adjust the color temperature of the screen [⚙️](./config/redshift.conf)
 - Fonts:
   1. [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
