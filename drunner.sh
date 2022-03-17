@@ -6,7 +6,7 @@ case $1 in
         xset +dpms dpms 0 0 300 > /dev/null &
         xset s off > /dev/null &
         picom -b > /dev/null &
-        feh --bg-fill /usr/src/$USER/dracula/wallpaper/solus.png > /dev/null &
+        feh --bg-tile /usr/src/$USER/dracula-pro/wallpapers/dracula-pro/desktop-1920x1080.png > /dev/null &
         setxkbmap -layout "us,ru" -option "grp:alt_space_toggle,grp:caps_toggle" -model "logitech" > /dev/null &
         #ibus-daemon -d --replace --desktop=i3 > /dev/null &
         dunst > /dev/null &
@@ -34,6 +34,15 @@ case $1 in
         ;;
     dropbox-folder)
         nautilus --new-window $HOME/Dropbox > /dev/null
+        ;;
+    dunst-clear)
+        dunstctl close-all > /dev/null
+        ;;
+    dunst-pause)
+        dunstctl set-paused toggle > /dev/null
+        ;;
+    dunst-pop)
+        dunstctl history-pop > /dev/null
         ;;
     firefox)
         firefox --new-tab about:newtab > /dev/null
@@ -68,6 +77,9 @@ case $1 in
         ;;
     settings)
         gnome-control-center info-overview > /dev/null
+        ;;
+    sound)
+        gnome-control-center sound > /dev/null
         ;;
     system-monitor)
         gnome-system-monitor -p > /dev/null

@@ -63,9 +63,9 @@ click-middle = ${exec.screenshot}
 ;module-margin-right = 1
 
 font-0 = JetBrains Mono:fontformat=opentype:style=Medium:size=8:antialias=true;2
-font-1 = Font Awesome 6 Free:fontformat=opentype:pixelsize=8;2
+font-1 = Font Awesome 6 Free:fontformat=opentype:size=8;2
 font-2 = Font Awesome 6 Free:fontformat=opentype:style=Solid:pixelsize=8;2
-font-3 = Font Awesome 6 Brands:fontformat=opentype:pixelsize=8;2
+font-3 = Font Awesome 6 Brands:fontformat=opentype:size=8;2
 
 [bar/foo]
 ;» xrandr -q
@@ -75,7 +75,7 @@ inherit = bar/base
 fixed-center = false
 
 modules-left = rofi xwindow
-modules-right = trash date time pulseaudio xkeyboard i3lock i3logout
+modules-right = trash date time dunst pulseaudio xkeyboard i3lock i3logout
 
 [bar/bar]
 monitor = ${env:MONITOR:DVI-D-0}
@@ -188,7 +188,9 @@ label-mode-padding = ${layout.def-i3-padding}
 [module/xwindow]
 type = internal/xwindow
 inherit = generic-format-style
-label = %title:0:120:...%
+
+; ~ half of 1920px[+Rofi]
+label = %title:0:125:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -212,7 +214,7 @@ inherit = generic-format-style
 
 interval = 60
 date = %d
-label = %{A1:~/.drunner.sh calendar:} %date%%{A}
+label = %{A1:~/.drunner.sh calendar:} %date%%{A}
 
 [module/time]
 type = internal/date
@@ -232,21 +234,28 @@ interval = 1
 
 time = %H:%M:%S
 time-alt = %H:%M
-label =  %time%
+label =  %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 inherit = generic-format-style
+click-right = ~/.drunner.sh sound
 
-format-volume = <label-volume>
+format-volume = <ramp-volume> <label-volume>
 ;format-volume = <bar-volume>
 format-volume-padding = ${layout.def-padding}
 
-label-volume =  %percentage%%
-label-volume-foreground = ${color.pink}
-
-label-muted = 
+label-volume = %percentage%%
+;label-volume =  %percentage%%
+;label-volume-foreground = ${color.pink}
+;label-muted = 
 ;label-muted-foreground = ${color.pink}
+
+label-muted = 
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+;ramp-volume-3 = 
 
 bar-volume-width = 10
 bar-volume-foreground-0 = ${color.green}
@@ -322,10 +331,20 @@ interval = 5
 format = <label>
 format-underline = ${color.yellow}
 
+[module/dunst]
+type = custom/script
+inherit = generic-format-style
+
+exec = $HOME/.dunst-state.sh
+interval = 1
+
+format = <label>
+format-foreground = ${color.pink}
+
 [module/rofi]
 type = custom/text
 inherit = generic-format-style
-content = 
+content = 
 content-foreground = ${color.purple}
 click-left = ~/.drunner.sh rofi
 click-right = i3-msg kill
@@ -333,7 +352,7 @@ click-right = i3-msg kill
 [module/trash]
 type = custom/text
 inherit = generic-format-style
-content = 
+content = 
 click-left = ~/.drunner.sh trash
 
 [module/filemanager]

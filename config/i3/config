@@ -317,9 +317,11 @@ bindsym Mod4+j exec "~/.drunner.sh downloads"
 
 bindsym Mod4+y exec --no-startup-id "~/.drunner.sh clipboard-manager"
 #bindsym Mod4+k exec --no-startup-id "~/.drunner.sh virtual-keyboard"
-bindsym Mod4+n exec --no-startup-id "~/.drunner.sh redshift"
 
-bindsym Mod4+m exec "~/.drunner.sh magnifier"
+bindsym Mod4+c exec --no-startup-id "~/.drunner.sh dunst-clear"
+bindsym Mod4+n exec --no-startup-id "~/.drunner.sh dunst-pop"
+bindsym Mod4+m exec --no-startup-id "~/.drunner.sh dunst-pause"
+
 bindsym Mod4+$KP_Plus exec "~/.drunner.sh magnifier"
 bindsym Mod4+plus exec "~/.drunner.sh magnifier"
 #bindsym Mod4+minus exec "~/.drunner.sh magnifier --zoom-out"
