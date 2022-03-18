@@ -341,6 +341,9 @@ interval = 1
 format = <label>
 format-foreground = ${color.pink}
 
+click-left = ~/.drunner.sh dunst-pause
+click-right = ~/.drunner.sh dunst-clear
+
 [module/rofi]
 type = custom/text
 inherit = generic-format-style
