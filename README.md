@@ -37,7 +37,7 @@
 # About
 This is my `i3wm` setup based on [Zeno](https://github.com/zenorocha)'s Color Scheme 🧛‍♂️
 
-<div align="center"><img src="https://raw.githubusercontent.com/etokarew/i3dracula/main/captures/current.png" alt="Current" height="405px"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/etokarew/i3dracula/main/captures/current.png" alt="Current"></div>
 <br>
 <div>
   <img src="https://raw.githubusercontent.com/etokarew/i3dracula/main/captures/hdmi.png" alt="HDMI" align="left" height="270px">
