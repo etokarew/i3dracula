@@ -44,6 +44,9 @@ case $1 in
     dunst-pop)
         dunstctl history-pop > /dev/null
         ;;
+    emoji)
+        gucharmap > /dev/null
+        ;;
     firefox)
         firefox --new-tab about:newtab > /dev/null
         ;;
