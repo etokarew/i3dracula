@@ -13,8 +13,8 @@ min_width=200
 
 [bandwidth]
 command=~/.bandwidth.sh
-instance=eno1
-interval=1
+#instance=eno1
+interval=5
 min_width=150
 color=#f1fa8c
 
@@ -31,26 +31,24 @@ interval=30
 min_width=150
 color=#50fa7b
 
-[time]
-command=echo -ne " " && date +%T
-interval=1
-min_width=100
-color=#ff79c6
-
 [power]
 command=~/.power.sh
 interval=30
 color=#ffb86c
-min_width=25
-separator=false
+min_width=75
+
+[time]
+command=echo -ne " " && date +%T
+interval=1
+min_width=100
+
+[kbd-layout]
+command=~/.kbd-layout.sh
+interval=1
+min_width=50
 
 [i3-quit]
 full_text=
 command=~/.drunner.sh i3logout
 color=#ff5555
-min_width=50
-
-[kbd-layout]
-command=~/.kbd-layout.sh
-interval=1
 min_width=50
