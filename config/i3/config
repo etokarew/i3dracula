@@ -11,8 +11,8 @@ set $defaultmod Mod4
 font pango:JetBrains Mono 8
 
 ########## Keybindings ##########
-bindsym Mod4+Shift+s exec --no-startup-id ~/.draculocker.sh
-bindsym Mod4+l exec --no-startup-id ~/.draculocker.sh
+bindsym Mod4+Shift+s exec --no-startup-id ~/.i3scr/draculocker.sh
+bindsym Mod4+l exec --no-startup-id ~/.i3scr/draculocker.sh
 
 ### Backlight ###
 # Note: If light doesn't work, install xbacklight and
@@ -35,13 +35,13 @@ bindsym XF86AudioNext exec playerctl next
 ### Sound ###
 # Raise Volume
 #bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.volume.sh up
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.i3scr/volume.sh up
 # Lower Volume
 #bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/.volume.sh down
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.i3scr/volume.sh down
 # Toggle muting
 #bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mute
-bindsym XF86AudioMute exec --no-startup-id ~/.volume.sh mute
+bindsym XF86AudioMute exec --no-startup-id ~/.i3scr/volume.sh mute
 
 # Use Mouse+Mod4 to drag floating windows to their wanted position
 floating_modifier Mod4
@@ -58,8 +58,8 @@ set $dmenu_run "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2
 bindsym Mod4+d exec --no-startup-id $dmenu_run
 
 # Rofi launcher -- the dmenu alternative
-bindsym Mod4+Tab exec --no-startup-id "~/.drunner.sh rofi"
-bindsym Control+Escape exec --no-startup-id "~/.drunner.sh rofi"
+bindsym Mod4+Tab exec --no-startup-id "~/.i3scr/drunner.sh rofi"
+bindsym Control+Escape exec --no-startup-id "~/.i3scr/drunner.sh rofi"
 
 # change focus
 #bindsym Mod4+$left focus left
@@ -215,9 +215,9 @@ bindsym Mod4+Shift+r restart
 
 # exit i3 (logs you out of your X session)
 #bindsym Mod4+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym Mod4+Shift+e exec --no-startup-id "~/.drunner.sh i3logout"
-bindsym Mod4+Escape exec --no-startup-id "~/.drunner.sh i3logout"
-bindsym Control+Mod1+Delete exec --no-startup-id "~/.drunner.sh i3logout"
+bindsym Mod4+Shift+e exec --no-startup-id "~/.i3scr/drunner.sh i3logout"
+bindsym Mod4+Escape exec --no-startup-id "~/.i3scr/drunner.sh i3logout"
+bindsym Control+Mod1+Delete exec --no-startup-id "~/.i3scr/drunner.sh i3logout"
 
 # resize window (you can also use the mouse for that)
 mode "" {
@@ -274,7 +274,7 @@ bar {
                 binding_mode       #FF5555 #FF5555 #F8F8F2
         }
 
-        bindsym --release button2 exec "~/.drunner.sh screenshot"
+        bindsym --release button2 exec "~/.i3scr/drunner.sh screenshot"
 }
 
 ########## Polybar ##########
@@ -304,45 +304,45 @@ gaps inner 2
 gaps outer 0
 
 ########## Shortcuts ##########
-bindsym Control+Shift+Escape exec "~/.drunner.sh system-monitor"
-bindsym Mod4+grave exec "~/.drunner.sh terminal"
-bindsym Mod4+u exec "~/.drunner.sh updater"
+bindsym Control+Shift+Escape exec "~/.i3scr/drunner.sh system-monitor"
+bindsym Mod4+grave exec "~/.i3scr/drunner.sh terminal"
+bindsym Mod4+u exec "~/.i3scr/drunner.sh updater"
 
 # Alt+F* group
 #bindsym Mod1+F1 exec help
 bindsym Mod1+F2 exec --no-startup-id $dmenu_run
 #bindsym Mod1+F3 exec search
-bindsym Mod1+F6 exec "~/.drunner.sh firefox"
+bindsym Mod1+F6 exec "~/.i3scr/drunner.sh firefox"
 #bindsym Mod1+F7 exec mail-client
-bindsym Mod1+F8 exec "~/.drunner.sh telegram"
-bindsym Mod1+F9 exec "~/.drunner.sh calculator"
-bindsym Mod1+F12 exec "~/.drunner.sh settings"
+bindsym Mod1+F8 exec "~/.i3scr/drunner.sh telegram"
+bindsym Mod1+F9 exec "~/.i3scr/drunner.sh calculator"
+bindsym Mod1+F12 exec "~/.i3scr/drunner.sh settings"
 
 # Problem with copy to clipboard under i3!
 # Do not close a GNOME screenshot window until you was pasted your image!
-bindsym Print exec "~/.drunner.sh screenshot"
+bindsym Print exec "~/.i3scr/drunner.sh screenshot"
 
-bindsym Mod4+o exec "~/.drunner.sh opera"
-bindsym Mod4+Shift+o exec "~/.drunner.sh opera-private"
-bindsym Mod4+Shift+f exec "~/.drunner.sh firefox-private"
+bindsym Mod4+o exec "~/.i3scr/drunner.sh opera"
+bindsym Mod4+Shift+o exec "~/.i3scr/drunner.sh opera-private"
+bindsym Mod4+Shift+f exec "~/.i3scr/drunner.sh firefox-private"
 
-bindsym Mod4+t exec "~/.drunner.sh telegram"
-bindsym Mod4+g exec "~/.drunner.sh telegram"
+bindsym Mod4+t exec "~/.i3scr/drunner.sh telegram"
+bindsym Mod4+g exec "~/.i3scr/drunner.sh telegram"
 
-bindsym Mod4+e exec "~/.drunner.sh recent"
-bindsym Mod4+j exec "~/.drunner.sh downloads"
+bindsym Mod4+e exec "~/.i3scr/drunner.sh recent"
+bindsym Mod4+j exec "~/.i3scr/drunner.sh downloads"
 
-bindsym Mod4+y exec --no-startup-id "~/.drunner.sh clipboard-manager"
-#bindsym Mod4+k exec --no-startup-id "~/.drunner.sh virtual-keyboard"
-bindsym Mod4+semicolon exec "~/.drunner.sh emoji"
+bindsym Mod4+y exec --no-startup-id "~/.i3scr/drunner.sh clipboard-manager"
+#bindsym Mod4+k exec --no-startup-id "~/.i3scr/drunner.sh virtual-keyboard"
+bindsym Mod4+semicolon exec "~/.i3scr/drunner.sh emoji"
 
-bindsym Mod4+c exec --no-startup-id "~/.drunner.sh dunst-clear"
-bindsym Mod4+n exec --no-startup-id "~/.drunner.sh dunst-pop"
-bindsym Mod4+m exec --no-startup-id "~/.drunner.sh dunst-pause"
+bindsym Mod4+c exec --no-startup-id "~/.i3scr/drunner.sh dunst-clear"
+bindsym Mod4+n exec --no-startup-id "~/.i3scr/drunner.sh dunst-pop"
+bindsym Mod4+m exec --no-startup-id "~/.i3scr/drunner.sh dunst-pause"
 
-bindsym Mod4+$KP_Plus exec "~/.drunner.sh magnifier"
-bindsym Mod4+plus exec "~/.drunner.sh magnifier"
-#bindsym Mod4+minus exec "~/.drunner.sh magnifier --zoom-out"
+bindsym Mod4+$KP_Plus exec "~/.i3scr/drunner.sh magnifier"
+bindsym Mod4+plus exec "~/.i3scr/drunner.sh magnifier"
+#bindsym Mod4+minus exec "~/.i3scr/drunner.sh magnifier --zoom-out"
 
 ########## Autolaunch ##########
-exec --no-startup-id "~/.drunner.sh autolaunch"
+exec --no-startup-id "~/.i3scr/drunner.sh autolaunch"

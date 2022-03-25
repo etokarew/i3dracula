@@ -37,7 +37,7 @@ def-padding-x2 = 2
 def-i3-padding = 2
 
 [exec]
-screenshot = ~/.drunner.sh screenshot
+screenshot = ~/.i3scr/drunner.sh screenshot
 
 [bar/base]
 width = 100%
@@ -214,7 +214,7 @@ inherit = generic-format-style
 
 interval = 60
 date = %d
-label = %{A1:~/.drunner.sh calendar:} %date%%{A}
+label = %{A1:~/.i3scr/drunner.sh calendar:} %date%%{A}
 
 [module/time]
 type = internal/date
@@ -239,7 +239,7 @@ label =  %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 inherit = generic-format-style
-click-right = ~/.drunner.sh sound
+click-right = ~/.i3scr/drunner.sh sound
 
 format-volume = <ramp-volume> <label-volume>
 ;format-volume = <bar-volume>
@@ -341,60 +341,60 @@ interval = 1
 format = <label>
 format-foreground = ${color.pink}
 
-click-left = ~/.drunner.sh dunst-pause
-click-right = ~/.drunner.sh dunst-clear
+click-left = ~/.i3scr/drunner.sh dunst-pause
+click-right = ~/.i3scr/drunner.sh dunst-clear
 
 [module/rofi]
 type = custom/text
 inherit = generic-format-style
 content = 
 content-foreground = ${color.purple}
-click-left = ~/.drunner.sh rofi
+click-left = ~/.i3scr/drunner.sh rofi
 click-right = i3-msg kill
 
 [module/trash]
 type = custom/text
 inherit = generic-format-style
 content = 
-click-left = ~/.drunner.sh trash
+click-left = ~/.i3scr/drunner.sh trash
 
 [module/filemanager]
 type = custom/text
 inherit = generic-format-style
 content = 
-click-left = ~/.drunner.sh recent
+click-left = ~/.i3scr/drunner.sh recent
 
 [module/control-center]
 type = custom/text
 inherit = generic-format-style
 content = 
-click-left = ~/.drunner.sh settings
+click-left = ~/.i3scr/drunner.sh settings
 
 [module/firefox]
 type = custom/text
 inherit = generic-format-style
 content = 
-click-left = ~/.drunner.sh firefox
-click-right = ~/.drunner.sh firefox-private
+click-left = ~/.i3scr/drunner.sh firefox
+click-right = ~/.i3scr/drunner.sh firefox-private
 
 [module/opera]
 type = custom/text
 inherit = generic-format-style
 content = 
-click-left = ~/.drunner.sh opera
-click-right = ~/.drunner.sh opera-private
+click-left = ~/.i3scr/drunner.sh opera
+click-right = ~/.i3scr/drunner.sh opera-private
 
 [module/steam]
 type = custom/text
 inherit = generic-format-style
 content = 
-click-left = ~/.drunner.sh steam
+click-left = ~/.i3scr/drunner.sh steam
 
 [module/dropbox-folder]
 type = custom/text
 inherit = generic-format-style
 content = 
-click-left = ~/.drunner.sh dropbox-folder
+click-left = ~/.i3scr/drunner.sh dropbox-folder
 
 [module/i3lock]
 type = custom/text
@@ -411,7 +411,7 @@ inherit = generic-format-style
 content = 
 content-foreground = ${color.red}
 
-click-left = ~/.drunner.sh i3logout
+click-left = ~/.i3scr/drunner.sh i3logout
 
 [module/temperature]
 type = internal/temperature
