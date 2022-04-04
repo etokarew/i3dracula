@@ -24,7 +24,7 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 600
+    width = 500
 
     # The maximum height of a single notification, excluding the frame.
     height = 300
@@ -196,7 +196,7 @@
     max_icon_size = 64
 
     # Paths to default icons.
-    icon_path = /home/$USER/.icons/dracula/16/panel/:/home/$USER/.icons/dracula/16/devices/:/home/$USER/.icons/dracula/scalable/apps/
+    icon_path = /home/larry/.icons/dracula/16/panel/:/home/larry/.icons/dracula/16/devices/:/home/larry/.icons/dracula/scalable/apps/
 
     ### History ###
 
