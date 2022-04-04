@@ -4,6 +4,7 @@ Comment=A X compositor
 Exec=picom -b
 GenericName=X compositor
 #Hidden=true
+Icon=picom
 Keywords=compositor;composite manager;window effects;transparency;opacity;
 Name=picom
 TryExec=picom
