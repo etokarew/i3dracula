@@ -78,6 +78,17 @@ function mute_notification {
     fi
 }
 
+function get_volume_char {
+    res=?
+    muted=$(pacmd list-sinks | awk '/muted/ { print $2 }' | head -n $sink_or | tail -n1)
+    if [[ "$muted" == 'yes' ]]; then res=
+    else
+           volume=`get_volume`
+            if [[ $volume -lt 34 ]]; then res=; elif [[ $volume -lt 67 ]]; then res=; else res=; fi
+            res=$(echo -n $res $volume%); fi
+    echo -ne $res
+}
+
 case $1 in
     up)
         #pactl set-sink-volume $sink_nr +5%
@@ -94,7 +105,10 @@ case $1 in
         amixer -D pulse sset Master toggle-mute
         mute_notification
         ;;
+    get)
+        get_volume_char
+        ;;
     *)
-        echo "Usage: $0 up | down | mute"
+        echo "Usage: $0 up | down | mute | get"
         ;;
 esac
