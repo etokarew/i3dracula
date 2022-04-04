@@ -325,7 +325,7 @@ label-mounted-padding = ${layout.def-padding}
 type = custom/script
 inherit = generic-format-style
 
-exec = $HOME/.bandwidth.sh
+exec = $HOME/.i3scr/bandwidth.sh
 interval = 5
 
 format = <label>
@@ -335,7 +335,7 @@ format-underline = ${color.yellow}
 type = custom/script
 inherit = generic-format-style
 
-exec = $HOME/.dunst-state.sh
+exec = $HOME/.i3scr/dunst-state.sh
 interval = 1
 
 format = <label>
@@ -402,7 +402,7 @@ inherit = generic-format-style
 
 content = 
 
-click-left = $HOME/.draculocker.sh > /dev/null
+click-left = $HOME/.i3scr/draculocker.sh > /dev/null
 
 [module/i3logout]
 type = custom/text
