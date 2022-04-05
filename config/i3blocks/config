@@ -15,7 +15,7 @@ min_width=200
 command=~/.i3scr/bandwidth.sh
 #instance=eno1
 interval=5
-min_width=150
+min_width=175
 color=#f1fa8c
 
 [cpu]
@@ -28,7 +28,7 @@ color=#8be9fd
 command=free -m | awk 'NR==2{printf " %.2f/%.2f", $3/1024, $2/1024 }'
 #command=~/.i3scr/memory.sh
 interval=30
-min_width=150
+min_width=175
 color=#50fa7b
 
 [power]
@@ -42,13 +42,30 @@ command=echo -ne " " && date +%T
 interval=1
 min_width=100
 
+[dunst]
+command=~/.i3scr/dunst-state.sh
+interval=1
+color=#ff79c6
+min_width=75
+
+[volume]
+command=~/.i3scr/volume.sh get
+interval=1
+min_width=75
+
 [kbd-layout]
 command=~/.i3scr/kbd-layout.sh
 interval=1
-min_width=50
+min_width=75
+
+[i3-lock]
+full_text=
+command=~/.i3scr/draculocker.sh
+separator=false
+min_width=25
 
 [i3-quit]
 full_text=
 command=~/.i3scr/drunner.sh i3logout
 color=#ff5555
-min_width=50
+min_width=25
