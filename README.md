@@ -30,8 +30,6 @@
 
 # @TODO
 - [x] Make **@TODO** list;
-- [x] Add `Bash` RC;
-- [x] Add some glyphs into `Polybar` RC using `Font Awesome`;
 - [ ] Add battery module to:
   - [x] `i3blocks` (via `neofetch`);
   - [ ] `Polybar` ([wiki](https://github.com/polybar/polybar/wiki/Module:-battery)).
