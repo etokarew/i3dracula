@@ -13,6 +13,7 @@ font pango:JetBrains Mono 8
 ########## Keybindings ##########
 bindsym Mod4+Shift+s exec --no-startup-id ~/.i3scr/draculocker.sh
 bindsym Mod4+l exec --no-startup-id ~/.i3scr/draculocker.sh
+bindsym Control+Mod1+l exec --no-startup-id ~/.i3scr/draculocker.sh
 
 ### Backlight ###
 # Note: If light doesn't work, install xbacklight and
@@ -243,7 +244,6 @@ mode "" {
         bindsym Escape mode "default"
         bindsym Mod4+r mode "default"
 }
-
 bindsym Mod4+r mode ""
 
 # Start i3bar to display a workspace bar (plus the system information i3status
