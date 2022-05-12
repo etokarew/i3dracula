@@ -33,7 +33,8 @@
 - [ ] Add battery module to:
   - [x] `i3blocks` (via `neofetch`);
   - [ ] `Polybar` ([wiki](https://github.com/polybar/polybar/wiki/Module:-battery)).
-- [ ] Analize possibility of usage ```fprintd``` in ```i3lock```.
+- [ ] Analize possibility of usage ```fprintd``` in ```i3lock```;
+- [ ] Replace ```i3lock``` with ```i3lock-color``` ([example](https://github.com/fccapria/myDracula/blob/master/scripts/lock.sh)).
 
 # About
 This is my `i3wm` setup based on [Zeno](https://github.com/zenorocha)'s Color Scheme 🧛‍♂️
