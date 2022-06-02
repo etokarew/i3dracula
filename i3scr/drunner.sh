@@ -17,7 +17,7 @@ case $1 in
         redshift-gtk -c $HOME/.config/redshift.conf > /dev/null &
         nm-applet > /dev/null &
         transmission-gtk --minimized > /dev/null &
-        #dropbox start > /dev/null &
+        #dropbox start -i > /dev/null &
         solus-update-checker > /dev/null &
         ;;
     calculator)
