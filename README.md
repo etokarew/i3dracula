@@ -27,6 +27,7 @@
   - [GTK](https://github.com/dracula/gtk) (include [cursors](https://github.com/dracula/gtk/tree/master/kde/cursors))
 - Non-trivial:
   - [CopyQ](https://github.com/dracula/copyq) [⚙️](./config/copyq/themes/dracula-custom.ini)
+  - [tint2](https://github.com/dracula/tint2) [⚙️](./config/tint2/tint2rc)
 
 # @TODO
 - [x] Make **@TODO** list;
