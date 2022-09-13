@@ -50,6 +50,9 @@ case $1 in
     firefox)
         firefox --new-tab about:newtab > /dev/null
         ;;
+    firefox-new-tab)
+        firefox --new-tab about:newtab > /dev/null
+        ;;
     firefox-private)
         firefox --private-window > /dev/null
         ;;
@@ -95,6 +98,9 @@ case $1 in
         ;;
     terminal)
         gnome-terminal > /dev/null
+        ;;
+    thunderbird)
+        thunderbird > /dev/null
         ;;
     trash)
         nautilus --new-window trash\: > /dev/null

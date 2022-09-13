@@ -52,7 +52,6 @@ bindsym Mod4+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym Mod4+Shift+q kill
-bindsym Mod1+F4 kill
 
 # start dmenu (a program launcher)
 set $dmenu_run "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'jetbrains-10' -p ''"
@@ -106,10 +105,10 @@ bindsym Mod4+q layout toggle split
 
 # toggle tiling / floating
 bindsym Mod4+Shift+space floating toggle
-bindsym Mod1+Escape floating toggle
 
 # change focus between tiling / floating windows
 bindsym Mod4+space focus mode_toggle
+bindsym Mod1+Escape focus mode_toggle
 
 # focus the parent container
 bindsym Mod4+a focus parent
@@ -243,6 +242,7 @@ mode "" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym Mod4+r mode "default"
+        bindsym Mod1+F8 mode "default"
 }
 bindsym Mod4+r mode ""
 
@@ -250,7 +250,7 @@ bindsym Mod4+r mode ""
 # finds out, if available)
 bar {
 #!!        » xrandr --query
-        output HDMI-A-0
+#?        output HDMI-A-0
         tray_output HDMI-A-0
 #!!        tray_output none
 
@@ -314,10 +314,13 @@ bindsym Mod4+u exec "~/.i3scr/drunner.sh updater"
 #bindsym Mod1+F1 exec help
 bindsym Mod1+F2 exec --no-startup-id $dmenu_run
 #bindsym Mod1+F3 exec search
-bindsym Mod1+F6 exec "~/.i3scr/drunner.sh firefox"
-#bindsym Mod1+F7 exec mail-client
-bindsym Mod1+F8 exec "~/.i3scr/drunner.sh telegram"
-bindsym Mod1+F9 exec "~/.i3scr/drunner.sh calculator"
+bindsym Mod1+F4 kill
+bindsym Mod1+F6 focus left
+#bindsym Mod1+F7 move
+bindsym Mod1+F8 mode ""
+#bindsym Mod1+F9 minimize
+bindsym Mod1+F10 floating toggle
+bindsym Mod1+F11 fullscreen toggle
 bindsym Mod1+F12 exec "~/.i3scr/drunner.sh settings"
 
 # Problem with copy to clipboard under i3!
@@ -345,6 +348,147 @@ bindsym Mod4+m exec --no-startup-id "~/.i3scr/drunner.sh dunst-pause"
 bindsym Mod4+$KP_Plus exec "~/.i3scr/drunner.sh magnifier"
 bindsym Mod4+plus exec "~/.i3scr/drunner.sh magnifier"
 #bindsym Mod4+minus exec "~/.i3scr/drunner.sh magnifier --zoom-out"
+
+# Special keys
+bindsym XF86WWW exec "~/.i3scr/drunner.sh firefox"
+bindsym XF86HomePage exec "~/.i3scr/drunner.sh firefox-new-tab"
+bindsym XF86Mail exec "~/.i3scr/drunner.sh thunderbird"
+bindsym XF86Calculator exec "~/.i3scr/drunner.sh calculator"
+# ...
+# XF86AddFavorite
+# XF86ApplicationLeft
+# XF86ApplicationRight
+# XF86AudioMedia
+# XF86AudioRecord
+# XF86AudioRewind
+# XF86AudioStop
+# XF86Away
+# XF86Back
+# XF86Book
+# XF86BrightnessAdjust
+# XF86CD
+# XF86Calendar
+# XF86Clear
+# XF86ClearGrab
+# XF86Close
+# XF86Community
+# XF86ContrastAdjust
+# XF86Copy
+# XF86Cut
+# XF86DOS
+# XF86Display
+# XF86Documents
+# XF86Eject
+# XF86Excel
+# XF86Explorer
+# XF86Favorites
+# XF86Finance
+# XF86Forward
+# XF86Game
+# XF86Go
+# XF86History
+# XF86HotLinks
+# XF86Launch0
+# XF86Launch1
+# XF86Launch2
+# XF86Launch3
+# XF86Launch4
+# XF86Launch5
+# XF86Launch6
+# XF86Launch7
+# XF86Launch8
+# XF86Launch9
+# XF86LaunchA
+# XF86LaunchB
+# XF86LaunchC
+# XF86LaunchD
+# XF86LaunchE
+# XF86LaunchF
+# XF86LightBulb
+# XF86LogOff
+# XF86MailForward
+# XF86Market
+# XF86Meeting
+# XF86Memo
+# XF86MenuKB
+# XF86MenuPB
+# XF86Messenger
+# XF86Music
+# XF86MyComputer
+# XF86MySites
+# XF86New
+# XF86News
+# XF86Next_VMode
+# XF86Prev_VMode
+# XF86OfficeHome
+# XF86Open
+# XF86OpenURL
+# XF86Option
+# XF86Paste
+# XF86Phone
+# XF86Pictures
+# XF86PowerDown
+# XF86PowerOff
+# XF86Next_VMode
+# XF86Prev_VMode
+# XF86Q
+# XF86Refresh
+# XF86Reload
+# XF86Reply
+# XF86RockerDown
+# XF86RockerEnter
+# XF86RockerUp
+# XF86RotateWindows
+# XF86RotationKB
+# XF86RotationPB
+# XF86Save
+# XF86ScreenSaver
+# XF86ScrollClick
+# XF86ScrollDown
+# XF86ScrollUp
+# XF86Search
+# XF86Send
+# XF86Shop
+# XF86Sleep
+# XF86Spell
+# XF86SplitScreen
+# XF86Standby
+# XF86Start
+# XF86Stop
+# XF86Support
+# XF86Switch_VT_1
+# XF86Switch_VT_10
+# XF86Switch_VT_11
+# XF86Switch_VT_12
+# XF86Switch_VT_2
+# XF86Switch_VT_3
+# XF86Switch_VT_4
+# XF86Switch_VT_5
+# XF86Switch_VT_6
+# XF86Switch_VT_7
+# XF86Switch_VT_8
+# XF86Switch_VT_9
+# XF86TaskPane
+# XF86Terminal
+# XF86ToDoList
+# XF86Tools
+# XF86Travel
+# XF86Ungrab
+# XF86User1KB
+# XF86User2KB
+# XF86UserPB
+# XF86VendorHome
+# XF86Video
+# XF86WakeUp
+# XF86WebCam
+# XF86WheelButton
+# XF86Word
+# XF86XF86BackForward
+# XF86Xfer
+# XF86ZoomIn
+# XF86ZoomOut
+# XF86iTouch 
+
 
 ########## Autolaunch ##########
 exec --no-startup-id "~/.i3scr/drunner.sh autolaunch"
