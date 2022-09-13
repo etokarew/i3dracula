@@ -48,7 +48,7 @@ case $1 in
         gucharmap > /dev/null
         ;;
     firefox)
-        firefox --new-tab about:newtab > /dev/null
+        firefox --new-window > /dev/null
         ;;
     firefox-new-tab)
         firefox --new-tab about:newtab > /dev/null
