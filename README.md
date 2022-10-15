@@ -1,7 +1,7 @@
 # What is used?
 - [i3-gaps](https://github.com/Airblader/i3) — A fork of [tiling window manager](https://github.com/i3/i3) for `X11` [⚙️](./config/i3/config)
 - [i3blocks](https://github.com/vivien/i3blocks) — A feed generator for text based status bars [⚙️](./config/i3blocks/config)
-- [tint2](https://gitlab.com/o9000/tint2) — A lightweight panel/taskbar for Linux and BSD [⚙️](./config/tint2/tint2rc)
+<!-- - [tint2](https://gitlab.com/o9000/tint2) — A lightweight panel/taskbar for Linux and BSD [⚙️](./config/tint2/tint2rc) -->
 - [Polybar](https://github.com/polybar/polybar) — A fast and easy-to-use status bar [⚙️](./config/polybar)
 - [Picom](https://github.com/yshui/picom) — A lightweight compositor for `X11` [⚙️](./config/picom.conf)
 - [Rofi](https://github.com/davatorium/rofi) — A window switcher, application launcher and [dmenu](https://tools.suckless.org/dmenu/) replacement [⚙️](./config/rofi/config.rasi)
