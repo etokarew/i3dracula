@@ -115,7 +115,7 @@ bindsym Mod4+a focus parent
 focus_follows_mouse no
 
 # focus the child container
-#bindsym Mod4+d focus child
+bindsym Mod4+b focus child
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
@@ -294,7 +294,7 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
 
 ########## i3-gaps integration ##########
-for_window [class="^.*"] border pixel 2
+#for_window [class="^.*"] border pixel 2
 
 # force floating for all new windows
 for_window [class="[.]*"] floating enable
