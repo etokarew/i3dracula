@@ -6,9 +6,14 @@
 - [Picom](https://github.com/yshui/picom) — A lightweight compositor for `X11` [⚙️](./config/picom.conf)
 - [Rofi](https://github.com/davatorium/rofi) — A window switcher, application launcher and [dmenu](https://tools.suckless.org/dmenu/) replacement [⚙️](./config/rofi/config.rasi)
 - [Dunst](https://dunst-project.org/) — A lightweight replacement for the notification daemons [⚙️](./config/dunst/dunstrc)
-- [Dracula](https://github.com/matheuuus/dracula-icons) or [Colloid](https://github.com/vinceliuice/Colloid-icon-theme) icon themes
-- Wallpapers: [Dracula](https://github.com/dracula/wallpaper) [PRO](https://draculatheme.com/pro) and [GNOME](https://gitlab.gnome.org/GNOME/gnome-backgrounds)
 - [Redshift](https://github.com/jonls/redshift) — A tool that is used to adjust the color temperature of the screen [⚙️](./config/redshift.conf)
+- Icon themes:
+  - [Dracula](https://github.com/matheuuus/dracula-icons)
+  - [Colloid](https://github.com/vinceliuice/Colloid-icon-theme)
+  - [Tela Circle](https://github.com/vinceliuice/Tela-circle-icon-theme)
+- Wallpapers:
+  - [Dracula](https://github.com/dracula/wallpaper) [PRO](https://draculatheme.com/pro)
+  - [GNOME](https://gitlab.gnome.org/GNOME/gnome-backgrounds)
 - Fonts:
   1. [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
   2. [Awesome](https://fontawesome.com/) (*icon glyphs*)
