@@ -30,6 +30,7 @@
   - [Rofi](https://github.com/dracula/rofi)
   - [Dunst](https://github.com/dracula/dunst)
   - [GTK](https://github.com/dracula/gtk) (include [cursors](https://github.com/dracula/gtk/tree/master/kde/cursors))
+  - [Starship](https://github.com/dracula/starship)
 - Non-trivial:
   - [CopyQ](https://github.com/dracula/copyq) [⚙️](./config/copyq/themes/dracula.ini)
   - [tint2](https://github.com/dracula/tint2) [⚙️](./config/tint2/tint2rc)
