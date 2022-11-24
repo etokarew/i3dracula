@@ -27,6 +27,8 @@
 # Color schemes
 - Trivial:
   - [i3](https://github.com/dracula/i3)
+  - [i3lock-color](https://github.com/dracula/i3lock-color)
+  - [dmenu](https://github.com/dracula/dmenu)
   - [Rofi](https://github.com/dracula/rofi)
   - [Dunst](https://github.com/dracula/dunst)
   - [GTK](https://github.com/dracula/gtk) (include [cursors](https://github.com/dracula/gtk/tree/master/kde/cursors))
