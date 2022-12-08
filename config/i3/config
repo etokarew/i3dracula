@@ -54,7 +54,7 @@ bindsym Mod4+Return exec i3-sensible-terminal
 bindsym Mod4+Shift+q kill
 
 # start dmenu (a program launcher)
-set $dmenu_run "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#282A36' -fn 'jetbrains-10' -p ''"
+set $dmenu_run "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#282A36' -fn 'Droid Sans-10' -p '' -l 10"
 bindsym Mod4+d exec --no-startup-id $dmenu_run
 
 # Rofi launcher -- the dmenu alternative
