@@ -45,7 +45,7 @@ case $1 in
         dunstctl history-pop > /dev/null
         ;;
     emoji)
-        gucharmap > /dev/null
+        gnome-characters > /dev/null
         ;;
     firefox)
         firefox --new-window > /dev/null
@@ -60,7 +60,7 @@ case $1 in
         i3-nagbar -t warning -m "Вы действительно хотите выйти из текущей сессии?" -b "Завершить работу i3" "i3-msg exit" > /dev/null
         ;;
     magnifier)
-        kmag > /dev/null
+        GTK_THEME=Yaru-purple-dark XCURSOR_THEME=breeze_cursors magnus --refresh-interval=100 --force-refresh > /dev/null
         ;;
     opera)
         opera --new-window --password-store=basic --enable-features=OverlayScrollbar --disable-features=OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter %U > /dev/null
