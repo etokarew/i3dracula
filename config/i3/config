@@ -7,7 +7,8 @@ set $defaultmod Mod4
 #set $left j
 #set $right l
 
-# Font for window titles. Will also be used by the bar unless a different font is used in the bar {} block below.
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
 font pango:JetBrains Mono 10
 
 ########## Keybindings ##########
@@ -54,7 +55,7 @@ bindsym Mod4+Return exec i3-sensible-terminal
 bindsym Mod4+Shift+q kill
 
 # start dmenu (a program launcher)
-set $dmenu_run "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#282A36' -fn 'Droid Sans-10' -p '' -l 10"
+set $dmenu_run "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#282A36' -fn 'Droid Sans-11' -p ''"
 bindsym Mod4+d exec --no-startup-id $dmenu_run
 
 # Rofi launcher -- the dmenu alternative
@@ -121,7 +122,8 @@ bindsym Mod4+b focus child
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym Mod4+minus scratchpad show
 
-# Define names for default workspaces for which we configure key bindings later on.
+# Define names for default workspaces for which
+#  we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
 set $ws2 "2"
@@ -322,6 +324,7 @@ bindsym Mod4+u exec "~/.i3scr/drunner.sh updater"
 bindsym Mod1+F2 exec --no-startup-id $dmenu_run
 #bindsym Mod1+F3 exec search
 bindsym Mod1+F4 kill
+bindsym Mod1+F5 floating toggle
 bindsym Mod1+F6 focus left
 #bindsym Mod1+F7 move
 bindsym Mod1+F8 mode ""
@@ -337,9 +340,7 @@ bindsym Print exec "~/.i3scr/drunner.sh screenshot"
 bindsym Mod4+o exec "~/.i3scr/drunner.sh opera"
 bindsym Mod4+Shift+o exec "~/.i3scr/drunner.sh opera-private"
 bindsym Mod4+Shift+f exec "~/.i3scr/drunner.sh firefox-private"
-
 bindsym Mod4+t exec "~/.i3scr/drunner.sh telegram"
-bindsym Mod4+g exec "~/.i3scr/drunner.sh telegram"
 
 bindsym Mod4+e exec "~/.i3scr/drunner.sh recent"
 bindsym Mod4+j exec "~/.i3scr/drunner.sh downloads"
@@ -354,7 +355,6 @@ bindsym Mod4+m exec --no-startup-id "~/.i3scr/drunner.sh dunst-pause"
 
 bindsym Mod4+$KP_Plus exec "~/.i3scr/drunner.sh magnifier"
 bindsym Mod4+plus exec "~/.i3scr/drunner.sh magnifier"
-#bindsym Mod4+minus exec "~/.i3scr/drunner.sh magnifier --zoom-out"
 
 # Special keys
 bindsym XF86WWW exec "~/.i3scr/drunner.sh firefox"
