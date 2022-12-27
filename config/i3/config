@@ -1,20 +1,17 @@
 # i3 config file (v4)
 
-# Variable setting
-set $defaultmod Mod4
-#set $up i
-#set $down k
-#set $left j
-#set $right l
+# Variables setting
+set $default_mod Mod4
+set $alternate_mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:JetBrains Mono 10
 
 ########## Keybindings ##########
-bindsym Mod4+Shift+s exec --no-startup-id ~/.i3scr/draculocker.sh
-bindsym Mod4+l exec --no-startup-id ~/.i3scr/draculocker.sh
-bindsym Control+Mod1+l exec --no-startup-id ~/.i3scr/draculocker.sh
+bindsym $default_mod+Shift+s exec --no-startup-id ~/.i3scr/draculocker.sh
+bindsym $default_mod+l exec --no-startup-id ~/.i3scr/draculocker.sh
+bindsym Control+$alternate_mod+l exec --no-startup-id ~/.i3scr/draculocker.sh
 
 ### Backlight ###
 # Note: If light doesn't work, install xbacklight and
@@ -31,96 +28,89 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
 
-### Other ###
-#bindsym Print exec scrot -q 100
-
 ### Sound ###
 # Raise Volume
 #bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.i3scr/volume.sh up
+
 # Lower Volume
 #bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.i3scr/volume.sh down
+
 # Toggle muting
 #bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mute
 bindsym XF86AudioMute exec --no-startup-id ~/.i3scr/volume.sh mute
 
-# Use Mouse+Mod4 to drag floating windows to their wanted position
-floating_modifier Mod4
+# Use Mouse+$default_mod to drag floating windows to their wanted position
+floating_modifier $default_mod
 
 # start a terminal
-bindsym Mod4+Return exec i3-sensible-terminal
+bindsym $default_mod+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym Mod4+Shift+q kill
+bindsym $default_mod+Shift+q kill
 
 # start dmenu (a program launcher)
 set $dmenu_run "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#282A36' -fn 'Droid Sans-12' -p ''"
-bindsym Mod4+d exec --no-startup-id $dmenu_run
+bindsym $default_mod+d exec --no-startup-id $dmenu_run
 
 # Rofi launcher -- the dmenu alternative
-bindsym Mod4+Tab exec --no-startup-id "~/.i3scr/drunner.sh rofi"
+bindsym $default_mod+Tab exec --no-startup-id "~/.i3scr/drunner.sh rofi"
 bindsym Control+Escape exec --no-startup-id "~/.i3scr/drunner.sh rofi"
 
 # change focus
-#bindsym Mod4+$left focus left
-#bindsym Mod4+$down focus down
-#bindsym Mod4+$up focus up
-#bindsym Mod4+$right focus right
-
-# alternatively, you can use the cursor keys:
-bindsym Mod4+Left focus left
-bindsym Mod4+Down focus down
-bindsym Mod4+Up focus up
-bindsym Mod4+Right focus right
+bindsym $default_mod+Left focus left
+bindsym $default_mod+Down focus down
+bindsym $default_mod+Up focus up
+bindsym $default_mod+Right focus right
 
 # also alt+tab
-bindsym Mod1+Shift+Tab focus left
-bindsym Mod1+Tab focus right
+bindsym $alternate_mod+Shift+Tab focus left
+bindsym $alternate_mod+Tab focus right
 
 # move focused window
-#bindsym Mod4+Shift+$left move left
-#bindsym Mod4+Shift+$down move down
-#bindsym Mod4+Shift+$up move up
-#bindsym Mod4+Shift+$right move right
+bindsym $default_mod+Shift+Right move right
+bindsym $default_mod+Shift+Left move left
+bindsym $default_mod+Shift+Down move down
+bindsym $default_mod+Shift+Up move up
 
-# alternatively, you can use the cursor keys:
-bindsym Mod4+Shift+Right move right
-bindsym Mod4+Shift+Left move left
-bindsym Mod4+Shift+Down move down
-bindsym Mod4+Shift+Up move up
+# move floating container to the center of all outputs
+bindsym $default_mod+c move absolute position center
+
+# move container to the current position of the cursor
+bindsym $default_mod+m move position mouse
 
 # split in horizontal orientation
-bindsym Mod4+h split h
+bindsym $default_mod+h split h
 
 # split in vertical orientation
-bindsym Mod4+v split v
+bindsym $default_mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym Mod4+f fullscreen toggle
+bindsym $default_mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym Mod4+s layout stacking
-bindsym Mod4+w layout tabbed
-bindsym Mod4+q layout toggle split
+bindsym $default_mod+s layout stacking
+bindsym $default_mod+w layout tabbed
+bindsym $default_mod+q layout toggle split
 
 # toggle tiling / floating
-bindsym Mod4+Shift+space floating toggle
+bindsym $default_mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym Mod4+space focus mode_toggle
-bindsym Mod1+Escape focus mode_toggle
+bindsym $default_mod+space focus mode_toggle
+bindsym $alternate_mod+Escape focus mode_toggle
 
 # focus the parent container
-bindsym Mod4+a focus parent
+bindsym $default_mod+a focus parent
 focus_follows_mouse no
 
 # focus the child container
-bindsym Mod4+b focus child
+bindsym $default_mod+b focus child
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym Mod4+minus scratchpad show
+bindsym $default_mod+minus scratchpad show
 
 # Define names for default workspaces for which
 #  we configure key bindings later on.
@@ -154,72 +144,72 @@ set $KP_Divide KP_Divide
 set $KP_Decimal KP_Delete
 
 # switch to workspace
-bindsym Mod4+1 workspace $ws1
-bindsym Mod4+2 workspace $ws2
-bindsym Mod4+3 workspace $ws3
-bindsym Mod4+4 workspace $ws4
-bindsym Mod4+5 workspace $ws5
-bindsym Mod4+6 workspace $ws6
-bindsym Mod4+7 workspace $ws7
-bindsym Mod4+8 workspace $ws8
-bindsym Mod4+9 workspace $ws9
-bindsym Mod4+0 workspace $ws10
+bindsym $default_mod+1 workspace $ws1
+bindsym $default_mod+2 workspace $ws2
+bindsym $default_mod+3 workspace $ws3
+bindsym $default_mod+4 workspace $ws4
+bindsym $default_mod+5 workspace $ws5
+bindsym $default_mod+6 workspace $ws6
+bindsym $default_mod+7 workspace $ws7
+bindsym $default_mod+8 workspace $ws8
+bindsym $default_mod+9 workspace $ws9
+bindsym $default_mod+0 workspace $ws10
 
 # switch to workspace (numpad)
-bindsym Mod4+$KP_1 workspace $ws1
-bindsym Mod4+$KP_2 workspace $ws2
-bindsym Mod4+$KP_3 workspace $ws3
-bindsym Mod4+$KP_4 workspace $ws4
-bindsym Mod4+$KP_5 workspace $ws5
-bindsym Mod4+$KP_6 workspace $ws6
-bindsym Mod4+$KP_7 workspace $ws7
-bindsym Mod4+$KP_8 workspace $ws8
-bindsym Mod4+$KP_9 workspace $ws9
-bindsym Mod4+$KP_0 workspace $ws10
+bindsym $default_mod+$KP_1 workspace $ws1
+bindsym $default_mod+$KP_2 workspace $ws2
+bindsym $default_mod+$KP_3 workspace $ws3
+bindsym $default_mod+$KP_4 workspace $ws4
+bindsym $default_mod+$KP_5 workspace $ws5
+bindsym $default_mod+$KP_6 workspace $ws6
+bindsym $default_mod+$KP_7 workspace $ws7
+bindsym $default_mod+$KP_8 workspace $ws8
+bindsym $default_mod+$KP_9 workspace $ws9
+bindsym $default_mod+$KP_0 workspace $ws10
 
 # switch to workspace (arrows)
-bindsym Control+Mod1+Left workspace prev
-bindsym Control+Mod1+Right workspace next
+bindsym Control+$alternate_mod+Left workspace prev
+bindsym Control+$alternate_mod+Right workspace next
 
 # move focused container to workspace
-bindsym Mod4+Shift+1 move container to workspace $ws1
-bindsym Mod4+Shift+2 move container to workspace $ws2
-bindsym Mod4+Shift+3 move container to workspace $ws3
-bindsym Mod4+Shift+4 move container to workspace $ws4
-bindsym Mod4+Shift+5 move container to workspace $ws5
-bindsym Mod4+Shift+6 move container to workspace $ws6
-bindsym Mod4+Shift+7 move container to workspace $ws7
-bindsym Mod4+Shift+8 move container to workspace $ws8
-bindsym Mod4+Shift+9 move container to workspace $ws9
-bindsym Mod4+Shift+0 move container to workspace $ws10
+bindsym $default_mod+Shift+1 move container to workspace $ws1
+bindsym $default_mod+Shift+2 move container to workspace $ws2
+bindsym $default_mod+Shift+3 move container to workspace $ws3
+bindsym $default_mod+Shift+4 move container to workspace $ws4
+bindsym $default_mod+Shift+5 move container to workspace $ws5
+bindsym $default_mod+Shift+6 move container to workspace $ws6
+bindsym $default_mod+Shift+7 move container to workspace $ws7
+bindsym $default_mod+Shift+8 move container to workspace $ws8
+bindsym $default_mod+Shift+9 move container to workspace $ws9
+bindsym $default_mod+Shift+0 move container to workspace $ws10
 
 # move focused container to workspace (numpad)
-bindsym Mod4+Shift+$KP_1 move container to workspace $ws1
-bindsym Mod4+Shift+$KP_2 move container to workspace $ws2
-bindsym Mod4+Shift+$KP_3 move container to workspace $ws3
-bindsym Mod4+Shift+$KP_4 move container to workspace $ws4
-bindsym Mod4+Shift+$KP_5 move container to workspace $ws5
-bindsym Mod4+Shift+$KP_6 move container to workspace $ws6
-bindsym Mod4+Shift+$KP_7 move container to workspace $ws7
-bindsym Mod4+Shift+$KP_8 move container to workspace $ws8
-bindsym Mod4+Shift+$KP_9 move container to workspace $ws9
-bindsym Mod4+Shift+$KP_0 move container to workspace $ws10
+bindsym $default_mod+Shift+$KP_1 move container to workspace $ws1
+bindsym $default_mod+Shift+$KP_2 move container to workspace $ws2
+bindsym $default_mod+Shift+$KP_3 move container to workspace $ws3
+bindsym $default_mod+Shift+$KP_4 move container to workspace $ws4
+bindsym $default_mod+Shift+$KP_5 move container to workspace $ws5
+bindsym $default_mod+Shift+$KP_6 move container to workspace $ws6
+bindsym $default_mod+Shift+$KP_7 move container to workspace $ws7
+bindsym $default_mod+Shift+$KP_8 move container to workspace $ws8
+bindsym $default_mod+Shift+$KP_9 move container to workspace $ws9
+bindsym $default_mod+Shift+$KP_0 move container to workspace $ws10
 
 # move container
-bindsym Mod4+z move workspace to output left
-bindsym Mod4+x move workspace to output right
+bindsym $default_mod+z move workspace to output left
+bindsym $default_mod+x move workspace to output right
 
 # reload the configuration file
-bindsym Mod4+Shift+c reload
+bindsym $default_mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Mod4+Shift+r restart
+bindsym $default_mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-#bindsym Mod4+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym Mod4+Shift+e exec --no-startup-id "~/.i3scr/drunner.sh i3logout"
-bindsym Mod4+Escape exec --no-startup-id "~/.i3scr/drunner.sh i3logout"
-bindsym Control+Mod1+Delete exec --no-startup-id "~/.i3scr/drunner.sh i3logout"
+#bindsym $default_mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $default_mod+Shift+e exec --no-startup-id "~/.i3scr/drunner.sh i3logout"
+bindsym $default_mod+Escape exec --no-startup-id "~/.i3scr/drunner.sh i3logout"
+bindsym Control+$alternate_mod+Delete exec --no-startup-id "~/.i3scr/drunner.sh i3logout"
 
 # resize window (you can also use the mouse for that)
 mode "" {
@@ -229,27 +219,21 @@ mode "" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        #bindsym $left       resize shrink width 10 px or 10 ppt
-        #bindsym $down       resize grow height 10 px or 10 ppt
-        #bindsym $up         resize shrink height 10 px or 10 ppt
-        #bindsym $right      resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize grow height 10 px or 10 ppt
-        bindsym Up          resize shrink height 10 px or 10 ppt
-        bindsym Right       resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or Mod4+r
+        # back to normal: Enter or Escape or $default_mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym Mod4+r mode "default"
-        bindsym Mod1+F8 mode "default"
+        bindsym $default_mod+r mode "default"
+        bindsym $alternate_mod+F8 mode "default"
 }
-bindsym Mod4+r mode ""
+bindsym $default_mod+r mode ""
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start i3bar to display a workspace bar
+#  (plus the system information i3status finds out, if available)
 bar {
 #!!        » xrandr --query
 #?        output HDMI-A-0
@@ -258,7 +242,7 @@ bar {
 
         mode hide
 #?        hidden_state show
-        modifier Mod4
+        modifier $default_mod
 
         status_command i3blocks
         position bottom
@@ -283,8 +267,12 @@ bar {
 # The middle button over a titlebar kills the window
 bindsym --release button2 kill
 
-# The middle button and a modifier over any part of the window kills the window
-bindsym --whole-window Mod4+button2 kill
+# The middle button and a modifier over any part of the window toggles floating
+bindsym --whole-window $default_mod+button2 floating toggle
+
+# The side buttons switch current song
+bindsym --whole-window $default_mod+button8 exec playerctl previous
+bindsym --whole-window $default_mod+button9 exec playerctl next
 
 ########## Polybar ##########
 #exec_always --no-startup-id polybar --config=$HOME/.config/polybar foo
@@ -327,47 +315,42 @@ gaps outer 0
 
 ########## Shortcuts ##########
 bindsym Control+Shift+Escape exec "~/.i3scr/drunner.sh system-monitor"
-bindsym Mod4+grave exec "~/.i3scr/drunner.sh terminal"
-bindsym Mod4+u exec "~/.i3scr/drunner.sh updater"
+bindsym $default_mod+grave exec "~/.i3scr/drunner.sh terminal"
+bindsym $default_mod+u exec "~/.i3scr/drunner.sh updater"
 
-# Alt+F* group
-#bindsym Mod1+F1 exec help
-bindsym Mod1+F2 exec --no-startup-id $dmenu_run
-#bindsym Mod1+F3 exec search
-bindsym Mod1+F4 kill
-bindsym Mod1+F5 floating toggle
-bindsym Mod1+F6 focus left
-#bindsym Mod1+F7 move
-bindsym Mod1+F8 mode ""
-#bindsym Mod1+F9 minimize
-bindsym Mod1+F10 floating toggle
-bindsym Mod1+F11 fullscreen toggle
-bindsym Mod1+F12 exec "~/.i3scr/drunner.sh settings"
+#bindsym $alternate_mod+F1 exec help
+bindsym $alternate_mod+F2 exec --no-startup-id $dmenu_run
+#bindsym $alternate_mod+F3 exec search
+bindsym $alternate_mod+F4 kill
+bindsym $alternate_mod+F5 floating toggle
+bindsym $alternate_mod+F6 focus left
+#bindsym $alternate_mod+F7 move
+bindsym $alternate_mod+F8 mode ""
+#bindsym $alternate_mod+F9 minimize
+bindsym $alternate_mod+F10 floating toggle
+bindsym $alternate_mod+F11 fullscreen toggle
+bindsym $alternate_mod+F12 exec "~/.i3scr/drunner.sh settings"
 
 # Problem with copy to clipboard under i3!
 # Do not close a GNOME screenshot window until you was pasted your image!
 bindsym Print exec "~/.i3scr/drunner.sh screenshot"
 
-bindsym Mod4+o exec "~/.i3scr/drunner.sh opera"
-bindsym Mod4+Shift+o exec "~/.i3scr/drunner.sh opera-private"
-bindsym Mod4+Shift+f exec "~/.i3scr/drunner.sh firefox-private"
-bindsym Mod4+t exec "~/.i3scr/drunner.sh telegram"
+bindsym $default_mod+e exec "~/.i3scr/drunner.sh recent"
+bindsym $default_mod+j exec "~/.i3scr/drunner.sh downloads"
 
-bindsym Mod4+e exec "~/.i3scr/drunner.sh recent"
-bindsym Mod4+j exec "~/.i3scr/drunner.sh downloads"
+bindsym $default_mod+y exec --no-startup-id "~/.i3scr/drunner.sh clipboard-manager"
+#bindsym $default_mod+k exec --no-startup-id "~/.i3scr/drunner.sh virtual-keyboard"
+bindsym $default_mod+semicolon exec "~/.i3scr/drunner.sh emoji"
 
-bindsym Mod4+y exec --no-startup-id "~/.i3scr/drunner.sh clipboard-manager"
-#bindsym Mod4+k exec --no-startup-id "~/.i3scr/drunner.sh virtual-keyboard"
-bindsym Mod4+semicolon exec "~/.i3scr/drunner.sh emoji"
+bindsym $default_mod+p exec --no-startup-id "~/.i3scr/drunner.sh dunst-clear"
+bindsym $default_mod+n exec --no-startup-id "~/.i3scr/drunner.sh dunst-pop"
+bindsym $default_mod+i exec --no-startup-id "~/.i3scr/drunner.sh dunst-pause"
 
-bindsym Mod4+c exec --no-startup-id "~/.i3scr/drunner.sh dunst-clear"
-bindsym Mod4+n exec --no-startup-id "~/.i3scr/drunner.sh dunst-pop"
-bindsym Mod4+m exec --no-startup-id "~/.i3scr/drunner.sh dunst-pause"
+bindsym $default_mod+$KP_Plus exec "~/.i3scr/drunner.sh magnifier"
+bindsym $default_mod+plus exec "~/.i3scr/drunner.sh magnifier"
 
-bindsym Mod4+$KP_Plus exec "~/.i3scr/drunner.sh magnifier"
-bindsym Mod4+plus exec "~/.i3scr/drunner.sh magnifier"
+bindsym $default_mod+t exec "~/.i3scr/drunner.sh telegram"
 
-# Special keys
 bindsym XF86WWW exec "~/.i3scr/drunner.sh firefox"
 bindsym XF86HomePage exec "~/.i3scr/drunner.sh firefox-new-tab"
 bindsym XF86Mail exec "~/.i3scr/drunner.sh thunderbird"
