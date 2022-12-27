@@ -62,12 +62,6 @@ case $1 in
     magnifier)
         GTK_THEME=Yaru-purple-dark XCURSOR_THEME=breeze_cursors magnus --refresh-interval=100 --force-refresh > /dev/null
         ;;
-    opera)
-        opera --new-window --password-store=basic --enable-features=OverlayScrollbar --disable-features=OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter %U > /dev/null
-        ;;
-    opera-private)
-        opera --private --password-store=basic --enable-features=OverlayScrollbar --disable-features=OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter %U > /dev/null
-        ;;
     recent)
         nautilus --new-window recent\: > /dev/null
         ;;
