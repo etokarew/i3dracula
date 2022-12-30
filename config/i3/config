@@ -51,7 +51,7 @@ bindsym $default_mod+Return exec i3-sensible-terminal
 bindsym $default_mod+Shift+q kill
 
 # start dmenu (a program launcher)
-set $dmenu_run "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#282A36' -fn 'Droid Sans-12' -p ''"
+set $dmenu_run "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#282A36' -fn 'Droid Sans-14' -p ''"
 bindsym $default_mod+d exec --no-startup-id $dmenu_run
 
 # Rofi launcher -- the dmenu alternative
@@ -291,9 +291,9 @@ client.placeholder         #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background          #F8F8F2
 
 ########## Title-bar ##########
-# print all window titles bold in the center
+# print all window titles bold in^W the^W center^W
 for_window [class=".*"] title_format "<b>%title</b>"
-title_align center
+#title_align center
 
 # enable window icons for all windows
 for_window [all] title_window_icon on
