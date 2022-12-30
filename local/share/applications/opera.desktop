@@ -1,4 +1,5 @@
 #!/usr/bin/env xdg-open
+
 [Desktop Entry]
 Version=1.0
 Name=Opera
@@ -6,7 +7,7 @@ GenericName=Web browser
 Comment=Fast and secure web browser
 Comment[ru]=Быстрый и безопасный веб-браузер
 TryExec=opera
-Exec=opera --password-store=basic --enable-features=OverlayScrollbar --disable-features=OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter %U
+Exec=opera %U --password-store=basic --enable-features=OverlayScrollbar --disable-features=OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter
 Terminal=false
 Icon=opera
 Type=Application
@@ -16,12 +17,10 @@ Actions=new-window;new-private-window;
 [Desktop Action new-window]
 Name=New window
 Name[ru]=Новое окно
-Exec=opera --new-window --password-store=basic --enable-features=OverlayScrollbar --disable-features=OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter %U
-TargetEnvironment=Unity
+Exec=opera %U --new-window --password-store=basic --enable-features=OverlayScrollbar --disable-features=OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter
 
 [Desktop Action new-private-window]
 Name=New private window
 Name[ru]=Новое приватное окно
-Exec=opera --private --password-store=basic --enable-features=OverlayScrollbar --disable-features=OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter %U
-TargetEnvironment=Unity
+Exec=opera %u --private --enable-features=OverlayScrollbar --disable-features=OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter
 MimeType=x-scheme-handler/mailto;text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;application/x-opera-download;
