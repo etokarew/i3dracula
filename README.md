@@ -21,6 +21,7 @@
 - Terminal Apps & Prompts:
   - [neofetch](https://github.com/dylanaraps/neofetch) — A command-line system information tool
   - [Starship](https://starship.rs/) — The minimal, blazing-fast, and infinitely customizable prompt for any shell [⚙️](./config/starship.toml)
+  - [snixembed](https://git.sr.ht/~steef/snixembed) — proxy StatusNotifierItems as XEmbedded systemtray-spec icons
   - [xrandr](https://x.org/releases/current/doc/man/man1/xrandr.1.xhtml), [feh](https://feh.finalrewind.org/), [setxkbmap](https://linux.die.net/man/1/setxkbmap), [xcursorgen](https://linux.die.net/man/1/xcursorgen)
   - [Gawk](https://www.gnu.org/software/gawk/), [GNU coreutils](https://www.gnu.org/software/coreutils/), etc...
 

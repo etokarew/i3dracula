@@ -8,6 +8,7 @@ case $1 in
         picom -b > /dev/null &
         feh --bg-tile /usr/src/$USER/dracula-pro/wallpapers/dracula-pro/desktop-1920x1080.png > /dev/null &
         setxkbmap -layout "us,ru" -option "grp:alt_space_toggle,grp:caps_toggle" -model "logitech" > /dev/null &
+        snixembed --proxy > /dev/null &
         #ibus-daemon -d --replace --desktop=i3 > /dev/null &
         dunst > /dev/null &
         /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1 > /dev/null &
