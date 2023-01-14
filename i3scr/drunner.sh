@@ -6,7 +6,8 @@ case $1 in
         xset +dpms dpms 0 0 300 > /dev/null &
         xset s off > /dev/null &
         picom -b > /dev/null &
-        feh --bg-tile /usr/src/$USER/dracula-pro/wallpapers/dracula-pro/desktop-1920x1080.png > /dev/null &
+        #xrandr --listmonitors &
+        feh --bg-center /usr/src/$USER/dracula-pro/wallpapers/dracula-pro/desktop-1920x1080.png /usr/src/$USER/dracula-pro/wallpapers/dracula-pro/phone-1080x1920.png --image-bg "#282a36" > /dev/null &
         setxkbmap -layout "us,ru" -option "grp:alt_space_toggle,grp:caps_toggle" -model "logitech" > /dev/null &
         snixembed --proxy > /dev/null &
         #ibus-daemon -d --replace --desktop=i3 > /dev/null &
