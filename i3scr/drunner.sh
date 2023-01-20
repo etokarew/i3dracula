@@ -7,7 +7,7 @@ case $1 in
         nohup xset +dpms dpms 0 0 300 &> /dev/null &
         nohup xset s off &> /dev/null &
         nohup picom -b &> /dev/null &
-        nohup #xrandr --listmonitors &
+        # xrandr --listmonitors &
         nohup feh --image-bg "#282a36" --bg-center \
             /usr/src/$USER/dracula-pro/wallpapers/dracula-pro/desktop-1920x1080.png \
             /usr/src/$USER/dracula-pro/wallpapers/dracula-pro/phone-1080x1920.png \
