@@ -2,13 +2,6 @@
 add_newline = false
 
 
-# Replaces the default "❯" symbol in the prompt
-[character] # The name of the module we are configuring is "character"
-success_symbol = "[ ](bold green)"
-error_symbol   = "[ ](bold red)"
-vicmd_symbol   = "[ ](bold yellow)"
-
-
 # Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
@@ -16,47 +9,80 @@ disabled = true
 
 # Also 👉 date 👈
 [time]
-disabled = false
+disabled        = true
 
-#format = "🕙 [$time]($style) "
-format = "[⏲ $time ]($style)"
+format          = "  [$time ]($style)"
+time_format     = "%H:%M:%S%.3f"
 
-time_format = "%H:%M:%S%.6f"
-#time_format = "%c"
+#format          = "[$time 🕙]($style) "
+#time_format     = "%c"
 
 utc_time_offset = "local"
 
 
-## Add the following below the file
-[battery]
-disabled = true
-format = "[$symbol $percentage]($style) "
+## Battery module
 
-full_symbol = "🔋"
-charging_symbol = "⚡️"
+[battery]
+disabled = false
+format   = "[$symbol $percentage]($style) "
+
+# 
+full_symbol        = "🔋"
+
+# 
+charging_symbol    = "⚡️"
+
+# 
 discharging_symbol = "💀"
-unknown_symbol = "🔌"
-empty_symbol = "🪫"
+
+# 
+unknown_symbol     = "🔌"
+
+# 
+empty_symbol       = "🪫"
 
 ## The display configuration option is used to define when the battery indicator should be shown (threshold) and what it looks like (style).
 
 [[battery.display]]
 threshold = 10
-style = "red"
+style     = "#ff5555"
 
-[[battery.display]] # "bold yellow" style when capacity is between 10% and 30%
+[[battery.display]]
 threshold = 30
-style = "yellow"
+style     = "#f1fa8c"
 
 [[battery.display]]
 threshold = 100
-style = "green"
+style     = "#50fa7b"
 
 
-[python]
-symbol = "∿ "
-python_binary = ["python", "python3"]
+# Replaces the default "❯" symbol in the prompt
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[ ](bold #50fa7b)"
+error_symbol   = "[ ](bold #ff5555)"
+vicmd_symbol   = "[ ](bold #f1fa8c)"
 
 
-[nodejs]
-symbol = "⚛️  "
+# From official Dracula theme
+
+[aws]
+style      = "bold #ffb86c"
+
+[cmd_duration]
+style      = "bold #f1fa8c"
+
+[directory]
+style      = "bold #50fa7b"
+
+[git_branch]
+style      = "bold #ff79c6"
+
+[git_status]
+style      = "bold #ff5555"
+
+[hostname]
+style      = "bold #bd93f9"
+
+[username]
+format     = "[$user]($style) on "
+style_user = "bold #8be9fd"
