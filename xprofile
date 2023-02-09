@@ -2,5 +2,7 @@
 
 # This file is sourced by display managers before the X user session starts.
 
-#unset XDG_CURRENT_DESKTOP;
-export QT_AUTO_SCREEN_SCALE_FACTOR=0 XDG_CURRENT_DESKTOP=GNOME
+unset XDG_CURRENT_DESKTOP
+export XDG_CURRENT_DESKTOP="GNOME"
+
+export QT_QPA_PLATFORMTHEME="GTK2" QT_AUTO_SCREEN_SCALE_FACTOR=0
