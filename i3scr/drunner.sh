@@ -25,7 +25,7 @@ case $1 in
 
         #nohup transmission-gtk --minimized &> /dev/null &
         nohup redshift-gtk -c $HOME/.config/redshift.conf &> /dev/null &
-        nohup copyq &> /dev/null &
+        nohup clipit &> /dev/null &
         nohup dropbox start -i &> /dev/null &
         nohup solus-update-checker &> /dev/null &
         nohup x0vncserver -RawKeyboard -Geometry 1920x1080 \
