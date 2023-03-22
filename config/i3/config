@@ -32,10 +32,12 @@ bindsym XF86AudioNext exec playerctl next
 # Raise Volume
 #bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.i3scr/volume.sh up
+bindsym --whole-window $default_mod+button4 exec --no-startup-id ~/.i3scr/volume.sh up
 
 # Lower Volume
 #bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.i3scr/volume.sh down
+bindsym --whole-window $default_mod+button5 exec --no-startup-id ~/.i3scr/volume.sh down
 
 # Toggle muting
 #bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mute
@@ -338,7 +340,7 @@ bindsym Print exec "~/.i3scr/drunner.sh screenshot"
 bindsym $default_mod+e exec "~/.i3scr/drunner.sh recent"
 bindsym $default_mod+j exec "~/.i3scr/drunner.sh downloads"
 
-bindsym $default_mod+y exec --no-startup-id "~/.i3scr/drunner.sh clipboard-manager"
+#bindsym $default_mod+y exec --no-startup-id "~/.i3scr/drunner.sh clipboard-manager"
 #bindsym $default_mod+k exec --no-startup-id "~/.i3scr/drunner.sh virtual-keyboard"
 bindsym $default_mod+semicolon exec "~/.i3scr/drunner.sh emoji"
 
