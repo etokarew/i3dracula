@@ -85,7 +85,7 @@ case $1 in
         ;;
 
     magnifier)
-        GTK_THEME=Yaru-purple-dark XCURSOR_THEME=breeze_cursors nohup magnus --refresh-interval=100 --force-refresh &> /dev/null &
+        GTK_THEME=Breeze-Dark XCURSOR_THEME=Dracula-cursors nohup magnus --refresh-interval=100 --force-refresh &> /dev/null &
         ;;
 
     recent)
