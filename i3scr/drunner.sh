@@ -84,8 +84,8 @@ case $1 in
         nohup i3-nagbar -t warning -m "Вы действительно хотите выйти из текущей сессии?" -b "Завершить работу i3" "i3-msg exit" &> /dev/null &
         ;;
 
-    magnifier)
-        GTK_THEME=Breeze-Dark XCURSOR_THEME=Dracula-cursors nohup magnus --refresh-interval=100 --force-refresh &> /dev/null &
+    magnifier) # snapcraft.io/magnus
+        GTK_THEME=Breeze-Dark XCURSOR_THEME=breeze_cursors nohup magnus --refresh-interval=100 --force-refresh &> /dev/null &
         ;;
 
     recent)
