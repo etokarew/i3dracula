@@ -118,6 +118,7 @@ A fast and easy-to-use tool for creating status bars.
 
 # Links
 * [Author](https://github.com/zenorocha)
+* [PRO](https://draculatheme.com/pro)
 
 # Captures
 <details><summary>Box</summary>
