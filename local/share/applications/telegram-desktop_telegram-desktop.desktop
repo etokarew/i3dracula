@@ -1,0 +1,24 @@
+#!/usr/bin/env xdg-open
+# snapcraft.io/telegram-desktop
+
+[Desktop Entry]
+X-SnapInstanceName=telegram-desktop
+Name=Telegram Desktop
+Name[ru]=Клиент Telegram
+Comment=Official desktop version of Telegram messaging app
+Comment[ru]=Официальная версия мессенджера Telegram для ПК
+Exec=sh -c 'export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus"; XCURSOR_THEME=breeze_cursors /snap/bin/telegram-desktop -- %u'
+Icon=telegram-desktop
+Terminal=false
+StartupWMClass=TelegramDesktop
+Type=Application
+Categories=Chat;Network;InstantMessaging;Qt;
+MimeType=x-scheme-handler/tg;
+Keywords=tg;chat;im;messaging;messenger;sms;tdesktop;
+#Actions=Quit;
+
+#[Desktop Action Quit]
+#Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/telegram-desktop_telegram-desktop.desktop /snap/bin/telegram-desktop -quit
+#Name=Quit Telegram
+#Name[ru]=Закрыть Telegram
+#Icon=/snap/telegram-desktop/current/meta/gui/icon.png
