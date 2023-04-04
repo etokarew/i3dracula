@@ -1,4 +1,5 @@
 ! after modify run: xrdb -merge ~/.Xdefaults
+! usually this file not used, see Xresources
 
 Xcursor.theme: Dracula-cursors
 Xcursor.size: 24

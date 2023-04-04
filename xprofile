@@ -8,3 +8,10 @@ fi
 
 unset QT_QPA_PLATFORMTHEME QT_AUTO_SCREEN_SCALE_FACTOR
 export QT_QPA_PLATFORMTHEME="qt5ct" QT_AUTO_SCREEN_SCALE_FACTOR=0
+
+# Cursor theme setup
+export XCURSOR_PATH=${XCURSOR_PATH}:$HOME/.icons
+export XCURSOR_THEME=Dracula-cursors
+
+# Load prior WM
+xrdb ~/.Xresources
