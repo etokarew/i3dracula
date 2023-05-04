@@ -7,13 +7,13 @@ Name=Telegram Desktop
 Name[ru]=Клиент Telegram
 Comment=Official desktop version of Telegram messaging app
 Comment[ru]=Официальная версия мессенджера Telegram для ПК
-Exec=sh -c 'export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus"; XCURSOR_THEME=breeze_cursors /snap/bin/telegram-desktop -- %u'
+Exec=sh -c 'DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus" XCURSOR_THEME=breeze_cursors XCURSOR_SIZE=24 /snap/bin/telegram-desktop -- %u'
 Icon=telegram-desktop
 Terminal=false
 StartupWMClass=TelegramDesktop
 Type=Application
 Categories=Chat;Network;InstantMessaging;Qt;
-MimeType=x-scheme-handler/tg;
+MimeType=text/html;x-scheme-handler/tg;
 Keywords=tg;chat;im;messaging;messenger;sms;tdesktop;
 #Actions=Quit;
 

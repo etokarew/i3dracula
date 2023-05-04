@@ -122,7 +122,7 @@ case $1 in
         ;;
 
     telegram)
-        nohup telegram-desktop -- %u &> /dev/null &
+        DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus" nohup telegram-desktop -- %u &> /dev/null &
         ;;
 
     terminal)
