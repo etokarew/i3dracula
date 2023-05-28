@@ -124,6 +124,8 @@ A fast and easy-to-use tool for creating status bars.
 <details><summary>Box</summary>
 <div align="center"><img src="https://raw.githubusercontent.com/etokarew/i3dracula/main/captures/current.png" alt="Current"></div>
 <br>
+<div align="center"><img src="https://raw.githubusercontent.com/etokarew/i3dracula/main/captures/current-polybar.png" alt="Current (Polybar)"></div>
+<br>
 <div>
   <img src="https://raw.githubusercontent.com/etokarew/i3dracula/main/captures/hdmi.png" alt="HDMI" align="left" height="270px">
   <img src="https://raw.githubusercontent.com/etokarew/i3dracula/main/captures/dvi.png" alt="DVI" align="right" height="480px">
