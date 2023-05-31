@@ -38,12 +38,22 @@
 - [Xresources](https://github.com/dracula/xresources)
 
 </details>
+
 <details><summary>Non-trivial</summary>
 
 - [CopyQ](https://github.com/dracula/copyq) [⚙️](./config/copyq/themes/dracula.ini)
 - [tint2](https://github.com/dracula/tint2) [⚙️](./config/tint2/tint2rc)
 
 </details>
+
+# @TODO
++ [x] Make **@TODO** list
+- [ ] Analize possibility of usage `fprintd` in `i3lock`
++ [x] Replace `i3lock` with `i3lock-color`
+- [ ] Integrate with the [GNOME Flashback](https://packages.gentoo.org/packages/gnome-base/gnome-flashback) session like in [Regolith](https://regolith-linux.org/)
+
+# Links
+[Author 🧛](https://github.com/zenorocha) | [PRO](https://draculatheme.com/pro)
 
 # Banners
 <details><summary>Polybar</summary>
@@ -55,7 +65,6 @@
 <p align="center">
 A fast and easy-to-use tool for creating status bars.
 </p>
-
 <p align="center">
 <a href="https://github.com/polybar/polybar/releases"><img src="https://img.shields.io/github/release/polybar/polybar.svg"></a>
 <a href="https://github.com/polybar/polybar/releases"><img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/polybar/polybar/total" /></a>
@@ -78,7 +87,6 @@ A fast and easy-to-use tool for creating status bars.
     alt="Starship – Cross-shell prompt"
   />
 </p>
-
 <p align="center">
   <a href="https://github.com/starship/starship/actions"
     ><img
@@ -108,18 +116,6 @@ A fast and easy-to-use tool for creating status bars.
 </p>
 </details>
 
-# @TODO
-- [x] Make **@TODO** list;
-+ [ ] Add battery module to:
-  - [x] `i3blocks` (via `neofetch`);
-  + [ ] `Polybar` ([wiki](https://github.com/polybar/polybar/wiki/Module:-battery)).
-+ [ ] Analize possibility of usage `fprintd` in `i3lock`;
-- [x] Replace `i3lock` with `i3lock-color`.
-
-# Links
-* [Author](https://github.com/zenorocha)
-* [PRO](https://draculatheme.com/pro)
-
 # Captures
 <details><summary>Box</summary>
   <br>
@@ -131,4 +127,4 @@ A fast and easy-to-use tool for creating status bars.
     <img src="https://raw.githubusercontent.com/etokarew/i3dracula/main/captures/hdmi.png" alt="HDMI" align="left" height="270px">
     <img src="https://raw.githubusercontent.com/etokarew/i3dracula/main/captures/dvi.png" alt="DVI" align="right" height="480px">
   </div>
-</summary>
+</details>
