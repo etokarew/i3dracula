@@ -8,6 +8,9 @@ export LC_COLLATE="C"
 # Default editor
 export EDITOR="/usr/bin/nano"
 
+# Default pager
+export PAGER="bat --theme Dracula"
+
 # Limit of history file size
 export HISTFILESIZE=1000
 
