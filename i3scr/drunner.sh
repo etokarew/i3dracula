@@ -13,7 +13,7 @@ case $1 in
             /usr/src/$USER/dracula-pro/wallpapers/dracula-pro/phone-1080x1920.png \
             &> /dev/null &
         nohup setxkbmap -layout "us,ru" -option "grp:alt_space_toggle,grp:caps_toggle" -model "logitech" &> /dev/null &
-        nohup snixembed --proxy &> /dev/null &
+        nohup snixembed --fork &> /dev/null &
         nohup dunst &> /dev/null &
 
         #nohup ibus-daemon -d --replace --desktop=i3 &> /dev/null &
