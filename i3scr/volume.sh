@@ -1,47 +1,30 @@
 #!/bin/bash
 
-# Volume notification: Pulseaudio and dunst
-# inspired by gist.github.com/sebastiencs/5d7227f388d93374cebdf72e783fbd6a
-
-#icon_path=/usr/share/icons/Numix/scalable/status/
 icon_path=/home/$USER/.icons/dracula/symbolic/status/
 
-notify_id=506
+NOTIFYID=506
 STEP=2; CHUNKS=50
 
-sink_or=1; sink_nr=0
-while read -rs sink
-do
-    if [[ $(echo -n "$sink" | awk '{ print $1 }') == '*' ]]
-    then
-        sink_nr=$(echo -n "$sink" | awk '{ print $3 }')
-        break
-    else
-        sink_nr=$(echo -n "$sink" | awk '{ print $2 }')
-        sink_or=$(( $sink_or + 1 ))
-    fi
-done < <(pacmd list-sinks | awk '/index: [[:digit:]]/')
-
-# legacy
+# legacy from PulseAudio
 function get_active {
     sink=$(pacmd list-sinks | awk '/\* index:/' | cut -d ':' -f 2 | sed 's/ //g')
     if [[ -z $sink || $sink -lt 0 ]]; then sink=0; fi
-    echo -n $sink
+    echo $sink
 }
 
 function get_volume {
-    pacmd list-sinks | awk '/\tvolume:/ { print $5 }' | head -n $sink_or | tail -n1 | cut -d '%' -f 1
+    pactl get-sink-volume @DEFAULT_SINK@ | awk '/Volume:/ { print $5 }' | cut -d '%' -f 1
 }
 
 function get_volume_icon {
     if [[ $1 -lt 34 ]]; then
-        echo -n "audio-volume-low-symbolic.svg"
+        echo "audio-volume-low-symbolic.svg"
     elif [[ $1 -lt 67 ]]; then
-        echo -n "audio-volume-medium-symbolic.svg"
+        echo "audio-volume-medium-symbolic.svg"
     elif [[ $1 -le 100 ]]; then
-        echo -n "audio-volume-high-symbolic.svg"
+        echo "audio-volume-high-symbolic.svg"
     else
-        echo -n "audio-volume-overamplified-symbolic.svg"
+        echo "audio-volume-overamplified-symbolic.svg"
     fi
 }
 
@@ -55,7 +38,7 @@ function generate_bar {
         if [[ $i -le $quotient ]]; then bar+=$ch; else bar+=$chex; fi
     done
 
-    echo -n $bar
+    echo $bar
     #return bar
 }
 
@@ -63,46 +46,55 @@ function volume_notification {
     volume=`get_volume`
     vol_icon=`get_volume_icon $volume`
     bar=`generate_bar $volume 0`
-    dunstify -r $notify_id -u low -i $icon_path$vol_icon "$bar $volume%"
+    dunstify -r $NOTIFYID -u low -i $icon_path$vol_icon "$bar $volume%"
+}
+
+function get_muted {
+    pactl get-sink-mute @DEFAULT_SINK@ | awk '/Mute:/ { print $2 }'
 }
 
 function mute_notification {
-    muted=$(pacmd list-sinks | awk '/muted/ { print $2 }' | head -n $sink_or | tail -n1)
+    muted=`get_muted`
     volume=`get_volume`
-    if [[ "$muted" == 'yes' ]]
+    if [[ "$muted" == 'да' ]]
     then
-        dunstify -r $notify_id -u low -i ${icon_path}audio-volume-muted-symbolic.svg `generate_bar $volume 1`
+        dunstify -r $NOTIFYID -u low -i ${icon_path}audio-volume-muted-symbolic.svg `generate_bar $volume 1`
     else
         bar=`generate_bar $volume 0`
-        dunstify -r $notify_id -u low -i ${icon_path}`get_volume_icon $volume` "$bar $volume%"
+        dunstify -r $NOTIFYID -u low -i ${icon_path}`get_volume_icon $volume` "$bar $volume%"
     fi
 }
 
 function get_volume_char {
     res=?
-    muted=$(pacmd list-sinks | awk '/muted/ { print $2 }' | head -n $sink_or | tail -n1)
-    if [[ "$muted" == 'yes' ]]; then res=
+    muted=`get_muted`
+    if [[ "$muted" == 'да' ]]; then res=
     else
-           volume=`get_volume`
-            if [[ $volume -lt 34 ]]; then res=; elif [[ $volume -lt 67 ]]; then res=; else res=; fi
-            res=$(echo -n $res $volume%); fi
-    echo -ne $res
+       volume=`get_volume`
+        if [[ $volume -lt 34 ]]
+        then
+            res=
+        elif [[ $volume -lt 67 ]]
+        then
+            res=
+        else
+            res=
+        fi
+        res=$(echo $res $volume%); fi
+    echo -e $res
 }
 
 case $1 in
     up)
-        #pactl set-sink-volume $sink_nr +5%
-        amixer -D pulse sset Master $STEP%+
+        pactl set-sink-volume @DEFAULT_SINK@ +$STEP%
         volume_notification
         ;;
     down)
-        #pactl set-sink-volume $sink_nr -5%
-        amixer -D pulse sset Master $STEP%-
+        pactl set-sink-volume @DEFAULT_SINK@ -$STEP%
         volume_notification
         ;;
     mute)
-        #pactl set-sink-mute $sink_nr toggle
-        amixer -D pulse sset Master toggle-mute
+        pactl set-sink-mute @DEFAULT_SINK@ toggle
         mute_notification
         ;;
     get)
