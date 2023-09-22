@@ -17,10 +17,24 @@ command=~/.i3scr/volume.sh get
 interval=1
 min_width=100
 
+[kbd-layout-switch-us]
+full_text=
+color=#f1fa8c
+command=setxkbmap -layout "us"
+separator=false
+min_width=40
+
+[kbd-layout-switch-us-ru]
+full_text=
+color=#50fa7b
+command=setxkbmap -layout "us,ru"
+separator=false
+min_width=40
+
 [kbd-layout]
 command=~/.i3scr/kbd-layout.sh
 interval=1
-min_width=100
+min_width=70
 
 [i3-lock]
 full_text=
