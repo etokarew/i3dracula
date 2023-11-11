@@ -1,17 +1,18 @@
 #!/bin/sh
+# xrandr --listmonitors
+# xrandr --output HDMI-A-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 
 case $1 in
     autolaunch)
-        #nohup xrandr --output HDMI-A-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal &
         nohup xrandr --output DVI-D-0 --rotate right &> /dev/null &
         nohup xset +dpms dpms 0 0 300 &> /dev/null &
         nohup xset s off &> /dev/null &
         nohup picom -b &> /dev/null &
-        # xrandr --listmonitors &
         nohup feh --image-bg "#282a36" --bg-center \
             /usr/src/$USER/dracula-pro/wallpapers/dracula-pro/desktop-1920x1080.png \
             /usr/src/$USER/dracula-pro/wallpapers/dracula-pro/phone-1080x1920.png \
-            &> /dev/null &
+        &> /dev/null &
+
         nohup setxkbmap -layout "us,ru" -option "grp:alt_space_toggle,grp:caps_toggle" -model "logitech" &> /dev/null &
         nohup snixembed --fork &> /dev/null &
         nohup dunst &> /dev/null &
@@ -21,15 +22,10 @@ case $1 in
         nohup gnome-keyring-daemon --daemonize &> /dev/null &
         #nohup gnome-session-i3 --failsafe &> /dev/null &
         #nohup gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true &> /dev/null &
-        nohup nm-applet &> /dev/null &
 
-        #nohup transmission-gtk --minimized &> /dev/null &
         nohup redshift-gtk -c $HOME/.config/redshift.conf &> /dev/null &
-        nohup clipit &> /dev/null &
-        nohup dropbox start -i &> /dev/null &
+        nohup nm-applet &> /dev/null &
         nohup solus-update-checker &> /dev/null &
-        nohup x0vncserver -RawKeyboard -Geometry 1920x1080 \
-            -PasswordFile /home/larry/.vnc/passwd -DisconnectClients=0 -NeverShared &> /dev/null &
         ;;
 
     calculator)
