@@ -1,49 +1,30 @@
 align=center
 separator_block_width=5
 
-[dunst]
-command=~/.i3scr/dunst-state.sh
+[date]
+command=echo -ne " " && date +"%a %e %b"
 interval=1
-color=#ff79c6
+min_width=125
 separator=false
 
 [time]
-command=echo -ne " " && date +%T
+command=echo -ne " " && date +%H:%M
 interval=1
-min_width=150
+min_width=100
+separator=false
+
+[dunst]
+command=~/.i3scr/dunst-state.sh
+interval=1
+min_width=100
+color=#ff79c6
 
 [volume]
 command=~/.i3scr/volume.sh get
 interval=1
-min_width=100
-
-[kbd-layout-switch-us]
-full_text=
-color=#f1fa8c
-command=setxkbmap -layout "us"
-separator=false
-min_width=40
-
-[kbd-layout-switch-us-ru]
-full_text=
-color=#50fa7b
-command=setxkbmap -layout "us,ru"
-separator=false
-min_width=40
+min_width=125
 
 [kbd-layout]
 command=~/.i3scr/kbd-layout.sh
 interval=1
-min_width=70
-
-[i3-lock]
-full_text=
-command=~/.i3scr/draculocker.sh
-min_width=50
-separator=false
-
-[i3-quit]
-full_text=
-command=~/.i3scr/drunner.sh i3logout
-color=#ff5555
-min_width=40
+min_width=100
