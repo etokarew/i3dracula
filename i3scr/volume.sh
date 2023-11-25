@@ -1,9 +1,11 @@
 #!/bin/bash
 
-icon_path=/home/$USER/.icons/dracula/symbolic/status/
+#icon_path=/home/$USER/.icons/dracula/symbolic/status/
+icon_path=/home/$USER/.local/share/icons/Colloid-dracula-dark/status/symbolic/
 
 NOTIFYID=506
 STEP=2; CHUNKS=50
+
 
 # legacy from PulseAudio
 function get_active {
@@ -46,7 +48,9 @@ function volume_notification {
     volume=`get_volume`
     vol_icon=`get_volume_icon $volume`
     bar=`generate_bar $volume 0`
-    dunstify -r $NOTIFYID -u low -i $icon_path$vol_icon "$bar $volume%"
+    #dunstify -r $NOTIFYID -u low -i $icon_path$vol_icon "$bar $volume%"
+    notify-send -c volume -h string:synchronous:volume -h int:value:$volume \
+        -i $icon_path$vol_icon 'summary' 'body'
 }
 
 function get_muted {
@@ -58,10 +62,14 @@ function mute_notification {
     volume=`get_volume`
     if [[ "$muted" == 'да' ]]
     then
-        dunstify -r $NOTIFYID -u low -i ${icon_path}audio-volume-muted-symbolic.svg `generate_bar $volume 1`
+        #dunstify -r $NOTIFYID -u low -i ${icon_path}audio-volume-muted-symbolic.svg `generate_bar $volume 1`
+        notify-send -c volume -h string:synchronous:volume -h int:value:0 \
+            -i ${icon_path}audio-volume-muted-symbolic.svg 'Foo' 'bar'
     else
         bar=`generate_bar $volume 0`
-        dunstify -r $NOTIFYID -u low -i ${icon_path}`get_volume_icon $volume` "$bar $volume%"
+        #dunstify -r $NOTIFYID -u low -i ${icon_path}`get_volume_icon $volume` "$bar $volume%"
+        notify-send -c volume -h string:synchronous:volume -h int:value:$volume \
+            -i ${icon_path}`get_volume_icon $volume` 'spam' 'eggs'
     fi
 }
 
