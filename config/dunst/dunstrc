@@ -29,7 +29,17 @@
     # The maximum height of a single notification, excluding the frame.
     height = 300
 
-    # Position the notification in the top right corner
+    # The origin of the notification window on the screen
+    # It can then be moved with offset. Origin can be one of:
+    #  top-left
+    #  top-center
+    #  top-right (default)
+    #  bottom-left
+    #  bottom-center
+    #  bottom-right
+    #  left-center
+    #  center
+    #  right-center
     origin = bottom-center
 
     # Offset from the origin
