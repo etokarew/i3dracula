@@ -3,7 +3,7 @@
 
 include "/home/larry/.gtkrc-2.0.mine"
 gtk-theme-name="Colloid-Dark-Dracula"
-gtk-icon-theme-name="Tela-circle-dracula-dark"
+gtk-icon-theme-name="Papirus-Dark"
 gtk-font-name="Droid Sans 10"
 gtk-cursor-theme-name="Dracula-cursors"
 gtk-cursor-theme-size=24
