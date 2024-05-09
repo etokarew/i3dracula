@@ -12,6 +12,7 @@
   - [Dracula](https://github.com/matheuuus/dracula-icons)
   - [Colloid](https://github.com/vinceliuice/Colloid-icon-theme)
   - [Tela Circle](https://github.com/vinceliuice/Tela-circle-icon-theme)
+  - [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) with [Folders](https://github.com/dracula/papirus-folders)
 - Wallpapers:
   - [Dracula](https://github.com/dracula/wallpaper) [PRO](https://draculatheme.com/pro)
   - [GNOME](https://gitlab.gnome.org/GNOME/gnome-backgrounds)
