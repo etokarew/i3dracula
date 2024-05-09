@@ -127,7 +127,17 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws0 "0"
+set $ws0 "10"
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
 
 # numpad bindings
 set $KP_0 KP_Insert
@@ -157,6 +167,16 @@ bindsym $default_mod+7 workspace $ws7
 bindsym $default_mod+8 workspace $ws8
 bindsym $default_mod+9 workspace $ws9
 bindsym $default_mod+0 workspace $ws0
+bindsym $default_mod+Control+1 workspace $ws11
+bindsym $default_mod+Control+2 workspace $ws12
+bindsym $default_mod+Control+3 workspace $ws13
+bindsym $default_mod+Control+4 workspace $ws14
+bindsym $default_mod+Control+5 workspace $ws15
+bindsym $default_mod+Control+6 workspace $ws16
+bindsym $default_mod+Control+7 workspace $ws17
+bindsym $default_mod+Control+8 workspace $ws18
+bindsym $default_mod+Control+9 workspace $ws19
+bindsym $default_mod+Control+0 workspace $ws20
 
 # switch to workspace (numpad)
 bindsym $default_mod+$KP_1 workspace $ws1
@@ -169,6 +189,16 @@ bindsym $default_mod+$KP_7 workspace $ws7
 bindsym $default_mod+$KP_8 workspace $ws8
 bindsym $default_mod+$KP_9 workspace $ws9
 bindsym $default_mod+$KP_0 workspace $ws0
+bindsym $default_mod+Control+$KP_1 workspace $ws11
+bindsym $default_mod+Control+$KP_2 workspace $ws12
+bindsym $default_mod+Control+$KP_3 workspace $ws13
+bindsym $default_mod+Control+$KP_4 workspace $ws14
+bindsym $default_mod+Control+$KP_5 workspace $ws15
+bindsym $default_mod+Control+$KP_6 workspace $ws16
+bindsym $default_mod+Control+$KP_7 workspace $ws17
+bindsym $default_mod+Control+$KP_8 workspace $ws18
+bindsym $default_mod+Control+$KP_9 workspace $ws19
+bindsym $default_mod+Control+$KP_0 workspace $ws20
 
 # switch to workspace (arrows)
 bindsym Control+$alternate_mod+Left workspace prev
@@ -185,6 +215,16 @@ bindsym $default_mod+Shift+7 move container to workspace $ws7
 bindsym $default_mod+Shift+8 move container to workspace $ws8
 bindsym $default_mod+Shift+9 move container to workspace $ws9
 bindsym $default_mod+Shift+0 move container to workspace $ws0
+bindsym $default_mod+Shift+Control+1 move container to workspace $ws11
+bindsym $default_mod+Shift+Control+2 move container to workspace $ws12
+bindsym $default_mod+Shift+Control+3 move container to workspace $ws13
+bindsym $default_mod+Shift+Control+4 move container to workspace $ws14
+bindsym $default_mod+Shift+Control+5 move container to workspace $ws15
+bindsym $default_mod+Shift+Control+6 move container to workspace $ws16
+bindsym $default_mod+Shift+Control+7 move container to workspace $ws17
+bindsym $default_mod+Shift+Control+8 move container to workspace $ws18
+bindsym $default_mod+Shift+Control+9 move container to workspace $ws19
+bindsym $default_mod+Shift+Control+0 move container to workspace $ws20
 
 # move focused container to workspace (numpad)
 bindsym $default_mod+Shift+$KP_1 move container to workspace $ws1
@@ -197,6 +237,16 @@ bindsym $default_mod+Shift+$KP_7 move container to workspace $ws7
 bindsym $default_mod+Shift+$KP_8 move container to workspace $ws8
 bindsym $default_mod+Shift+$KP_9 move container to workspace $ws9
 bindsym $default_mod+Shift+$KP_0 move container to workspace $ws0
+bindsym $default_mod+Shift+Control+$KP_1 move container to workspace $ws11
+bindsym $default_mod+Shift+Control+$KP_2 move container to workspace $ws12
+bindsym $default_mod+Shift+Control+$KP_3 move container to workspace $ws13
+bindsym $default_mod+Shift+Control+$KP_4 move container to workspace $ws14
+bindsym $default_mod+Shift+Control+$KP_5 move container to workspace $ws15
+bindsym $default_mod+Shift+Control+$KP_6 move container to workspace $ws16
+bindsym $default_mod+Shift+Control+$KP_7 move container to workspace $ws17
+bindsym $default_mod+Shift+Control+$KP_8 move container to workspace $ws18
+bindsym $default_mod+Shift+Control+$KP_9 move container to workspace $ws19
+bindsym $default_mod+Shift+Control+$KP_0 move container to workspace $ws20
 
 # move container
 bindsym $default_mod+z move workspace to output left
@@ -269,8 +319,11 @@ bar {
 # The middle button over a titlebar kills the window
 bindsym --release button2 kill
 
-# The middle button and a modifier over any part of the window toggles floating
-bindsym --whole-window $default_mod+button2 floating toggle
+# The middle button and a modifier over any part of the window kill it
+bindsym --whole-window $default_mod+button2 kill
+
+# The middle button and a modifier's and Shift buttons toggle the floating
+bindsym --whole-window $default_mod+Shift+button2 floating toggle
 
 # The side buttons switch current song
 bindsym --whole-window $default_mod+button8 exec playerctl previous
@@ -307,7 +360,7 @@ for_window [all] title_window_icon padding 3px
 #for_window [class="^.*"] border pixel 2
 
 # force floating for all new windows
-#for_window [class="[.]*"] floating enable
+for_window [class="[.]*"] floating enable
 
 smart_gaps on
 smart_borders no_gaps
@@ -322,16 +375,15 @@ bindsym $default_mod+u exec "~/.i3scr/drunner.sh updater"
 
 #bindsym $alternate_mod+F1 exec help
 bindsym $alternate_mod+F2 exec --no-startup-id $dmenu_run
-#bindsym $alternate_mod+F3 exec search
+bindsym $alternate_mod+F3 exec --no-startup-id "~/.i3scr/drunner.sh rofi"
 bindsym $alternate_mod+F4 kill
-bindsym $alternate_mod+F5 floating toggle
+#bindsym $alternate_mod+F5 ...
 bindsym $alternate_mod+F6 focus left
-#bindsym $alternate_mod+F7 move
+#bindsym $alternate_mod+F7 move current window
 bindsym $alternate_mod+F8 mode ""
 #bindsym $alternate_mod+F9 minimize
 bindsym $alternate_mod+F10 floating toggle
 bindsym $alternate_mod+F11 fullscreen toggle
-bindsym $alternate_mod+F12 exec "~/.i3scr/drunner.sh settings"
 
 # Problem with copy to clipboard under i3!
 # Do not close a GNOME screenshot window until you was pasted your image!
