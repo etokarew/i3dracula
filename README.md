@@ -24,7 +24,7 @@
   - [neofetch](https://github.com/dylanaraps/neofetch) — A command-line system information tool
   - [Starship](https://starship.rs/) — The minimal, blazing-fast, and infinitely customizable prompt for any shell [⚙️](./config/starship.toml)
   - [snixembed](https://git.sr.ht/~steef/snixembed) — proxy StatusNotifierItems as XEmbedded systemtray-spec icons
-  - [xrandr](https://x.org/releases/current/doc/man/man1/xrandr.1.xhtml), [feh](https://feh.finalrewind.org/), [setxkbmap](https://linux.die.net/man/1/setxkbmap), [xcursorgen](https://linux.die.net/man/1/xcursorgen)
+  - [xrandr](https://x.org/releases/current/doc/man/man1/xrandr.1.xhtml), [feh](https://feh.finalrewind.org/), [setxkbmap](https://linux.die.net/man/1/setxkbmap), [xcursorgen](https://linux.die.net/man/1/xcursorgen), [xprop](https://gitlab.freedesktop.org/xorg/app/xprop), [Xdotool](https://directory.fsf.org/wiki/Xdotool)
   - [Gawk](https://www.gnu.org/software/gawk/), [GNU coreutils](https://www.gnu.org/software/coreutils/), etc...
 
 # Color schemes
@@ -118,15 +118,5 @@ A fast and easy-to-use tool for creating status bars.
 </p>
 </details>
 
-# Captures
-<details><summary>Box</summary>
-  <br>
-  <div align="center"><img src="https://raw.githubusercontent.com/etokarew/i3dracula/main/captures/current.png" alt="Current"></div>
-  <br>
-  <div align="center"><img src="https://raw.githubusercontent.com/etokarew/i3dracula/main/captures/current-polybar.png" alt="Current (Polybar)"></div>
-  <br>
-  <div>
-    <img src="https://raw.githubusercontent.com/etokarew/i3dracula/main/captures/hdmi.png" alt="HDMI" align="left" height="270px">
-    <img src="https://raw.githubusercontent.com/etokarew/i3dracula/main/captures/dvi.png" alt="DVI" align="right" height="480px">
-  </div>
-</details>
+# Current View
+![Screenshot of current config](/captures/current.png)
