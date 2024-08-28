@@ -53,6 +53,7 @@
 - [ ] Analize possibility of usage `fprintd` in `i3lock`
 + [x] Replace `i3lock` with `i3lock-color`
 - [ ] Integrate with the [GNOME Flashback](https://packages.gentoo.org/packages/gnome-base/gnome-flashback) session like in [Regolith](https://regolith-linux.org/)
+- [ ] Move to [Zsh](https://draculatheme.com/zsh) with [syntax highlighting](https://draculatheme.com/zsh-syntax-highlighting)
 
 # Links
 [Author 🧛](https://github.com/zenorocha) | [PRO](https://draculatheme.com/pro)
