@@ -101,6 +101,14 @@ case $1 in
         nohup gnome-screenshot --interactive &> /dev/null &
         ;;
 
+    screenshot-window)
+        nohup gnome-screenshot -wib &> /dev/null &
+        ;;
+
+    screenshot-area)
+        nohup gnome-screenshot -ai &> /dev/null &
+        ;;
+
     settings)
         nohup gnome-control-center info-overview &> /dev/null &
         ;;

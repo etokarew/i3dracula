@@ -385,9 +385,9 @@ bindsym $alternate_mod+F8 mode ""
 bindsym $alternate_mod+F10 floating toggle
 bindsym $alternate_mod+F11 fullscreen toggle
 
-# Problem with copy to clipboard under i3!
-# Do not close a GNOME screenshot window until you was pasted your image!
 bindsym Print exec "~/.i3scr/drunner.sh screenshot"
+bindsym $alternate_mod+Sys_Req exec "~/.i3scr/drunner.sh screenshot-window"
+bindsym Shift+Print exec "~/.i3scr/drunner.sh screenshot-area"
 
 bindsym $default_mod+e exec "~/.i3scr/drunner.sh recent"
 bindsym $default_mod+j exec "~/.i3scr/drunner.sh downloads"
