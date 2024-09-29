@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=snixembed
+Comment=Proxy StatusNotifierItems as XEmbedded systemtray-spec icons
+Icon=systemtray
+Exec=snixembed --fork
+Type=Application
+Categories=Utility;
+OnlyShowIn=XFCE;
+Terminal=false
+Hidden=false
+NoDisplay=true
