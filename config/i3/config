@@ -9,6 +9,8 @@ set $alternate_mod Mod1
 font pango:JetBrains Mono 10
 
 ########## Keybindings ##########
+
+### Lockscreen ###
 bindsym $default_mod+Shift+s exec --no-startup-id ~/.i3scr/draculocker.sh
 bindsym $default_mod+l exec --no-startup-id ~/.i3scr/draculocker.sh
 bindsym Control+$alternate_mod+l exec --no-startup-id ~/.i3scr/draculocker.sh
@@ -28,6 +30,10 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
 
+# The side buttons switch current song
+bindsym --whole-window $default_mod+button8 exec playerctl previous
+bindsym --whole-window $default_mod+button9 exec playerctl next
+
 ### Sound ###
 # Raise Volume
 #bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
@@ -42,6 +48,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id ~/.i3scr/volume.sh down
 # Toggle muting
 #bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mute
 bindsym XF86AudioMute exec --no-startup-id ~/.i3scr/volume.sh mute
+
+### Heap ###
 
 # Use Mouse+$default_mod to drag floating windows to their wanted position
 floating_modifier $default_mod
@@ -113,7 +121,7 @@ bindsym $default_mod+b focus child
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $default_mod+minus scratchpad show
+#bindsym $default_mod+minus scratchpad show
 
 # Define names for default workspaces for which
 #  we configure key bindings later on.
@@ -178,7 +186,30 @@ bindsym $default_mod+Control+8 workspace $ws18
 bindsym $default_mod+Control+9 workspace $ws19
 bindsym $default_mod+Control+0 workspace $ws20
 
-# switch to workspace (numpad)
+# switch to workspace (when numpad is turn on)
+# unix.stackexchange.com/questions/566566
+bindsym $default_mod+mod2+KP_1 workspace $ws1
+bindsym $default_mod+mod2+KP_2 workspace $ws2
+bindsym $default_mod+mod2+KP_3 workspace $ws3
+bindsym $default_mod+mod2+KP_4 workspace $ws4
+bindsym $default_mod+mod2+KP_5 workspace $ws5
+bindsym $default_mod+mod2+KP_6 workspace $ws6
+bindsym $default_mod+mod2+KP_7 workspace $ws7
+bindsym $default_mod+mod2+KP_8 workspace $ws8
+bindsym $default_mod+mod2+KP_9 workspace $ws9
+bindsym $default_mod+mod2+KP_0 workspace $ws0
+bindsym $default_mod+Control+mod2+KP_1 workspace $ws11
+bindsym $default_mod+Control+mod2+KP_2 workspace $ws12
+bindsym $default_mod+Control+mod2+KP_3 workspace $ws13
+bindsym $default_mod+Control+mod2+KP_4 workspace $ws14
+bindsym $default_mod+Control+mod2+KP_5 workspace $ws15
+bindsym $default_mod+Control+mod2+KP_6 workspace $ws16
+bindsym $default_mod+Control+mod2+KP_7 workspace $ws17
+bindsym $default_mod+Control+mod2+KP_8 workspace $ws18
+bindsym $default_mod+Control+mod2+KP_9 workspace $ws19
+bindsym $default_mod+Control+mod2+KP_0 workspace $ws20
+
+# switch to workspace (when numpad is turn off)
 bindsym $default_mod+$KP_1 workspace $ws1
 bindsym $default_mod+$KP_2 workspace $ws2
 bindsym $default_mod+$KP_3 workspace $ws3
@@ -226,7 +257,7 @@ bindsym $default_mod+Shift+Control+8 move container to workspace $ws18
 bindsym $default_mod+Shift+Control+9 move container to workspace $ws19
 bindsym $default_mod+Shift+Control+0 move container to workspace $ws20
 
-# move focused container to workspace (numpad)
+# move focused container to workspace (it doesn't matter if numpad on)
 bindsym $default_mod+Shift+$KP_1 move container to workspace $ws1
 bindsym $default_mod+Shift+$KP_2 move container to workspace $ws2
 bindsym $default_mod+Shift+$KP_3 move container to workspace $ws3
@@ -313,21 +344,8 @@ bar {
         }
         height 30
 
-        bindsym --release button2 exec "~/.i3scr/drunner.sh screenshot"
+        bindsym --release button2 restart
 }
-
-# The middle button over a titlebar kills the window
-bindsym --release button2 kill
-
-# The middle button and a modifier over any part of the window kill it
-bindsym --whole-window $default_mod+button2 kill
-
-# The middle button and a modifier's and Shift buttons toggle the floating
-bindsym --whole-window $default_mod+Shift+button2 floating toggle
-
-# The side buttons switch current song
-bindsym --whole-window $default_mod+button8 exec playerctl previous
-bindsym --whole-window $default_mod+button9 exec playerctl next
 
 ########## Polybar ##########
 #exec_always --no-startup-id polybar --config=$HOME/.config/polybar foo
@@ -356,6 +374,15 @@ for_window [all] title_window_icon on
 # enable window icons for all windows with extra horizontal padding
 for_window [all] title_window_icon padding 3px
 
+# The middle button over a titlebar kills the window
+bindsym --release button2 kill
+
+# The middle button and a modifier over any part of the window kill it
+bindsym --whole-window $default_mod+button2 kill
+
+# The middle button and a modifier's and Shift buttons toggle the floating
+bindsym --whole-window $default_mod+Shift+button2 floating toggle
+
 ########## i3-gaps integration ##########
 #for_window [class="^.*"] border pixel 2
 
@@ -368,18 +395,18 @@ smart_borders no_gaps
 gaps inner 5
 gaps outer 0
 
-########## Shortcuts ##########
+########## My shortcuts ##########
 bindsym Control+Shift+Escape exec "~/.i3scr/drunner.sh system-monitor"
 bindsym $default_mod+grave exec "~/.i3scr/drunner.sh terminal"
 bindsym $default_mod+u exec "~/.i3scr/drunner.sh updater"
 
-#bindsym $alternate_mod+F1 exec help
+bindsym $alternate_mod+F1 exec --no-startup-id "~/.i3scr/drunner.sh clipboard-manager"
 bindsym $alternate_mod+F2 exec --no-startup-id $dmenu_run
 bindsym $alternate_mod+F3 exec --no-startup-id "~/.i3scr/drunner.sh rofi"
 bindsym $alternate_mod+F4 kill
-#bindsym $alternate_mod+F5 ...
+#bindsym $alternate_mod+F5 unmaximize
 bindsym $alternate_mod+F6 focus left
-#bindsym $alternate_mod+F7 move current window
+#bindsym $alternate_mod+F7 move-a-window
 bindsym $alternate_mod+F8 mode ""
 #bindsym $alternate_mod+F9 minimize
 bindsym $alternate_mod+F10 floating toggle
@@ -392,7 +419,6 @@ bindsym Shift+Print exec "~/.i3scr/drunner.sh screenshot-area"
 bindsym $default_mod+e exec "~/.i3scr/drunner.sh recent"
 bindsym $default_mod+j exec "~/.i3scr/drunner.sh downloads"
 
-#bindsym $default_mod+y exec --no-startup-id "~/.i3scr/drunner.sh clipboard-manager"
 #bindsym $default_mod+k exec --no-startup-id "~/.i3scr/drunner.sh virtual-keyboard"
 bindsym $default_mod+semicolon exec "~/.i3scr/drunner.sh emoji"
 
@@ -401,7 +427,9 @@ bindsym $default_mod+n exec --no-startup-id "~/.i3scr/drunner.sh dunst-pop"
 bindsym $default_mod+i exec --no-startup-id "~/.i3scr/drunner.sh dunst-pause"
 
 bindsym $default_mod+$KP_Plus exec "~/.i3scr/drunner.sh magnifier"
+bindsym $default_mod+$KP_Minus exec "~/.i3scr/drunner.sh magnifier"
 bindsym $default_mod+plus exec "~/.i3scr/drunner.sh magnifier"
+bindsym $default_mod+minus exec "~/.i3scr/drunner.sh magnifier"
 
 bindsym $default_mod+t exec "~/.i3scr/drunner.sh telegram"
 
@@ -410,5 +438,5 @@ bindsym XF86HomePage exec "~/.i3scr/drunner.sh firefox-new-tab"
 bindsym XF86Mail exec "~/.i3scr/drunner.sh thunderbird"
 bindsym XF86Calculator exec "~/.i3scr/drunner.sh calculator"
 
-########## Autolaunch ##########
+########## Launch services and applications ##########
 exec --no-startup-id "~/.i3scr/drunner.sh autolaunch"
