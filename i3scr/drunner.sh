@@ -81,7 +81,7 @@ case $1 in
         ;;
 
     magnifier) # snapcraft.io/magnus
-        env GTK_THEME=Breeze-Dark XCURSOR_THEME=breeze_cursors magnus --refresh-interval=100 --force-refresh &> /dev/null &
+        env XCURSOR_SIZE=24 XCURSOR_THEME=breeze_cursors GTK_THEME=Breeze-Dark nohup magnus --refresh-interval=100 --force-refresh &> /dev/null &
         ;;
 
     recent)

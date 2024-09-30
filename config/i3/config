@@ -8,7 +8,7 @@ set $alternate_mod Mod1
 # is used in the bar {} block below.
 font pango:JetBrains Mono 10
 
-########## Keybindings ##########
+########## Keybindings (a bit) ##########
 
 ### Lockscreen ###
 bindsym $default_mod+Shift+s exec --no-startup-id ~/.i3scr/draculocker.sh
@@ -49,7 +49,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id ~/.i3scr/volume.sh down
 #bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mute
 bindsym XF86AudioMute exec --no-startup-id ~/.i3scr/volume.sh mute
 
-### Heap ###
+########## Keybindings & settings ##########
 
 # Use Mouse+$default_mod to drag floating windows to their wanted position
 floating_modifier $default_mod
@@ -363,7 +363,7 @@ client.urgent              #44475A #FF5555 #282A36 #FF5555   #FF5555
 client.placeholder         #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background          #F8F8F2
 
-########## Title-bar ##########
+########## Titlebar ##########
 # print all window titles bold in^W the^W center^W
 for_window [class=".*"] title_format "<b>%title</b>"
 #title_align center
@@ -395,7 +395,7 @@ smart_borders no_gaps
 gaps inner 5
 gaps outer 0
 
-########## My shortcuts ##########
+########## Custom shortcuts ##########
 bindsym Control+Shift+Escape exec "~/.i3scr/drunner.sh system-monitor"
 bindsym $default_mod+grave exec "~/.i3scr/drunner.sh terminal"
 bindsym $default_mod+u exec "~/.i3scr/drunner.sh updater"
