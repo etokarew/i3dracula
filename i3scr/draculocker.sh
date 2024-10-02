@@ -12,6 +12,6 @@ activate() {
 #trap revert HUP INT TERM
 
 #i3lock -u -c 282a36 -p default --nofork &
-/usr/src/$(whoami)/dracula/i3lock-color/lock &
+/usr/local/src/$(whoami)/dracula/i3lock-color/lock &
 
 activate

@@ -9,8 +9,8 @@ case $1 in
         nohup xset s off &> /dev/null &
         nohup picom -b &> /dev/null &
         nohup feh --image-bg "#282a36" --bg-center \
-            /usr/src/$USER/dracula-pro/wallpapers/dracula-pro/desktop-1920x1080.png \
-            /usr/src/$USER/dracula-pro/wallpapers/dracula-pro/phone-1080x1920.png \
+            /usr/local/src/$USER/dracula-pro/wallpapers/dracula-pro/desktop-1920x1080.png \
+            /usr/local/src/$USER/dracula-pro/wallpapers/dracula-pro/phone-1080x1920.png \
         &> /dev/null &
 
         nohup setxkbmap -layout "us,ru" -option "grp:alt_space_toggle,grp:caps_toggle" -model "logitech" &> /dev/null &
