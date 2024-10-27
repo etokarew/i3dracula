@@ -54,10 +54,11 @@
 + [x] Replace `i3lock` with `i3lock-color`
 - [x] ~Integrate with the [GNOME Flashback](https://packages.gentoo.org/packages/gnome-base/gnome-flashback) session like in [Regolith](https://regolith-linux.org/)~
 - [ ] Move to [Zsh](https://draculatheme.com/zsh) with [syntax highlighting](https://draculatheme.com/zsh-syntax-highlighting)
-- Create scripts or utilities:
-  - [ ] for auto-switching of keyboard layout
-  - [ ] for auto-locking of a screen when PC is idle
-  - [ ] magnify (zoom) tool
+  - configure ^W behavior
+  - check autocompletions for bash (for example, eopkg)
+- [ ] create script for auto-switching of keyboard layout (see [i3ipc](https://pypi.org/project/i3ipc/) and [xkb-switch](https://github.com/sergei-mironov/xkb-switch))
+- [ ] create script for auto-locking of a screen when PC is idle
+- [ ] create the magnify (zoom) tool (like [this](https://github.com/tsoding/boomer))
 
 # Links
 [Author 🧛](https://github.com/zenorocha) | [PRO](https://draculatheme.com/pro)
