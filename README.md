@@ -8,6 +8,7 @@
 - [Rofi](https://github.com/davatorium/rofi) — A window switcher, application launcher and [dmenu](https://tools.suckless.org/dmenu/) replacement [⚙️](./config/rofi/config.rasi)
 - [Dunst](https://dunst-project.org/) — A lightweight replacement for the notification daemons [⚙️](./config/dunst/dunstrc)
 - [Redshift](https://github.com/jonls/redshift) — A tool that is used to adjust the color temperature of the screen [⚙️](./config/redshift.conf)
+- [nitrogen](https://github.com/l3ib/nitrogen) — A background browser and setter for X
 - Icon themes:
   - [Dracula](https://github.com/matheuuus/dracula-icons)
   - [Colloid](https://github.com/vinceliuice/Colloid-icon-theme)
@@ -24,8 +25,16 @@
   - [neofetch](https://github.com/dylanaraps/neofetch) — A command-line system information tool
   - [Starship](https://starship.rs/) — The minimal, blazing-fast, and infinitely customizable prompt for any shell [⚙️](./config/starship.toml)
   - [snixembed](https://git.sr.ht/~steef/snixembed) — proxy StatusNotifierItems as XEmbedded systemtray-spec icons
-  - [xrandr](https://x.org/releases/current/doc/man/man1/xrandr.1.xhtml), [feh](https://feh.finalrewind.org/), [setxkbmap](https://linux.die.net/man/1/setxkbmap), [xcursorgen](https://linux.die.net/man/1/xcursorgen), [xprop](https://gitlab.freedesktop.org/xorg/app/xprop), [Xdotool](https://directory.fsf.org/wiki/Xdotool)
-  - [Gawk](https://www.gnu.org/software/gawk/), [GNU coreutils](https://www.gnu.org/software/coreutils/), etc...
+  - Utilities:
+    - [xrandr](https://x.org/releases/current/doc/man/man1/xrandr.1.xhtml)
+    - [feh](https://feh.finalrewind.org/) (alternative for setting a wallpapers)
+    - [setxkbmap](https://linux.die.net/man/1/setxkbmap)
+    - [numlockx](https://github.com/rg3/numlockx)
+    - [xcursorgen](https://linux.die.net/man/1/xcursorgen)
+    - [xprop](https://gitlab.freedesktop.org/xorg/app/xprop)
+    - [Xdotool](https://directory.fsf.org/wiki/Xdotool)
+    - [Gawk](https://www.gnu.org/software/gawk/)
+    - [GNU coreutils](https://www.gnu.org/software/coreutils/)
 
 # Color schemes
 <details><summary>Trivial</summary>

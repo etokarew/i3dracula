@@ -7,23 +7,29 @@ case $1 in
         nohup xrandr --output DVI-D-0 --rotate right &> /dev/null &
         nohup xset +dpms dpms 0 0 300 &> /dev/null &
         nohup xset s off &> /dev/null &
-        nohup picom -b &> /dev/null &
-        nohup feh --image-bg "#282a36" --bg-center \
-            /usr/local/src/$USER/dracula-pro/wallpapers/dracula-pro/desktop-1920x1080.png \
-            /usr/local/src/$USER/dracula-pro/wallpapers/dracula-pro/phone-1080x1920.png \
-        &> /dev/null &
 
+        nohup picom -b &> /dev/null &
+
+        #nohup feh --image-bg "#282a36" --bg-center \
+        #    /usr/local/src/$USER/dracula-pro/wallpapers/dracula-pro/desktop-1920x1080.png \
+        #    /usr/local/src/$USER/dracula-pro/wallpapers/dracula-pro/phone-1080x1920.png \
+        #&> /dev/null &
+        nohup nitrogen --restore &> /dev/null &
+
+        #nohup ibus-daemon -d --replace --desktop=i3 &> /dev/null &
         nohup setxkbmap -layout "us,ru" -option "grp:alt_space_toggle,grp:caps_toggle" -model "logitech" &> /dev/null &
+        nohup numlockx on &> /dev/null &
+
         nohup snixembed --fork &> /dev/null &
         nohup dunst &> /dev/null &
 
-        #nohup ibus-daemon -d --replace --desktop=i3 &> /dev/null &
         nohup /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1 &> /dev/null &
         nohup gnome-keyring-daemon --daemonize &> /dev/null &
         #nohup gnome-session-i3 --failsafe &> /dev/null &
-        #nohup gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true &> /dev/null &
 
+        #nohup gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true &> /dev/null &
         nohup redshift-gtk -c $HOME/.config/redshift.conf &> /dev/null &
+
         nohup nm-applet &> /dev/null &
         nohup solus-update-checker &> /dev/null &
         ;;
