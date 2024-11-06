@@ -10,7 +10,7 @@
 - [Redshift](https://github.com/jonls/redshift) — A tool that is used to adjust the color temperature of the screen [⚙️](./config/redshift.conf)
 - [nitrogen](https://github.com/l3ib/nitrogen) — A background browser and setter for X
 - Icon themes:
-  - [Dracula](https://github.com/matheuuus/dracula-icons)
+  - Dracula: [0](https://github.com/matheuuus/dracula-icons) [1](https://github.com/m4thewz/dracula-icons)
   - [Colloid](https://github.com/vinceliuice/Colloid-icon-theme)
   - [Tela Circle](https://github.com/vinceliuice/Tela-circle-icon-theme)
   - [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) with [Folders](https://github.com/dracula/papirus-folders)
