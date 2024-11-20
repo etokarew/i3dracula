@@ -32,6 +32,8 @@ case $1 in
 
         nohup nm-applet &> /dev/null &
         nohup solus-update-checker &> /dev/null &
+
+        COPYQ_DEFAULT_ICON=1 COPYQ_SESSION_COLOR=white nohup copyq --start-server hide &> /dev/null &
         ;;
 
     calculator)
@@ -87,7 +89,7 @@ case $1 in
         ;;
 
     magnifier) # snapcraft.io/magnus
-        env XCURSOR_SIZE=24 XCURSOR_THEME=breeze_cursors GTK_THEME=Breeze-Dark nohup magnus --refresh-interval=100 --force-refresh &> /dev/null &
+        echo magnifier
         ;;
 
     recent)
