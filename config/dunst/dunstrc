@@ -24,10 +24,10 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 600
+    width = 300
 
     # The maximum height of a single notification, excluding the frame.
-    height = 300
+    height = 120
 
     # The origin of the notification window on the screen
     # It can then be moved with offset. Origin can be one of:
@@ -49,7 +49,7 @@
     scale = 0
 
     # Maximum number of notification (0 means no limit)
-    notification_limit = 6
+    notification_limit = 3
 
     ### Progress bar ###
 
@@ -65,10 +65,10 @@
     progress_bar_frame_width = 1
 
     # Set the minimum width for the progress bar
-    progress_bar_min_width = 300
+    progress_bar_min_width = 150
 
     # Set the maximum width for the progress bar
-    progress_bar_max_width = 450
+    progress_bar_max_width = 240
 
 
     # Show how many messages are currently hidden (because of
@@ -121,7 +121,7 @@
 
     ### Text ###
 
-    font = JetBrains Mono 12
+    font = JetBrains Mono 10
     word_wrap = yes
 
     # The spacing between lines.  If the height is smaller than the
@@ -201,14 +201,13 @@
     # Scale small icons up to this size, set to 0 to disable. Helpful
     # for e.g. small files or high-dpi screens. In case of conflict,
     # max_icon_size takes precedence over this.
-    min_icon_size = 32
+    min_icon_size = 24
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 64
+    max_icon_size = 32
 
     # Paths to default icons.
-    # icon_path = /home/larry/.icons/dracula/16/panel/:/home/larry/.icons/dracula/16/devices/:/home/larry/.icons/dracula/scalable/apps/
-    icon_path = /home/larry/.local/share/icons/Colloid-dracula-dark/status/16/:/home/larry/.local/share/icons/Colloid-dracula-dark/devices/16/:/home/larry/.local/share/icons/Colloid-dracula-dark/apps/scalable/
+    icon_path = /home/larry/.local/share/icons/Papirus-Dracula/24x24/status/:/home/larry/.local/share/icons/Papirus-Dracula/24x24/devices/:/home/larry/.local/share/icons/Papirus-Dracula/24x24/apps/
 
     ### History ###
 
