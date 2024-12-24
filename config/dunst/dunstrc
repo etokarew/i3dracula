@@ -207,7 +207,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /home/larry/.local/share/icons/Papirus-Dracula/24x24/status/:/home/larry/.local/share/icons/Papirus-Dracula/24x24/devices/:/home/larry/.local/share/icons/Papirus-Dracula/24x24/apps/
+    icon_path = /home/larry/.local/share/icons/Papirus-Dracula/24x24/actions/:/home/larry/.local/share/icons/Papirus-Dracula/24x24/animations/:/home/larry/.local/share/icons/Papirus-Dracula/24x24/apps/:/home/larry/.local/share/icons/Papirus-Dracula/24x24/categories/:/home/larry/.local/share/icons/Papirus-Dracula/24x24/devices/:/home/larry/.local/share/icons/Papirus-Dracula/24x24/emblems/:/home/larry/.local/share/icons/Papirus-Dracula/24x24/emotes/:/home/larry/.local/share/icons/Papirus-Dracula/24x24/mimetypes/:/home/larry/.local/share/icons/Papirus-Dracula/24x24/panel/:/home/larry/.local/share/icons/Papirus-Dracula/24x24/places/:/home/larry/.local/share/icons/Papirus-Dracula/24x24/status/
 
     ### History ###
 
