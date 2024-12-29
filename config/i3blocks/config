@@ -1,5 +1,5 @@
 align=center
-separator_block_width=5
+separator_block_width=1
 
 [date]
 command=echo -ne " " && date +"%a %e %b"
@@ -10,21 +10,21 @@ separator=false
 [time]
 command=echo -ne " " && date +%H:%M
 interval=1
-min_width=100
+min_width=75
 separator=false
 
 [dunst]
 command=~/.i3scr/dunst-state.sh
 interval=1
-min_width=100
+min_width=75
 color=#ff79c6
 
 [volume]
 command=~/.i3scr/volume.sh get
 interval=1
-min_width=125
+min_width=75
 
 [kbd-layout]
 command=~/.i3scr/kbd-layout.sh
 interval=1
-min_width=100
+min_width=75

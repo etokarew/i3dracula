@@ -21,6 +21,7 @@
   1. [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
   2. [Awesome](https://fontawesome.com/) (*icon glyphs*)
   3. [Droid Sans](https://fonts.adobe.com/fonts/droid-sans)
+  4. [Iosevka](https://typeof.net/Iosevka/)
 - Terminal Apps & Prompts:
   - [neofetch](https://github.com/dylanaraps/neofetch) — A command-line system information tool
   - [Starship](https://starship.rs/) — The minimal, blazing-fast, and infinitely customizable prompt for any shell [⚙️](./config/starship.toml)

@@ -6,7 +6,7 @@ set $alternate_mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:JetBrains Mono 10
+font pango:JetBrains Mono 8
 
 ########## Keybindings (a bit) ##########
 
@@ -62,7 +62,7 @@ bindsym $default_mod+Shift+q kill
 bindsym --release $default_mod+Shift+x exec xkill
 
 # start dmenu (a program launcher)
-set $dmenu_run "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#282A36' -fn 'Droid Sans-14' -p ''"
+set $dmenu_run "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#282A36' -fn 'Droid Sans-13' -p ''"
 bindsym $default_mod+d exec --no-startup-id $dmenu_run
 
 # Rofi launcher -- the dmenu alternative
@@ -296,61 +296,17 @@ bindsym $default_mod+Escape exec --no-startup-id "~/.i3scr/drunner.sh i3logout"
 bindsym Control+$alternate_mod+Delete exec --no-startup-id "~/.i3scr/drunner.sh i3logout"
 
 # resize window (you can also use the mouse for that)
-mode "" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $default_mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $default_mod+r mode "default"
-        bindsym $alternate_mod+F8 mode "default"
-}
+include rmode.conf
 bindsym $default_mod+r mode ""
 
 # Start i3bar to display a workspace bar
 #  (plus the system information i3status finds out, if available)
-#» xrandr --query
-bar {
-        #output HDMI-A-0
-        tray_output HDMI-A-0 # none
-
-        mode hide # dock
-        #hidden_state show
-        modifier $default_mod
-
-        status_command i3blocks
-        position bottom
-        workspace_min_width 40
-        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-        font pango:JetBrains Mono 12
-        colors {
-                background #282A36
-                statusline #F8F8F2
-                separator  #44475A
-                focused_workspace  #44475A #44475A #F8F8F2
-                active_workspace   #282A36 #44475A #F8F8F2
-                inactive_workspace #282A36 #282A36 #BFBFBF
-                urgent_workspace   #FF5555 #FF5555 #282A36
-                binding_mode       #FF5555 #FF5555 #282A36
-        }
-        height 30
-
-        bindsym --release button2 restart
-}
+#include bar.conf
 
 ########## Polybar ##########
-#exec_always --no-startup-id polybar --config=$HOME/.config/polybar foo
-#exec_always --no-startup-id polybar --config=$HOME/.config/polybar bar
-#for_window [instance=polybar] sticky enable
+exec_always --no-startup-id polybar --config=$HOME/.config/polybar top
+exec_always --no-startup-id polybar --config=$HOME/.config/polybar bottom
+for_window [instance=polybar] sticky enable
 
 ########## tint2 ##########
 #exec --no-startup-id tint2
@@ -366,7 +322,7 @@ client.background          #F8F8F2
 ########## Titlebar ##########
 # print all window titles bold in^W the^W center^W
 for_window [class=".*"] title_format "<b>%title</b>"
-#title_align center
+title_align left
 
 # enable window icons for all windows
 for_window [all] title_window_icon on
@@ -384,7 +340,11 @@ bindsym --whole-window $default_mod+button2 kill
 bindsym --whole-window $default_mod+Shift+button2 floating toggle
 
 ########## i3-gaps integration ##########
-#for_window [class="^.*"] border pixel 2
+
+#! SHOW or HIDE windows title bars
+#for_window [class="^.*"] border pixel 2 !DEPRECATED?
+default_border pixel 2
+default_floating_border pixel 2
 
 # force floating for all new windows
 for_window [class="[.]*"] floating enable
