@@ -1,0 +1,5 @@
+[D-BUS Service]
+Name=org.freedesktop.Notifications
+#Exec=/usr/lib64/mate-notification-daemon/mate-notification-daemon --idle-exit
+Exec=dunst --startup_notification
+AssumedAppArmorLabel=unconfined

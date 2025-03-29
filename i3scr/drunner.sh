@@ -56,6 +56,14 @@ case $1 in
         nohup nautilus --new-window $HOME/Dropbox &> /dev/null &
         ;;
 
+    dmenu)
+        /usr/bin/dmenu -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#282A36' -fn 'Droid Sans-13' -p ''
+        ;;
+
+    dmenu_run)
+        nohup dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#282A36' -fn 'Droid Sans-13' -p '' &> /dev/null &
+        ;;
+
     dunst-clear)
         nohup dunstctl close-all &> /dev/null &
         ;;
@@ -85,7 +93,7 @@ case $1 in
         ;;
 
     i3logout)
-        nohup i3-nagbar -t warning -m "Вы действительно хотите выйти из текущей сессии?" -b "Завершить работу i3" "i3-msg exit" &> /dev/null &
+        nohup i3-nagbar -t warning -m "Вы действительно хотите выйти из текущей сессии?" -b "Завершить работу i3" "i3-msg exit" -f "pango:JetBrains Mono 9" &> /dev/null &
         ;;
 
     magnifier) # snapcraft.io/magnus

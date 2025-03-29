@@ -22,6 +22,7 @@
   2. [Awesome](https://fontawesome.com/) (*icon glyphs*)
   3. [Droid Sans](https://fonts.adobe.com/fonts/droid-sans)
   4. [Iosevka](https://typeof.net/Iosevka/)
+  5. [Noto Color Emoji](https://fonts.google.com/noto/specimen/Noto+Color+Emoji)
 - Terminal Apps & Prompts:
   - [neofetch](https://github.com/dylanaraps/neofetch) — A command-line system information tool
   - [Starship](https://starship.rs/) — The minimal, blazing-fast, and infinitely customizable prompt for any shell [⚙️](./config/starship.toml)
@@ -54,7 +55,11 @@
 <details><summary>Non-trivial</summary>
 
 - [CopyQ](https://github.com/dracula/copyq) [⚙️](./config/copyq/themes/dracula.ini)
+- [Rofi](https://github.com/dracula/rofi) [⚙️](./config/rofi/config.rasi)
+- [Dunst](https://github.com/dracula/dunst) [⚙️](./config/dunst/dunstrc)
+- [Plank](https://github.com/dracula/plank) [⚙️](./local/share/plank/)
 - [tint2](https://github.com/dracula/tint2) [⚙️](./config/tint2/tint2rc)
+
 
 </details>
 
@@ -62,7 +67,7 @@
 + [x] Make **@TODO** list
 - [ ] Analize possibility of usage `fprintd` in `i3lock`
 + [x] Replace `i3lock` with `i3lock-color`
-- [x] ~Integrate with the [GNOME Flashback](https://packages.gentoo.org/packages/gnome-base/gnome-flashback) session like in [Regolith](https://regolith-linux.org/)~
++ [x] ~Integrate with the [GNOME Flashback](https://packages.gentoo.org/packages/gnome-base/gnome-flashback) session like in [Regolith](https://regolith-linux.org/)~
 - [ ] Move to [Zsh](https://draculatheme.com/zsh) with [syntax highlighting](https://draculatheme.com/zsh-syntax-highlighting)
   - configure ^W behavior
   - check autocompletions for bash (for example, eopkg)
@@ -72,6 +77,7 @@
 
 # Links
 [Author 🧛](https://github.com/zenorocha) | [PRO](https://draculatheme.com/pro)
+[Huge collection of Rofi themes](https://github.com/adi1090x/rofi)
 
 # Banners
 <details><summary>Polybar</summary>

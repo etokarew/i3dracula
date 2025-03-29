@@ -1,5 +1,13 @@
+
 align=center
 separator_block_width=1
+
+[xtitle]
+command=~/.i3scr/xapp-title.sh --force-title
+interval=repeat
+min_width=250
+background=#6272a4
+color=#282a36
 
 [date]
 command=echo -ne " " && date +"%a %e %b"
@@ -28,3 +36,9 @@ min_width=75
 command=~/.i3scr/kbd-layout.sh
 interval=1
 min_width=75
+
+[power-off]
+full_text=
+command=~/.i3scr/powermenu.sh
+color=#ff5555
+min_width=50
