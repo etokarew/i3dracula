@@ -139,6 +139,6 @@ A fast and easy-to-use tool for creating status bars.
 </details>
 
 # Current View
-![i3blocks](/captures/current.png)
 ![polybar](/captures/current-polybar.png)
+![i3blocks](/captures/current.png)
 ![tint2](/captures/current-tint2.png)
