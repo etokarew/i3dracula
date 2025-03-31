@@ -31,4 +31,4 @@ fi
 
 # sed to remove leading and trailing spaces
 [[ -n $perc ]] && perc="$perc%"
-echo -n "$icon $arrow $perc" | sed 's/^ //g' | sed 's/ $//g'
+echo -n "$icon $arrow $perc" | sed 's/^ //g' | sed 's/ $//g'

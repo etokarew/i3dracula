@@ -182,7 +182,7 @@ launcher_item_app = tint2conf.desktop
 
 #-------------------------------------
 # Clock
-time1_format =  %H:%M
+time1_format =  %H:%M
 time2_format = 
 time1_font = JetBrains Mono 9
 time1_timezone = 
@@ -382,4 +382,3 @@ tooltip_padding = 8 4
 tooltip_background_id = 5
 tooltip_font_color = #282a36 100
 tooltip_font = Droid Sans 10
-

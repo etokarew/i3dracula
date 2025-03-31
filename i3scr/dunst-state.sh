@@ -4,7 +4,7 @@ count=$(dunstctl count history)
 is_paused=$(dunstctl is-paused)
 
 if [[ "$is_paused" == 'true' ]]; then
-    echo -ne ""
+    echo -e ""
 else
-    echo -ne " $count"
+    echo -e " $count"
 fi

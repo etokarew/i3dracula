@@ -234,7 +234,7 @@ format = <label-layout>
 format-spacing = ${layout.def-spacing}
 
 ; %layout% %name% %number%
-label-layout =  %icon%
+label-layout =  %icon%
 ;label-layout-overline = ${color.white}
 
 ;layout-icon-default = ⌨
@@ -246,7 +246,7 @@ type = internal/date
 inherit = generic-format-style
 
 interval = 60
-date = %a%e %b
+date = %a %e %b
 label = %{A1:~/.i3scr/drunner.sh calendar:} %date%%{A}
 
 [module/time]
@@ -275,14 +275,14 @@ inherit = generic-format-style
 interval = 2
 click-right = ~/.i3scr/drunner.sh sound
 
-format-volume = <ramp-volume> <label-volume>
+format-volume = <ramp-volume> <label-volume>
 ;format-volume = <bar-volume>
 format-volume-padding = ${layout.def-padding}
 format-muted-padding = ${layout.def-padding}
 
 label-volume = %percentage:3%%
 label-volume-minlen = 4
-label-muted =  %percentage:3%%
+label-muted =  %percentage:3%%
 label-muted-minlen = 4
 ramp-volume-0 = 
 ramp-volume-1 = 
@@ -310,7 +310,7 @@ inherit = generic-format-style
 interval = 2
 
 format = <label>
-label =  %percentage:3%%
+label =  %percentage:3%%
 label-underline = ${color.cyan}
 
 [module/memory]
@@ -320,7 +320,7 @@ inherit = generic-format-style
 interval = 5
 
 format = <label>
-label =  %gb_used:9%
+label =  %gb_used:9%
 label-underline = ${color.green}
 
 ; Only applies if <ramp-used> is used
@@ -339,7 +339,7 @@ inherit = generic-format-style
 
 interval = 60
 
-format = sw <label>
+format = sw <label>
 label = %percentage_swap_used:3%%
 
 [module/filesystem]
@@ -349,7 +349,7 @@ inherit = generic-format-style
 interval = 300
 mount-0 = /home
 
-label-mounted =  %free:7%
+label-mounted =  %free:7%
 label-mounted-padding = ${layout.def-padding}
 
 [module/bandwidth]
@@ -466,12 +466,12 @@ thermal-zone = 0
 warn-temperature = 80
 
 format = <label>
-label =  %temperature-c:6%
+label =  %temperature-c:6%
 label-underline = ${color.orange}
 
 format-warn-background = ${color.red}
 format-warn-foreground = ${color.fg}
 format-warn-underline = ${color.red}
 format-warn-padding = ${layout.def-padding}
-format-warn =  <label-warn>
+format-warn =  <label-warn>
 label-warn = ${self.label}

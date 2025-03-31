@@ -32,8 +32,8 @@ while [[ $# -gt 1 ]]; do
     shift
 done
 
-[[ -z $INLABEL ]] && INLABEL=" "
-[[ -z $OUTLABEL ]] && OUTLABEL=" "
+[[ -z $INLABEL ]] && INLABEL=" "
+[[ -z $OUTLABEL ]] && OUTLABEL=" "
 
 # Use the provided interface, otherwise the device used for the default route.
 if [[ -n $BLOCK_INSTANCE ]]; then
@@ -48,7 +48,7 @@ then
     #echo "$INTERFACE down"
     #echo "#FF0000"
 
-    echo "  "
+    echo "  "
     exit 0
 fi
 
@@ -98,7 +98,7 @@ else
   echo -n "${rx_kib}K"
 fi
 
-echo -n " "
+echo -n " "
 
 # outgoing
 echo -n "$OUTLABEL"

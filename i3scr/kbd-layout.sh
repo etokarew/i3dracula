@@ -6,4 +6,4 @@ case "$(xset -q | grep LED | awk '{ print substr($10, 5, 1) }')" in
   *) lo="?" ;;
 esac
 
-echo -n " $lo"
+echo " $lo"

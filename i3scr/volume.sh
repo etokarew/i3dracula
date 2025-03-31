@@ -87,7 +87,7 @@ function get_volume_char {
         else
             res=
         fi
-        res=$(echo $res $volume%); fi
+        res=$(echo "$res $volume%"); fi
     echo -e $res
 }
 
