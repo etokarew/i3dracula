@@ -11,8 +11,8 @@ case $1 in
         nohup picom -b &> /dev/null &
 
         #nohup feh --image-bg "#282a36" --bg-center \
-        #    /usr/local/src/$USER/dracula-pro/wallpapers/dracula-pro/desktop-1920x1080.png \
-        #    /usr/local/src/$USER/dracula-pro/wallpapers/dracula-pro/phone-1080x1920.png \
+        #    /usr/local/src/dracula-pro/wallpapers/dracula-pro/desktop-1920x1080.png \
+        #    /usr/local/src/dracula-pro/wallpapers/dracula-pro/phone-1080x1920.png \
         #&> /dev/null &
         nohup nitrogen --restore &> /dev/null &
 
