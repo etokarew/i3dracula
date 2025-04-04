@@ -57,8 +57,8 @@ run_cmd() {
         elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
             bspc quit
         elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
-            if [[ -x "./drunner.sh" ]]; then
-                ./drunner.sh i3logout
+            if [[ -x "$(dirname "$0")/drunner.sh" ]]; then
+                $(dirname "$0")/drunner.sh i3logout
             elif [[ -x '/usr/bin/i3lock' ]]; then
                 i3-msg exit
             fi
@@ -72,8 +72,8 @@ run_cmd() {
         exit 0
     elif [[ $1 == '--lock' ]]; then
         if [[ "$DESKTOP_SESSION" == 'i3' ]]; then
-            if [[ -x "./draculocker.sh" ]]; then
-                ./draculocker.sh
+            if [[ -x "$(dirname "$0")/draculocker.sh" ]]; then
+                $(dirname "$0")/draculocker.sh
             elif [[ -x '/usr/bin/i3lock' ]]; then
                 i3lock
             fi
