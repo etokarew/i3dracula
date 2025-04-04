@@ -11,9 +11,9 @@ font pango:JetBrains Mono 8
 ########## Keybindings (a bit) ##########
 
 ### Lockscreen ###
-bindsym $default_mod+Shift+s exec --no-startup-id ~/.i3scr/draculocker.sh
-bindsym $default_mod+l exec --no-startup-id ~/.i3scr/draculocker.sh
-bindsym Control+$alternate_mod+l exec --no-startup-id ~/.i3scr/draculocker.sh
+bindsym $default_mod+Shift+s exec --no-startup-id ~/.i3scripts/draculocker.sh
+bindsym $default_mod+l exec --no-startup-id ~/.i3scripts/draculocker.sh
+bindsym Control+$alternate_mod+l exec --no-startup-id ~/.i3scripts/draculocker.sh
 
 ### Backlight ###
 # Note: If light doesn't work, install xbacklight and
@@ -37,17 +37,17 @@ bindsym --whole-window $default_mod+button9 exec playerctl next
 ### Sound ###
 # Raise Volume
 #bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.i3scr/volume.sh up
-#bindsym --whole-window $default_mod+button4 exec --no-startup-id ~/.i3scr/volume.sh up
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.i3scripts/volume.sh up
+#bindsym --whole-window $default_mod+button4 exec --no-startup-id ~/.i3scripts/volume.sh up
 
 # Lower Volume
 #bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/.i3scr/volume.sh down
-#bindsym --whole-window $default_mod+button5 exec --no-startup-id ~/.i3scr/volume.sh down
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.i3scripts/volume.sh down
+#bindsym --whole-window $default_mod+button5 exec --no-startup-id ~/.i3scripts/volume.sh down
 
 # Toggle muting
 #bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mute
-bindsym XF86AudioMute exec --no-startup-id ~/.i3scr/volume.sh mute
+bindsym XF86AudioMute exec --no-startup-id ~/.i3scripts/volume.sh mute
 
 ########## Keybindings & settings ##########
 
@@ -56,17 +56,17 @@ floating_modifier $default_mod
 
 # start a terminal
 bindsym $default_mod+Return exec i3-sensible-terminal
-bindsym $default_mod+grave exec "~/.i3scr/drunner.sh terminal"
+bindsym $default_mod+grave exec "~/.i3scripts/drunner.sh terminal"
 
 # kill focused window
 bindsym $default_mod+Shift+q kill
 bindsym --release $default_mod+Shift+x exec xkill
 
 # start dmenu (a program launcher)
-bindsym $default_mod+d exec --no-startup-id "~/.i3scr/drunner.sh dmenu_run"
+bindsym $default_mod+d exec --no-startup-id "~/.i3scripts/drunner.sh dmenu_run"
 
 # Rofi launcher -- the dmenu alternative
-bindsym $default_mod+Tab exec --no-startup-id "~/.i3scr/drunner.sh rofi"
+bindsym $default_mod+Tab exec --no-startup-id "~/.i3scripts/drunner.sh rofi"
 
 # change focus
 bindsym $default_mod+Left focus left
@@ -290,8 +290,8 @@ bindsym $default_mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
 #bindsym $default_mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $default_mod+Shift+e exec --no-startup-id "~/.i3scr/drunner.sh i3logout"
-bindsym $default_mod+Escape exec --no-startup-id "~/.i3scr/drunner.sh i3logout"
+bindsym $default_mod+Shift+e exec --no-startup-id "~/.i3scripts/drunner.sh i3logout"
+bindsym $default_mod+Escape exec --no-startup-id "~/.i3scripts/drunner.sh i3logout"
 
 # resize window (you can also use the mouse for that)
 include rmode.conf
@@ -354,12 +354,12 @@ gaps inner 5
 gaps outer 0
 
 ########## Additional shortcuts ##########
-bindsym Control+$alternate_mod+Delete exec --no-startup-id "~/.i3scr/powermenu.sh"
-bindsym Control+Shift+Escape exec "~/.i3scr/drunner.sh system-monitor"
+bindsym Control+$alternate_mod+Delete exec --no-startup-id "~/.i3scripts/powermenu.sh"
+bindsym Control+Shift+Escape exec "~/.i3scripts/drunner.sh system-monitor"
 
 # bindsym Control+Escape exec Windows-Start-Menu
 # bindsym $alternate_mod+F1 exec X11-MainMenu
-bindsym $alternate_mod+F2 exec --no-startup-id "~/.i3scr/drunner.sh dmenu_run"
+bindsym $alternate_mod+F2 exec --no-startup-id "~/.i3scripts/drunner.sh dmenu_run"
 # bindsym $alternate_mod+F3 exec SearchTool
 bindsym $alternate_mod+F4 kill
 bindsym $alternate_mod+F5 floating toggle
@@ -370,35 +370,35 @@ bindsym $alternate_mod+F8 mode ""
 bindsym $alternate_mod+F10 floating toggle
 bindsym $alternate_mod+F11 fullscreen toggle
 
-bindsym Print exec "~/.i3scr/drunner.sh screenshot"
-bindsym $alternate_mod+Sys_Req exec "~/.i3scr/drunner.sh screenshot-window"
-bindsym Shift+Print exec "~/.i3scr/drunner.sh screenshot-area"
+bindsym Print exec "~/.i3scripts/drunner.sh screenshot"
+bindsym $alternate_mod+Sys_Req exec "~/.i3scripts/drunner.sh screenshot-window"
+bindsym Shift+Print exec "~/.i3scripts/drunner.sh screenshot-area"
 
-bindsym $default_mod+c exec --no-startup-id "~/.i3scr/drunner.sh clipboard-manager"
+bindsym $default_mod+c exec --no-startup-id "~/.i3scripts/drunner.sh clipboard-manager"
 
-bindsym $default_mod+e exec "~/.i3scr/drunner.sh recent"
-bindsym $default_mod+j exec "~/.i3scr/drunner.sh downloads"
+bindsym $default_mod+e exec "~/.i3scripts/drunner.sh recent"
+bindsym $default_mod+j exec "~/.i3scripts/drunner.sh downloads"
 
-#bindsym $default_mod+k exec --no-startup-id "~/.i3scr/drunner.sh virtual-keyboard"
-bindsym $default_mod+semicolon exec "~/.i3scr/drunner.sh emoji"
+#bindsym $default_mod+k exec --no-startup-id "~/.i3scripts/drunner.sh virtual-keyboard"
+bindsym $default_mod+semicolon exec "~/.i3scripts/drunner.sh emoji"
 
-bindsym $default_mod+p exec --no-startup-id "~/.i3scr/drunner.sh dunst-clear"
-bindsym $default_mod+n exec --no-startup-id "~/.i3scr/drunner.sh dunst-pop"
-bindsym $default_mod+i exec --no-startup-id "~/.i3scr/drunner.sh dunst-pause"
+bindsym $default_mod+p exec --no-startup-id "~/.i3scripts/drunner.sh dunst-clear"
+bindsym $default_mod+n exec --no-startup-id "~/.i3scripts/drunner.sh dunst-pop"
+bindsym $default_mod+i exec --no-startup-id "~/.i3scripts/drunner.sh dunst-pause"
 
-bindsym $default_mod+$KP_Plus exec "~/.i3scr/drunner.sh magnifier"
-bindsym $default_mod+$KP_Minus exec "~/.i3scr/drunner.sh magnifier"
-bindsym $default_mod+plus exec "~/.i3scr/drunner.sh magnifier"
-bindsym $default_mod+minus exec "~/.i3scr/drunner.sh magnifier"
+bindsym $default_mod+$KP_Plus exec "~/.i3scripts/drunner.sh magnifier"
+bindsym $default_mod+$KP_Minus exec "~/.i3scripts/drunner.sh magnifier"
+bindsym $default_mod+plus exec "~/.i3scripts/drunner.sh magnifier"
+bindsym $default_mod+minus exec "~/.i3scripts/drunner.sh magnifier"
 
-bindsym $default_mod+t exec "~/.i3scr/drunner.sh telegram"
-bindsym $default_mod+u exec "~/.i3scr/drunner.sh updater"
+bindsym $default_mod+t exec "~/.i3scripts/drunner.sh telegram"
+bindsym $default_mod+u exec "~/.i3scripts/drunner.sh updater"
 
-bindsym XF86WWW exec "~/.i3scr/drunner.sh firefox"
-bindsym XF86HomePage exec "~/.i3scr/drunner.sh firefox-new-tab"
-bindsym XF86Mail exec "~/.i3scr/drunner.sh thunderbird"
-bindsym XF86Calculator exec "~/.i3scr/drunner.sh calculator"
+bindsym XF86WWW exec "~/.i3scripts/drunner.sh firefox"
+bindsym XF86HomePage exec "~/.i3scripts/drunner.sh firefox-new-tab"
+bindsym XF86Mail exec "~/.i3scripts/drunner.sh thunderbird"
+bindsym XF86Calculator exec "~/.i3scripts/drunner.sh calculator"
 
 
 ########## Launch services and applications ##########
-exec --no-startup-id "~/.i3scr/drunner.sh autolaunch"
+exec --no-startup-id "~/.i3scripts/drunner.sh autolaunch"

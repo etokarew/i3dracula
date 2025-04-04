@@ -3,7 +3,7 @@ align=center
 separator_block_width=1
 
 [xtitle]
-command=~/.i3scr/xapp-title.sh --force-title
+command=~/.i3scripts/xapp-title.sh --force-title
 interval=repeat
 min_width=250
 background=#6272a4
@@ -22,23 +22,23 @@ min_width=75
 separator=false
 
 [dunst]
-command=~/.i3scr/dunst-state.sh
+command=~/.i3scripts/dunst-state.sh
 interval=1
 min_width=75
 color=#ff79c6
 
 [volume]
-command=~/.i3scr/volume.sh get
+command=~/.i3scripts/volume.sh get
 interval=1
 min_width=75
 
 [kbd-layout]
-command=~/.i3scr/kbd-layout.sh
+command=~/.i3scripts/kbd-layout.sh
 interval=1
 min_width=75
 
 [power-off]
 full_text=
-command=~/.i3scr/powermenu.sh
+command=~/.i3scripts/powermenu.sh
 color=#ff5555
 min_width=50
