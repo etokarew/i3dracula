@@ -14,7 +14,7 @@ configuration {
     location:         west;
     anchor:           west;
     width:            999px;
-    height:           100%;
+    height:           calc(100% - 4px);
     x-offset:         5px;
     y-offset:         0px;
     background-color: @background-color;
